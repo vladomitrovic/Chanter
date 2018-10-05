@@ -9,8 +9,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var presentationRouter = require('./routes/presentation');
 var avccRouter = require('./routes/avcc');
-var servicetestRouter = require('./routes/servicetest');
-
+var serviceRouter = require('./routes/services');
+var choeursRouter = require('./routes/choeurs');
 
 var app = express();
 
@@ -29,10 +29,13 @@ app.use((req, res, next) => {
     if (req.url == "/") {
         res.redirect("/fr");
         return;
-    } else if (req.url.indexOf("/services") != -1) {
+    }
+    /*
+    else if (req.url.indexOf("/services") != -1) {
         next();
         return;
     }
+    */
     var langUrl = req.url.split('/');
     var newUrl = "/";
     for (var i = 2; i < langUrl.length; i++) {
@@ -54,8 +57,9 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/presentation', presentationRouter);
 app.use('/avcc', avccRouter);
+//app.use('/services', serviceRouter);
+app.use('/choeurs', choeursRouter);
 
-app.use('/service',servicetestRouter)
 
 
 // catch 404 and forward to error handler
