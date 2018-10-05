@@ -7,19 +7,19 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/comite', function(req, res, next) {
-    res.render('presentation/comite', { title: 'Express' });
+    res.render('presentation/comite');
 });
 
 router.get('/commission', function(req, res, next) {
-    res.render('presentation/commission', { title: 'Express' });
+    res.render('presentation/commission');
 });
 
 router.get('/groupement.hbs', function(req, res, next) {
-    res.render('presentation/groupement', { title: 'Express' });
+    res.render('presentation/groupement');
 });
 
 router.get('/honneur', function(req, res, next) {
-    res.render('presentation/honneur', { title: 'Express' });
+    res.render('presentation/honneur');
 });
 
 module.exports = router;
