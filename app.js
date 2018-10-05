@@ -9,6 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var presentationRouter = require('./routes/presentation');
 var avccRouter = require('./routes/avcc');
+var choeursRouter = require('./routes/choeurs')
 
 
 
@@ -54,7 +55,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/presentation', presentationRouter);
 app.use('/avcc', avccRouter);
-
+app.use('/choeurs', choeursRouter);
 
 
 // catch 404 and forward to error handler
