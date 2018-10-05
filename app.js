@@ -9,6 +9,8 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var presentationRouter = require('./routes/presentation');
 var avccRouter = require('./routes/avcc');
+var servicesRouter = require('./routes/services');
+
 
 
 
@@ -54,6 +56,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/presentation', presentationRouter);
 app.use('/avcc', avccRouter);
+app.use('/services', servicesRouter);
 
 
 
