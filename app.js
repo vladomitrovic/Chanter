@@ -9,7 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var presentationRouter = require('./routes/presentation');
 var avccRouter = require('./routes/avcc');
-var serviceRouter = require('./routes/servicetest');
+//var serviceRouter = require('./routes/servicetest');
 var choeursRouter = require('./routes/choeurs');
 
 var app = express();
@@ -57,7 +57,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/presentation', presentationRouter);
 app.use('/avcc', avccRouter);
-app.use('/service', serviceRouter);
+//app.use('/service', serviceRouter);
 app.use('/choeurs', choeursRouter);
 
 
