@@ -9,9 +9,7 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var presentationRouter = require('./routes/presentation');
 var avccRouter = require('./routes/avcc');
-var servicesRouter = require('./routes/services');
-
-
+var servicetestRouter = require('./routes/servicetest');
 
 
 var app = express();
@@ -56,8 +54,8 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/presentation', presentationRouter);
 app.use('/avcc', avccRouter);
-app.use('/services', servicesRouter);
 
+app.use('/service',servicetestRouter)
 
 
 // catch 404 and forward to error handler

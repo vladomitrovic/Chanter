@@ -16,6 +16,8 @@ module.exports = {
     historiqueavcc: 'Historique AVCC',
     comiteavcc: 'Comité AVCC',
     fondsavcc: 'Fonds choral et Foyer AVCC',
-    formationavcc: 'Prochaine formation AVCC'
+    formationavcc: 'Prochaine formation AVCC',
+    presidents: 'présidents',
+    servicedep: 'dépannage'
 
 }
