@@ -5,13 +5,17 @@
       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+      <link rel="stylesheet" href="stylesheets/style.css">
+
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <title>{{title}}</title>
   <body>
 
-  <nav class="navbar navbar-inverse navbar-expand-lg navbar-light">
+  <!--/.Navbar-->
+
+  <nav class="navbar navbar-inverse navbar-light" >
       <div class="navbar-header d-flex col">
-          <a class="navbar-brand" href="#">Fédération des sociétés de chant du valais</a>
+          <a class="navbar-brand" href="/" class="navbar-toggle navbar-toggler ml-auto"><strong>FSCV</strong></a>
           <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
               <span class="navbar-toggler-icon"></span>
               <span class="icon-bar"></span>
@@ -22,38 +26,72 @@
       <!-- Collection of nav links, forms, and other content for toggling -->
       <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
           <ul class="nav navbar-nav">
-              <li class="nav-item"><a href="#" class="nav-link">{{langs.home}}</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">About</a></li>
               <li class="nav-item dropdown">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Services <b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="presentation/">{{langs.presentation}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="#" class="dropdown-item">Web Design</a></li>
-                      <li><a href="#" class="dropdown-item">Web Development</a></li>
-                      <li><a href="#" class="dropdown-item">Graphic Design</a></li>
-                      <li><a href="#" class="dropdown-item">Digital Marketing</a></li>
+                      <li><a href="comite/" 0class="dropdown-item">{{langs.comite}}</a></li>
+                      <li><a href="" class="dropdown-item">{{langs.groupements}}</a></li>
+                      <li><a href="/views/presentation/commission.hbs" class="dropdown-item">{{langs.commission}}</a></li>
+                      <li><a href="/views/presentation/honneur.hbs" class="dropdown-item">{{langs.membresH}}</a></li>
                   </ul>
               </li>
-              <li class="nav-item active"><a href="#" class="nav-link">Pricing</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
-              <li class="nav-item"><a href="#" class="nav-link">Contact</a></li>
+              <li class="nav-item dropdown">
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">{{langs.chorus}}<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#" class="dropdown-item">{{langs.searchChorus}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.calendrier}}</a></li>
+                  </ul>
+              </li>
+
+              <li class="nav-item active"><a href="#" class="nav-link">{{langs.cantonalFest}}</a></li>
+              <li class="nav-item dropdown">
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">{{langs.musicalProject}}<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#" class="dropdown-item">Choeur en Herbe 2018</a></li>
+                      <li><a href="#" class="dropdown-item">Frapp'Festival 2018</a></li>
+                      <li><a href="#" class="dropdown-item">Un air de montagne</a></li>
+
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">{{langs.formation}}<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#" class="dropdown-item">{{langs.generalPlan}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.conference}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.travailVocal}}</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">{{langs.chefChoeur}}<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#" class="dropdown-item">{{langs.presentationavcc}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.historiqueavcc}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.comiteavcc}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.fondsavcc}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.formationavcc}}</a></li>
+                  </ul>
+              </li>
+              <li class="nav-item dropdown">
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">{{langs.services}}<b class="caret"></b></a>
+                  <ul class="dropdown-menu">
+                      <li><a href="#" class="dropdown-item">{{langs.annonces}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.forum}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.soutien}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.newsletter}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.servicedep}}</a></li>
+                      <li><a href="#" class="dropdown-item">{{langs.contacts}}</a></li>
+                  </ul>
+              </li>
+
+
           </ul>
-          <form class="navbar-form form-inline">
-              <div class="input-group search-box">
-                  <input type="text" id="search" class="form-control" placeholder="Search here...">
-                  <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
-              </div>
-          </form>
           <ul class="nav navbar-nav navbar-right ml-auto">
               <li class="nav-item">
                   <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
                   <ul class="dropdown-menu form-wrapper">
                       <li>
                           <form action="/examples/actions/confirmation.php" method="post">
-                              <p class="hint-text">Sign in with your social media account</p>
-                              <div class="form-group social-btn clearfix">
-                                  <a href="#" class="btn btn-primary pull-left"><i class="fa fa-facebook"></i> Facebook</a>
-                                  <a href="#" class="btn btn-info pull-right"><i class="fa fa-twitter"></i> Twitter</a>
-                              </div>
+
                               <div class="or-seperator"><b>or</b></div>
                               <div class="form-group">
                                   <input type="text" class="form-control" placeholder="Username" required="required">
@@ -71,10 +109,73 @@
               </li>
 
           </ul>
+          <form class="navbar-form navbar-right form-inline">
+              <div class="input-group search-box">
+                  <input type="text" id="search" class="form-control" placeholder="Search here...">
+                  <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
+              </div>
+          </form>
+
       </div>
   </nav>
+  <header>
 
-  {{{body}}}
+      <div class="containerTitle">
+          <img src="/images/eric-whitacre-522604_1280.jpg" style="width:100%;">
+          <div class="content">
+              <h1>{{title}}</h1>
+          </div>
+      </div>
+
+  </header>
+  <div class="container-fluid bg-3 text-left">
+      {{{body}}}
+  </div>
+  <footer>
+      <div class="container-fluid">
+          <div class="row">
+
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <ul class="social">
+                      <h3>FSVC - 2018</h3>
+
+                      <li>
+                          <a href="#"><i class="fa fa-facebook fa-2x"></i></a>
+                      </li>
+
+                      <li>
+                          <a href="#"><i class="fa fa-youtube fa-2x"></i></a>
+                      </li>
+
+                  </ul>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <ul class="contact">
+
+                  </ul>
+              </div>
+
+
+              <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
+                  <ul class="contact">
+
+                  </ul>
+              </div>
+
+              <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                  <ul class="social">
+
+
+
+                  </ul>
+              </div>
+
+
+          </div>
+      </div>
+  </footer>
+
   <script type="text/javascript">
       // Prevent dropdown menu from closing when click inside the form
       $(document).on("click", ".navbar-right .dropdown-menu", function(e){

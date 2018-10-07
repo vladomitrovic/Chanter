@@ -3,11 +3,11 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('avcc/index', { title: 'Express' });
+    res.render('avcc/index',{layout: 'layout.hbs'}, { title: 'AVCC' });
 });
 
 router.get('/historique', function(req, res, next) {
-    res.render('avcc/historique', { title: 'Express' });
+    res.render('avcc/historique', { title: 'Historique' });
 });
 
 
