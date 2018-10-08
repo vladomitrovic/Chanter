@@ -30,6 +30,7 @@ app.use((req, res, next) => {
         res.redirect("/fr");
         return;
     }
+
     /*
     else if (req.url.indexOf("/services") != -1) {
         next();

@@ -7,7 +7,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/comite', function(req, res, next) {
-    res.render('presentation/comite');
+    res.render('presentation/comite',{ title: 'Comité' });
 });
 
 router.get('/commission', function(req, res, next) {
