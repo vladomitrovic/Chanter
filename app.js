@@ -53,7 +53,7 @@ app.use((req, res, next) => {
     res.locals.langUsed = langUrl[1];
 
     next();
-})
+});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
