@@ -26,6 +26,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 app.use((req, res, next) => {
+    //if no language is specified in the url of the homepage
+    //assume FR
     if (req.url == "/") {
         res.redirect("/fr");
         return;
@@ -37,11 +39,16 @@ app.use((req, res, next) => {
         return;
     }
     */
+
+    //split the url into strings on slash
     var langUrl = req.url.split('/');
+    //forge new url
     var newUrl = "/";
+    //append everything that comes after the language string
     for (var i = 2; i < langUrl.length; i++) {
         newUrl += langUrl[i] + "/";
     }
+    //remove trailing slash
     if (newUrl.length > 1) {
         newUrl = newUrl.slice(0, -1);
     }
