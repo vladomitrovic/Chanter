@@ -41,8 +41,10 @@ module.exports = {
     contacts : 'Contacts',
     chefChoeur:'Chefs choeurs ',
     services: 'Services',
-    formation:'Formations'
-
+    formation:'Formations',
+    generalPlan: 'Plan général',
+    conference: 'Conférence',
+    travailLocal: 'Travail local'
 
 
 }
