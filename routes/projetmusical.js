@@ -13,3 +13,6 @@ router.get('/frappFestival', function(req, res, next) {
 router.get('/airDeMontagne', function(req, res, next) {
     res.render('projetmusical/airDeMontagne', { title: 'Air de montagne' });
 });
+
+
+module.exports = router;

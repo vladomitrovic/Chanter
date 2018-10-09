@@ -13,3 +13,5 @@ router.get('/conference', function(req, res, next) {
 router.get('/travailLocal', function(req, res, next) {
     res.render('formation/travailLocal', { title: 'Air de montagne' });
 });
+
+module.exports = router;
