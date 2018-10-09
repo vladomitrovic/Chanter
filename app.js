@@ -48,6 +48,7 @@ app.use((req, res, next) => {
 
     req.url = newUrl;
     var lang = require('./lang/' + langUrl[1] + '.js');
+    res.dlangUrl = 'fr';
     res.locals.langs = lang;
     res.locals.langUsed = langUrl[1];
 
