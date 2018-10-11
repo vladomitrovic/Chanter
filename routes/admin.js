@@ -3,11 +3,25 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('index', { title: 'News'});
+    res.render('admin/index', { title: 'Admin'});
 });
 
+
+// New article from
 router.get('/newArticle', function(req, res, next) {
-    res.render('admin/newArticle', { title: 'Ajouter un article'});
+
+    //To implement -> get the categories avalaible
+    var categroy = ["Annonce", "Actualité", "News"];
+
+    res.render('admin/newArticle', {category:categroy,  title: 'Ajouter un article'});
+});
+
+
+// Add the article || TO IMPLEMENT !!!
+router.post('/newArticle', function(req, res, next) {
+
+    //Add the article in data base
+
 });
 
 module.exports = router;

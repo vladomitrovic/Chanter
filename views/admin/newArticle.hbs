@@ -1,9 +1,28 @@
-<form action='/admin/newArtivle' method="post">
-    <input type="text" name="title" placeholder="{{langs.titre}}" autofocus><br>
-    <input type="text" name="Chapeau" placeholder="{{langs.chapeau}}" autofocus><br>
-
-    <button type="submit">{{langs.ajouter}}</button>
-    {{#if error}}
-        <span>Error: {{error}}</span>
-    {{/if}}
+<div class="container">
+<form action='/admin/newArticle' method="post">
+    <div class="form-group">
+    <input required="true" type="text" class="form-control" name="title" placeholder="{{langs.titre}}" autofocus><br>
+    </div>
+    <div class="form-group">
+        <select required="true" class="form-control" id="categorie">
+            <option selected disabled>{{langs.categorie}}...</option>
+            {{#each category}}
+                <option>{{this}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="form-group">
+        <textarea class="form-control" rows="2" id="Chapeau" required="true" placeholder="{{langs.chapeau}}"></textarea>
+    </div>
+    <div class="form-group">
+      <textarea required="true" class="form-control" rows="8" id="text" placeholder="{{langs.text}}"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="file">{{langs.image}}</label>
+    <input type="file"  name="myFile">
+    </div>
+    <button type="submit" class="btn btn-primary">{{langs.ajouter}}</button>
 </form>
+</div>
+
+

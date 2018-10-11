@@ -49,6 +49,11 @@ module.exports = {
     conference: 'Conférence',
     travailLocal: 'Travail local',
     titre: 'Titre',
+    chapeau: 'Chapeau',
+    ajouter: 'Ajouter',
+    text: 'Text',
+    image: 'Image',
+    categorie : 'Catégorie'
 
 
 }
