@@ -42,9 +42,11 @@ module.exports = {
     chefChoeur:'Chefs choeurs ',
     services: 'Services',
     formation:'Formations',
-    honneur:'Membres d\'honneur'
 
+    honneur:'Membres d\'honneur',
 
-
+    generalPlan: 'Plan général',
+    conference: 'Conférence',
+    travailLocal: 'Travail local'
 
 }
