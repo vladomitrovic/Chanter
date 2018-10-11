@@ -93,27 +93,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right ml-auto">
               <li class="nav-item">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="#">Login</a>
-                  <ul class="dropdown-menu form-wrapper">
-                      <li>
-                          <form action="/examples/actions/confirmation.php" method="post">
-
-                              <div class="or-seperator"><b>or</b></div>
-                              <div class="form-group">
-                                  <input type="text" class="form-control" placeholder="Username" required="required">
-                              </div>
-                              <div class="form-group">
-                                  <input type="password" class="form-control" placeholder="Password" required="required">
-                              </div>
-                              <input type="submit" class="btn btn-primary btn-block" value="Login">
-                              <div class="form-footer">
-                                  <a href="#">Forgot Your password?</a>
-                              </div>
-                          </form>
-                      </li>
-                  </ul>
-              </li>
-
+              <li><a href="/{{langUsed}}/users/login" class="dropdown-item">{{langs.login}}</a></li>
           </ul>
           <form class="navbar-form navbar-right form-inline">
               <div class="input-group search-box">
