@@ -1,0 +1,9 @@
+<form action='/admin/newArtivle' method="post">
+    <input type="text" name="title" placeholder="{{langs.titre}}" autofocus><br>
+    <input type="text" name="Chapeau" placeholder="{{langs.chapeau}}" autofocus><br>
+
+    <button type="submit">{{langs.ajouter}}</button>
+    {{#if error}}
+        <span>Error: {{error}}</span>
+    {{/if}}
+</form>

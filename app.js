@@ -11,6 +11,7 @@ var presentationRouter = require('./routes/presentation');
 var avccRouter = require('./routes/avcc');
 //var serviceRouter = require('./routes/servicetest');
 var choeursRouter = require('./routes/choeurs');
+var adminRouter = require('./routes/admin');
 
 var app = express();
 
@@ -68,6 +69,7 @@ app.use('/presentation', presentationRouter);
 app.use('/avcc', avccRouter);
 //app.use('/service', serviceRouter);
 app.use('/choeurs', choeursRouter);
+app.use('/admin', adminRouter);
 
 
 

@@ -47,6 +47,8 @@ module.exports = {
 
     generalPlan: 'Plan général',
     conference: 'Conférence',
-    travailLocal: 'Travail local'
+    travailLocal: 'Travail local',
+    titre: 'Titre',
+
 
 }
