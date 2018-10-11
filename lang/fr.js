@@ -49,6 +49,7 @@ module.exports = {
     conference: 'Conférence',
     travailLocal: 'Travail local',
     titre: 'Titre',
+    titleChoose: 'Rechercher un choeur',
 
 
 }

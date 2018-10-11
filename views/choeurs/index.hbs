@@ -1,1 +1,80 @@
-<h1>{{langs.searchChore}}</h1>
+<h3> {{langs.titleChoose}}</h3>
+<div class='col-md-4'>
+    <label for="inputsm">Membre fédération</label>
+    <div class="radio">
+        <label><input type="radio" name="optradio" checked>Oui</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">Non</label>
+    </div>
+    <div class="radio disabled">
+        <label><input type="radio" name="optradio" disabled>Tous</label>
+    </div>
+</div>
+
+<div class='col-md-4'>
+    <label for="inputsm">Région lingustique</label>
+    <div class="radio">
+        <label><input type="radio" name="optradio" checked>Haut-Valais</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">Bas-Valais</label>
+    </div>
+    <div class="radio disabled">
+        <label><input type="radio" name="optradio" disabled>Tous</label>
+    </div>
+</div>
+
+<div class='col-md-4'>
+    <label for="inputsm">Groupement</label>
+    <div class="radio">
+        <label><input type="radio" name="optradio" checked>Haut-Valais</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">Bas-Valais</label>
+    </div>
+    <div class="radio disabled">
+        <label><input type="radio" name="optradio" disabled>Tous</label>
+    </div>
+</div>
+<div class='col-md-4'>
+    <label for="inputsm">Type de choeur</label>
+    <div class="radio">
+        <label><input type="radio" name="optradio" checked>Adultes</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">Mixte</label>
+    </div>
+    <div class="radio disabled">
+        <label><input type="radio" name="optradio" disabled>Hommes</label>
+    </div>
+    <div class="radio disabled">
+        <label><input type="radio" name="optradio" disabled>Jeunes</label>
+    </div>
+    <div class="radio disabled">
+        <label><input type="radio" name="optradio" disabled>Dames</label>
+    </div>
+    <div class="radio disabled">
+        <label><input type="radio" name="optradio" disabled>Enfants</label>
+    </div>
+</div>
+
+<div class='col-md-4'>
+    <label for="inputsm">Président</label>
+    <select class="selectpicker form-control input-sm" name="President">
+        <option>Pres1</option>
+    </select>
+</div>
+
+
+<div class='col-md-4'>
+    <label for="inputsm">Chef de choeur</label>
+    <select class="selectpicker form-control input-sm" name="President">
+        <option>chef1</option>
+    </select>
+</div>
+
+<div class='col-md-8' style="vertical-align:bottom;">
+    <br />
+    <button type="submit" id="btnSubmit" style="width:100%;" name="Submit">Rechercher</button>
+</div>
