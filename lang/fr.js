@@ -41,7 +41,9 @@ module.exports = {
     contacts : 'Contacts',
     chefChoeur:'Chefs choeurs ',
     services: 'Services',
-    formation:'Formations'
+    formation:'Formations',
+    honneur:'Membres d\'honneur'
+
 
 
 
