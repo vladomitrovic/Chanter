@@ -1,0 +1,7 @@
+var express = require('express');
+var router = express.Router();
+
+/* GET home page. */
+router.get('/feteCantonale', function(req, res, next) {
+res.render('feteCantonale', { title: 'feteCantonale' });
+});

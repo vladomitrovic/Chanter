@@ -10,8 +10,8 @@ router.get('/conference', function(req, res, next) {
     res.render('formation/conference', { title: 'conference' });
 });
 
-router.get('/travailLocal', function(req, res, next) {
-    res.render('formation/travailLocal', { title: 'travailVocal' });
+router.get('/travailVocal', function(req, res, next) {
+    res.render('formation/travailVocal', { title: 'travailVocal' });
 });
 
 module.exports = router;

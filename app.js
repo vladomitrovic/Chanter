@@ -52,7 +52,7 @@ app.use('/service', serviceRouter);
 app.use('/choeurs', choeursRouter);
 app.use('/admin', adminRouter);
 app.use('/formation', formationRouter);
-app.use('/projets', projetsRouter);
+app.use('/projetmusical', projetsRouter);
 
 
 
