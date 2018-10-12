@@ -16,14 +16,29 @@
   <nav class="navbar navbar-inverse navbar-light" >
       <div class="navbar-header d-flex col">
           <a class="navbar-brand" href="/" class="navbar-toggle navbar-toggler ml-auto"><strong>FSCV</strong></a>
+
           <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
               <span class="navbar-toggler-icon"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
           </button>
+          <button type="button" data-target="#languageCollapse" data-toggle="collapse" class="navbar-toggle navbar-toggler ml-auto">
+              <span class="navbar-toggler-icon" style="color:white;">Languages</span>
+          </button>
       </div>
-      <!-- Collection of nav links, forms, and other content for toggling -->
+
+      <div id="languageCollapse" class="collapse navbar-collapse justify-content-start">
+          <ul class="nav navbar-nav">
+              <li class="nav-item dropdown">
+                   <ul style="padding:20px 0 20px 0;" >
+                      <li> <a class="navbar-item" href="?clang=fr">{{langs.francais}}</a></li>
+                      <li>    <a class="navbar-item" href="?clang=de">{{langs.allemand}}</a></li>
+                  </ul>
+              </li>
+          </ul>
+      </div>
+                  <!-- Collection of nav links, forms, and other content for toggling -->
       <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
           <ul class="nav navbar-nav">
               <li class="nav-item dropdown">
@@ -88,7 +103,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right ml-auto">
               <li class="nav-item">
-              <li><a href="/{{langUsed}}/users/login" class="dropdown-item">{{langs.login}}</a></li>
+              <li><a href="/{{langUsed}}/users/" class="dropdown-item">{{langs.login}}</a></li>
           </ul>
           <form class="navbar-form navbar-right form-inline">
               <div class="input-group search-box">
