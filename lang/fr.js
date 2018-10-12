@@ -26,7 +26,6 @@ module.exports = {
     generalPlan:'Plan général de formation',
     conference:'Conférence 2018 - Mouvement et musique',
     travailVocal:'Travail vocal en chorale',
-
     presentationavcc: 'Présentation AVCC',
     historiqueavcc: 'Historique AVCC',
     comiteavcc: 'Comité AVCC',
@@ -56,6 +55,24 @@ module.exports = {
     ajouter: 'Ajouter',
     text: 'Text',
     image: 'Image',
-    categorie : 'Catégorie'
+    categorie : 'Catégorie',
+    membrefed : 'Membre fédération',
+    yes: 'Oui',
+    no: 'Non',
+    all: 'Tous',
+    regionling: 'Région lingustique',
+    typeChoeur: 'Type de choeur',
+    adultes: 'Adultes',
+    jeunes: 'Jeune',
+    enfants: 'Enfant',
+    dames: 'Dame',
+    mixte: 'Mixte',
+    hommes: 'Homme',
+    president: 'Président',
+    chefDeChoeur: 'Chef de choeur',
+    rechercher: 'Rechercher',
+    connexion: 'Connexion',
+
+
 
 }
