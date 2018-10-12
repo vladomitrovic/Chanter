@@ -13,11 +13,7 @@ router.get('/newArticle', function(req, res, next) {
     //To implement -> get the categories avalaible
     var category = ["Annonce", "Actualité", "News"];
 
-<<<<<<< HEAD
     res.render('admin/newArticle', {category:category,  title: 'Ajouter un article'});
-=======
-    res.render('admin/newArticle', {category:categroy,  title: 'Ajouter un article' ,  layout:'admin/adminLayout'});
->>>>>>> 27c3af3d2b83281ccc94e27f108a617229247928
 });
 
 
