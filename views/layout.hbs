@@ -8,7 +8,7 @@
       <link rel="stylesheet" href="/stylesheets/style.css">
 
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <title>{{title}}</title>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> <title>{{lookup langs title}}</title>
   <body>
 
   <!--/.Navbar-->
@@ -27,65 +27,60 @@
       <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
           <ul class="nav navbar-nav">
               <li class="nav-item dropdown">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/{{langUsed}}/presentation">{{langs.presentation}}<b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/presentation">{{langs.presentation}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="/{{langUsed}}/presentation/comite" class="dropdown-item">{{langs.comite}}</a></li>
+                      <li><a href="/presentation/comite" class="dropdown-item">{{langs.comite}}</a></li>
 
-                      <li><a href="/{{langUsed}}/presentation/groupement" class="dropdown-item">{{langs.groupements}}</a></li>
-                      <li><a href="/{{langUsed}}/presentation/comission" class="dropdown-item">{{langs.commission}}</a></li>
-                      <li><a href="/{{langUsed}}/presentation/honneur" class="dropdown-item">{{langs.membresH}}</a></li>
-
-                      <li><a href="" class="dropdown-item">{{langs.groupements}}</a></li>
-                      <li><a href="/views/presentation/commission.hbs" class="dropdown-item">{{langs.commission}}</a></li>
-                      <li><a href="/views/presentation/honneur.hbs" class="dropdown-item">{{langs.membresH}}</a></li>
-
+                      <li><a href="/presentation/groupement" class="dropdown-item">{{langs.groupements}}</a></li>
+                      <li><a href="/presentation/comission" class="dropdown-item">{{langs.commission}}</a></li>
+                      <li><a href="/presentation/honneur" class="dropdown-item">{{langs.membresH}}</a></li>
                   </ul>
               </li>
               <li class="nav-item dropdown">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="{{langUsed}}/choeurs/">{{langs.chorus}}<b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/choeurs/">{{langs.chorus}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="/{{langUsed}}/choeurs/" class="dropdown-item">{{langs.searchChorus}}</a></li>
-                      <li><a href="/{{langUsed}}/choeurs/calendrier" class="dropdown-item">{{langs.calendrier}}</a></li>
+                      <li><a href="/choeurs/" class="dropdown-item">{{langs.searchChorus}}</a></li>
+                      <li><a href="/choeurs/calendrier" class="dropdown-item">{{langs.calendrier}}</a></li>
                   </ul>
               </li>
 
               <li class="nav-item active"><a href="#" class="nav-link">{{langs.cantonalFest}}</a></li>
               <li class="nav-item dropdown">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="{{langUsed}}/projetmusical">{{langs.musicalProject}}<b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/projetmusical">{{langs.musicalProject}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="/{{langUsed}}/projetmusical/choeurEnHerbe" class="dropdown-item">Choeur en Herbe 2018</a></li>
-                      <li><a href="/{{langUsed}}/projetmusical/frappFestival" class="dropdown-item">Frapp'Festival 2018</a></li>
-                      <li><a href="/{{langUsed}}/projetmusical/airDeMontagne" class="dropdown-item">Un air de montagne</a></li>
+                      <li><a href="/projetmusical/choeurEnHerbe" class="dropdown-item">Choeur en Herbe 2018</a></li>
+                      <li><a href="/projetmusical/frappFestival" class="dropdown-item">Frapp'Festival 2018</a></li>
+                      <li><a href="/projetmusical/airDeMontagne" class="dropdown-item">Un air de montagne</a></li>
 
                   </ul>
               </li>
               <li class="nav-item dropdown">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="{{langUsed}}/formation">{{langs.formation}}<b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/formation">{{langs.formation}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="/{{langUsed}}/formation/generalPlan" class="dropdown-item">{{langs.generalPlan}}</a></li>
-                      <li><a href="/{{langUsed}}/formation/conference" class="dropdown-item">{{langs.conference}}</a></li>
-                      <li><a href="/{{langUsed}}/formation/travailVocal" class="dropdown-item">{{langs.travailVocal}}</a></li>
+                      <li><a href="/formation/generalPlan" class="dropdown-item">{{langs.generalPlan}}</a></li>
+                      <li><a href="/formation/conference" class="dropdown-item">{{langs.conference}}</a></li>
+                      <li><a href="/formation/travailVocal" class="dropdown-item">{{langs.travailVocal}}</a></li>
                   </ul>
               </li>
               <li class="nav-item dropdown">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/{{langUsed}}/avcc">{{langs.chefChoeur}}<b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/avcc">{{langs.chefChoeur}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="/{{langUsed}}/avcc/presentationavcc" class="dropdown-item">{{langs.presentationavcc}}</a></li>
-                      <li><a href="/{{langUsed}}/avcc/historique" class="dropdown-item">{{langs.historiqueavcc}}</a></li>
-                      <li><a href="/{{langUsed}}/avcc/comite" class="dropdown-item">{{langs.comiteavcc}}</a></li>
-                      <li><a href="/{{langUsed}}/avcc/fonds" class="dropdown-item">{{langs.fondsavcc}}</a></li>
-                      <li><a href="/{{langUsed}}/avcc/formation" class="dropdown-item">{{langs.formationavcc}}</a></li>
+                      <li><a href="/avcc/presentationavcc" class="dropdown-item">{{langs.presentationavcc}}</a></li>
+                      <li><a href="/avcc/historique" class="dropdown-item">{{langs.historiqueavcc}}</a></li>
+                      <li><a href="/avcc/comite" class="dropdown-item">{{langs.comiteavcc}}</a></li>
+                      <li><a href="/avcc/fonds" class="dropdown-item">{{langs.fondsavcc}}</a></li>
+                      <li><a href="/avcc/formation" class="dropdown-item">{{langs.formationavcc}}</a></li>
                   </ul>
               </li>
               <li class="nav-item dropdown">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/{{langUsed}}/servicetest">{{langs.services}}<b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/servicetest">{{langs.services}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="/{{langUsed}}/servicetest/annonces" class="dropdown-item">{{langs.annonces}}</a></li>
-                      <li><a href="/{{langUsed}}/servicetest/forumpres" class="dropdown-item">{{langs.forum}}</a></li>
-                      <li><a href="/{{langUsed}}/servicetest/ascj" class="dropdown-item">{{langs.soutien}}</a></li>
-                      <li><a href="/{{langUsed}}/servicetest/newsletter" class="dropdown-item">{{langs.newsletter}}</a></li>
-                      <li><a href="/{{langUsed}}/servicetest/servicedep" class="dropdown-item">{{langs.servicedep}}</a></li>
-                      <li><a href="/{{langUsed}}/servicetest/contacts" class="dropdown-item">{{langs.contacts}}</a></li>
+                      <li><a href="/servicetest/annonces" class="dropdown-item">{{langs.annonces}}</a></li>
+                      <li><a href="/servicetest/forumpres" class="dropdown-item">{{langs.forum}}</a></li>
+                      <li><a href="/servicetest/ascj" class="dropdown-item">{{langs.soutien}}</a></li>
+                      <li><a href="/servicetest/newsletter" class="dropdown-item">{{langs.newsletter}}</a></li>
+                      <li><a href="/servicetest/servicedep" class="dropdown-item">{{langs.servicedep}}</a></li>
+                      <li><a href="/servicetest/contacts" class="dropdown-item">{{langs.contacts}}</a></li>
                   </ul>
               </li>
 

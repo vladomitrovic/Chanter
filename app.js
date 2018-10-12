@@ -1,9 +1,11 @@
-;var createError = require('http-errors');
+var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mysql = require('mysql');
+var session = require('express-session');
+var i18n=require("i18n-express");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -12,6 +14,8 @@ var avccRouter = require('./routes/avcc');
 //var serviceRouter = require('./routes/servicetest');
 var choeursRouter = require('./routes/choeurs');
 var adminRouter = require('./routes/admin');
+
+
 
 var app = express();
 
@@ -24,44 +28,19 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(session({
+    secret: 'jeannetteetmarilou',
+    saveUninitialized: true,
+    resave: true
+}));
 
+app.use(i18n({
+    translationsPath: path.join(__dirname, 'lang'), // <--- use here. Specify translations files path.
+    siteLangs: ["fr","de"],
+    defaultLang : "fr",
+    textsVarName: "langs"
+}));
 
-app.use((req, res, next) => {
-    //if no language is specified in the url of the homepage
-    //assume FR
-    if (req.url == "/") {
-        res.redirect("/fr");
-        return;
-    }
-
-    /*
-    else if (req.url.indexOf("/services") != -1) {
-        next();
-        return;
-    }
-    */
-
-    //split the url into strings on slash
-    var langUrl = req.url.split('/');
-    //forge new url
-    var newUrl = "/";
-    //append everything that comes after the language string
-    for (var i = 2; i < langUrl.length; i++) {
-        newUrl += langUrl[i] + "/";
-    }
-    //remove trailing slash
-    if (newUrl.length > 1) {
-        newUrl = newUrl.slice(0, -1);
-    }
-
-    req.url = newUrl;
-    var lang = require('./lang/' + langUrl[1] + '.js');
-    res.dlangUrl = 'fr';
-    res.locals.langs = lang;
-    res.locals.langUsed = langUrl[1];
-
-    next();
-});
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
