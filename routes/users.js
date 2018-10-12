@@ -11,4 +11,11 @@ router.post('/login', function(req, res, next) {
     res.render('login');
 });
 
+router.post('/logout', function(req, res, next) {
+
+    // Destroy isAutenticated
+
+    res.render('login');
+});
+
 module.exports = router;
