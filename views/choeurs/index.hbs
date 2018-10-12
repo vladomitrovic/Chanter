@@ -1,19 +1,19 @@
 <h3> {{langs.titleChoose}}</h3>
 <div class='col-md-4'>
-    <label for="inputsm">Membre fédération</label>
+    <label for="inputsm">{{langs.membrefed}}</label>
     <div class="radio">
-        <label><input type="radio" name="optradio" checked>Oui</label>
+        <label><input type="radio" name="optradio" checked>{{langs.yes}}</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">Non</label>
+        <label><input type="radio" name="optradio">{{langs.no}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>Tous</label>
+        <label><input type="radio" name="optradio" disabled>{{langs.all}}</label>
     </div>
 </div>
 
 <div class='col-md-4'>
-    <label for="inputsm">Région lingustique</label>
+    <label for="inputsm">{{langs.regionling}}</label>
     <div class="radio">
         <label><input type="radio" name="optradio" checked>Haut-Valais</label>
     </div>
@@ -21,46 +21,52 @@
         <label><input type="radio" name="optradio">Bas-Valais</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>Tous</label>
+        <label><input type="radio" name="optradio" disabled>{{langs.all}}</label>
     </div>
 </div>
 
 <div class='col-md-4'>
     <label for="inputsm">Groupement</label>
     <div class="radio">
-        <label><input type="radio" name="optradio" checked>Haut-Valais</label>
+        <label><input type="radio" name="optradio" checked>GSCBV</label>
+</div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">UCC </label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">Bas-Valais</label>
+        <label><input type="radio" name="optradio">GCVC </label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="optradio">OCV</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>Tous</label>
+        <label><input type="radio" name="optradio" disabled>{{langs.all}}</label>
     </div>
 </div>
 <div class='col-md-4'>
-    <label for="inputsm">Type de choeur</label>
+    <label for="inputsm">{{langs.typeChoeur}}</label>
     <div class="radio">
-        <label><input type="radio" name="optradio" checked>Adultes</label>
+        <label><input type="radio" name="optradio" checked>{{langs.adultes}}</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">Mixte</label>
+        <label><input type="radio" name="optradio">{{langs.mixte}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>Hommes</label>
+        <label><input type="radio" name="optradio" disabled>{{langs.hommes}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>Jeunes</label>
+        <label><input type="radio" name="optradio" disabled>{{langs.jeunes}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>Dames</label>
+        <label><input type="radio" name="optradio" disabled>{{langs.dames}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>Enfants</label>
+        <label><input type="radio" name="optradio" disabled>{{langs.enfants}}</label>
     </div>
 </div>
 
 <div class='col-md-4'>
-    <label for="inputsm">Président</label>
+    <label for="inputsm">{{langs.president}}</label>
     <select class="selectpicker form-control input-sm" name="President">
         <option>Pres1</option>
     </select>
@@ -68,7 +74,7 @@
 
 
 <div class='col-md-4'>
-    <label for="inputsm">Chef de choeur</label>
+    <label for="inputsm">{{langs.chefDeChoeur}}</label>
     <select class="selectpicker form-control input-sm" name="President">
         <option>chef1</option>
     </select>
@@ -76,5 +82,5 @@
 
 <div class='col-md-8' style="vertical-align:bottom;">
     <br />
-    <button type="submit" id="btnSubmit" style="width:100%;" name="Submit">Rechercher</button>
+    <button type="submit" id="btnSubmit" style="width:100%;" name="Submit">{{langs.rechercher}}</button>
 </div>
