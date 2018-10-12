@@ -1,0 +1,206 @@
+
+
+
+<div class="accordion" id="accordionExample">
+    <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingOne">
+            <h5 class="mb-0">
+                <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+
+                </button>
+            </h5>
+        </div>
+        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="jumbotron">
+                    <div class="container">
+                        <h2> {{langs.welcome}} </h2>
+                        <p> {{langs.chorus}} </p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingTwo">
+            <h5 class="mb-0">
+                <button class="btn btn-primary btn-lg btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                    Choeurs Details
+                </button>
+            </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+            <div class="card-body">
+                <div class="container">
+                    <div class="row">
+
+                        <div class="col-xs-12 col-sm-12 com-md-12 col-lg-12">
+
+                            <form action="/" method="post" role="form" enctype="application/x-www-form-urlencoded">
+                                <legend>Enter Choir Registraton Information Here </legend>
+
+                                <div class="form-group">
+                                    <label for="choir_name">{{langs.name}} du {{langs.choir}} </label>
+                                    <input type="text" class="form-control" name="choir_name" id="choir_name" placeholder={{langs.name}}>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="npa">NPA</label>
+                                    <input type="text" maxlength="10" size="10" class="form-control" name="choir_npa" id="choir_npa" placeholder="NPA">
+
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="lieu">Lieu</label>
+                                    <input type="text" class="form-control" name="choir_lieu" id="choir_lieu" placeholder="Liue">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="effectif">Effectif</label>
+                                    <input type="text" class="form-control" name="choir_effectif" id="choir_effectif" placeholder="effectif">
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="fondation">Fondation</label>
+                                    <input type="text" class="form-control" name="choir_fondation" id="choir_fondation" placeholder="Fondation">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="fondation">Home page</label>
+                                    <input type="text" class="form-control" name="choir_homepage" id="choir_homepage" placeholder="homepage">
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="grpregion">Grpmts + Region</label>
+                                    <select name="grpregion">
+                                        <option value="0">UCC_Y</option>
+                                        <option value="1">Bas-Valais Membre GSCBV</option>
+                                        <option value="2">Bas-Valais Non Membre GSCBV</option>
+                                        <option value="3">Centre du Valais - Membre UCC</option>
+                                        <option value="4">Centre du Valais - Non Membre UCC</option>
+                                        <option value="5">Valais Central - Membre GCVC</option>
+                                        <option value="6">Valais Central - Non Membre GCVC</option>
+                                        <option value="5">Oberwallis - Membre OCV</option>
+                                        <option value="6">Oberwallis - Non Membre OCV</option>
+
+
+                                    </select>
+                                </div>
+
+
+
+                                <div class="form-group">
+                                    <label for="dekanat">Dekanat (Nur fur OCV)</label>
+                                    <select name="deknat">
+                                        <option value="0"></option>
+                                        <option value="1">Weltlich</option>
+                                        <option value="2">Leuk</option>
+                                        <option value="3">Raron</option>
+                                        <option value="4">Visp</option>
+                                        <option value="5">Brig</option>
+                                        <option value="6">Ernen</option>
+
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="federationcanton">Federation Canton</label>
+                                    <input type="radio" name="memberfscv" value="memberfscv" checked> Member FSCV</input>
+                                    <input  type="radio" name="memberfscv" value="Nonmember">Non Member FSCV</input>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="dateentree">Date Entry Federation Canton</label>
+                                    <input type="text" class="form-control" maxlength="4" name="dateentree" id="dateentree">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="language">Langue </label>
+                                    <select name="language" id="language">
+                                        <option value="1">French</option>
+                                        <option value="2">Deutsch</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="typeofchoir">Type of Choir </label>
+                                    <select name="typeofchoir" id="typeofchoir">
+                                        <option value="1">CX</option>
+                                        <option value="2">Choir</option>
+                                        <option value="3">Choir</option>
+                                        <option value="4">Choir</option>
+                                        <option value="5">Choir</option>
+                                        <option value="6">Choir</option>
+                                    </select>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="stypeofchoir">Type of Choir </label>
+                                    <select name="stypeofchoir" id="stypeofchoir">
+                                        <option value="1">CX</option>
+                                        <option value="2">Choir</option>
+                                        <option value="3">Choir</option>
+                                        <option value="4">Choir</option>
+                                        <option value="5">Choir</option>
+                                        <option value="6">Choir</option>
+                                        <option value="7">Iej jfasfjasdfhasfksaf;l </option>
+                                    </select>
+                                </div>
+
+
+                                <button type="submit" class="">Choir Registration</button>
+
+                            </form>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="card z-depth-0 bordered">
+        <div class="card-header" id="headingThree">
+            <h5 class="mb-0">
+                <button class="btn btn-primary btn-lg btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                    Comite Details
+                </button>
+            </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+            <div class="card-body">
+                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
