@@ -3,7 +3,7 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('admin/index', { title: 'Admin'});
+    res.render('admin/index', { title: 'Admin',  layout:'admin/adminLayout'});
 });
 
 
@@ -13,7 +13,7 @@ router.get('/newArticle', function(req, res, next) {
     //To implement -> get the categories avalaible
     var categroy = ["Annonce", "Actualité", "News"];
 
-    res.render('admin/newArticle', {category:categroy,  title: 'Ajouter un article'});
+    res.render('admin/newArticle', {category:categroy,  title: 'Ajouter un article' ,  layout:'admin/adminLayout'});
 });
 
 

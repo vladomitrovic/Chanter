@@ -35,5 +35,16 @@
 	"formation": "Formations",
 	"honneur": "Membres d'honneur",
 	"travailLocal": "Travail local",
-	"titre": "Titre"
+	"titre": "Titre",
+	"chapeau": "Chapeau",
+	"ajouter": "Ajouter",
+	"text": "Texte",
+	"image": "Image",
+	"ajouer": "Ajouter",
+	"categorie": "Categorie",
+	"articles": "Articles",
+	"modifier": "Modifier",
+	"list": "Listes"
+
+
 }
