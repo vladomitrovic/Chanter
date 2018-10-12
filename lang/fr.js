@@ -50,5 +50,12 @@ module.exports = {
     travailLocal: 'Travail local',
     titre: 'Titre',
 
+    titleChoose: 'Rechercher un choeur',
+
+    chapeau: 'Chapeau',
+    ajouter: 'Ajouter',
+    text: 'Text',
+    image: 'Image',
+    categorie : 'Catégorie'
 
 }
