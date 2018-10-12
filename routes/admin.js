@@ -16,6 +16,12 @@ router.get('/newArticle', function(req, res, next) {
     res.render('admin/newArticle', {category:category,  title: 'Ajouter un article',  layout:'admin/adminLayout'});
 });
 
+// New chore from
+router.get('/newChoeur', function(req, res, next) {
+
+    res.render('admin/registration', {layout:'admin/adminLayout'});
+});
+
 
 // Add the article || TO IMPLEMENT !!!
 router.post('/newArticle', function(req, res, next) {
@@ -23,5 +29,11 @@ router.post('/newArticle', function(req, res, next) {
     //Add the article in data base
 
 });
+
+
+
+
+
+
 
 module.exports = router;
