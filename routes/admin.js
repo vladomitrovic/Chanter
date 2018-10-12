@@ -11,9 +11,9 @@ router.get('/', function(req, res, next) {
 router.get('/newArticle', function(req, res, next) {
 
     //To implement -> get the categories avalaible
-    var categroy = ["Annonce", "Actualité", "News"];
+    var category = ["Annonce", "Actualité", "News"];
 
-    res.render('admin/newArticle', {category:categroy,  title: 'Ajouter un article'});
+    res.render('admin/newArticle', {category:category,  title: 'Ajouter un article'});
 });
 
 

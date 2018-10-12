@@ -47,7 +47,7 @@
                       <li><a href="/presentation/comite" class="dropdown-item">{{langs.comite}}</a></li>
 
                       <li><a href="/presentation/groupement" class="dropdown-item">{{langs.groupements}}</a></li>
-                      <li><a href="/presentation/comission" class="dropdown-item">{{langs.commission}}</a></li>
+                      <li><a href="/presentation/commission" class="dropdown-item">{{langs.commission}}</a></li>
                       <li><a href="/presentation/honneur" class="dropdown-item">{{langs.membresH}}</a></li>
                   </ul>
               </li>
@@ -80,7 +80,7 @@
               <li class="nav-item dropdown">
                   <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/avcc">{{langs.chefChoeur}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="/avcc/presentationavcc" class="dropdown-item">{{langs.presentationavcc}}</a></li>
+                      <li><a href="/avcc/" class="dropdown-item">{{langs.presentationavcc}}</a></li>
                       <li><a href="/avcc/historique" class="dropdown-item">{{langs.historiqueavcc}}</a></li>
                       <li><a href="/avcc/comite" class="dropdown-item">{{langs.comiteavcc}}</a></li>
                       <li><a href="/avcc/fonds" class="dropdown-item">{{langs.fondsavcc}}</a></li>
@@ -88,14 +88,14 @@
                   </ul>
               </li>
               <li class="nav-item dropdown">
-                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/servicetest">{{langs.services}}<b class="caret"></b></a>
+                  <a data-toggle="dropdown" class="nav-link dropdown-toggle" href="/service/index">{{langs.services}}<b class="caret"></b></a>
                   <ul class="dropdown-menu">
-                      <li><a href="/servicetest/annonces" class="dropdown-item">{{langs.annonces}}</a></li>
-                      <li><a href="/servicetest/forumpres" class="dropdown-item">{{langs.forum}}</a></li>
-                      <li><a href="/servicetest/ascj" class="dropdown-item">{{langs.soutien}}</a></li>
-                      <li><a href="/servicetest/newsletter" class="dropdown-item">{{langs.newsletter}}</a></li>
-                      <li><a href="/servicetest/servicedep" class="dropdown-item">{{langs.servicedep}}</a></li>
-                      <li><a href="/servicetest/contacts" class="dropdown-item">{{langs.contacts}}</a></li>
+                      <li><a href="/service/annonces" class="dropdown-item">{{langs.annonces}}</a></li>
+                      <li><a href="/service/forumpres" class="dropdown-item">{{langs.forum}}</a></li>
+                      <li><a href="/service/ascj" class="dropdown-item">{{langs.soutien}}</a></li>
+                      <li><a href="/service/newsletter" class="dropdown-item">{{langs.newsletter}}</a></li>
+                      <li><a href="/service/servicedep" class="dropdown-item">{{langs.servicedep}}</a></li>
+                      <li><a href="/service/contacts" class="dropdown-item">{{langs.contacts}}</a></li>
                   </ul>
               </li>
 
@@ -103,7 +103,7 @@
           </ul>
           <ul class="nav navbar-nav navbar-right ml-auto">
               <li class="nav-item">
-              <li><a href="/{{langUsed}}/users/" class="dropdown-item">{{langs.login}}</a></li>
+              <li><a href="/users/" class="dropdown-item">{{langs.login}}</a></li>
           </ul>
           <form class="navbar-form navbar-right form-inline">
               <div class="input-group search-box">
@@ -119,7 +119,7 @@
       <div class="containerTitle">
           <img src="/images/eric-whitacre-522604_1280.jpg" style="width:100%;">
           <div class="content">
-              <h1>{{title}}</h1>
+              <h2>{{lookup langs title}}</h2>
           </div>
       </div>
 

@@ -3,12 +3,21 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    var langs = require('../lang/'+ res.locals.langUsed  );
-    res.render('choeurs/index', { title: langs.chorus});
+    //To implement -> get list the director avalaible
+    var president = ["dir1", "dir2", "dir3"];
+    var chefchoeur = ["chef1", "chef2", "chef3"];
+    res.render('choeurs/index', {president:president, chefchoeur:chefchoeur, title:'titleChoose'});
 });
 
+// SEARCH CHOIR TO DO
+router.post('/', function(req, res, next) {
+
+});
+
+
 router.get('/calendrier', function(req, res, next) {
-    res.render('choeurs/calendrier', { title: 'Express'});
+
+    res.render('choeurs/calendrier', { title: 'calendrier'});
 });
 
 module.exports = router;

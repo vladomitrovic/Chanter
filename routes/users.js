@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 
 router.get('/', function(req, res, next) {
-    res.render('login', { title:langs.connexion });
+    res.render('login', { title:'connexion'});
 });
 
 router.post('/login', function(req, res, next) {
