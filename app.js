@@ -13,7 +13,7 @@ var presentationRouter = require('./routes/presentation');
 var avccRouter = require('./routes/avcc');
 var serviceRouter = require('./routes/service');
 var choeursRouter = require('./routes/choeurs');
-var adminRouter = require('./routes/admin');
+var adminRouter = require('./routes/admin/admin');
 var formationRouter = require('./routes/formation');
 var projetsRouter = require('./routes/projetmusical');
 
