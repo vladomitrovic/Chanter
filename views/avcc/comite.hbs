@@ -1,0 +1,35 @@
+<h3>{{langs.comiteDirector}}</h3>
+
+    <div class="panel-group" id="accordion">
+        <div >
+            <text type="text" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-chevron-down"></span>Laurent Bovier, <b>Président de la FSCV</b></text>
+            <div id="collapseOne" class="panel-collapse collapse">
+                <table border="0">
+                    <tbody><tr>
+                        <td><img src="http://www.chanter.ch/wp/wp-content/imgsite/imgpers/lbovier.jpg" class="img-responsive" height="150"></td>
+                        <td> Route du Sanetsch 11<br>  1950 Sion<br>    Natel: 078/657.43.77<br> <a href="&amp;#109&amp;#97&amp;#105&amp;#108&amp;#116&amp;#111&amp;#58&amp;#108&amp;#97&amp;#117&amp;#98&amp;#111&amp;#118&amp;#64&amp;#98&amp;#108&amp;#117&amp;#101&amp;#119&amp;#105&amp;#110&amp;#46&amp;#99&amp;#104&amp;#63&amp;#115&amp;#117&amp;#98&amp;#106&amp;#101&amp;#99&amp;#116&amp;#61&amp;#67&amp;#111&amp;#110&amp;#116&amp;#97&amp;#99&amp;#116&amp;#37&amp;#50&amp;#48&amp;#70&amp;#83&amp;#67&amp;#86&amp;#38&amp;#98&amp;#99&amp;#99&amp;#61&amp;#119&amp;#101&amp;#98&amp;#64&amp;#99&amp;#104&amp;#97&amp;#110&amp;#116&amp;#101&amp;#114&amp;#46&amp;#99&amp;#104"><img src="http://www.chanter.ch/wp/wp-php/imgemail.php?ID=1394" class="imgemail img-responsive" border="0"></a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<script>
+    $(document).ready(function(){
+        // Add minus icon for collapse element which is open by default
+        $(".collapse.in").each(function(){
+            $(this).siblings(".panel-heading").find(".glyphicon").addClass("glyphicon-chevron-up").removeClass("glyphicon-chevron-down");
+        });
+
+        // Toggle plus minus icon on show hide of collapse element
+        $(".collapse").on('show.bs.collapse', function(){
+            $(this).parent().find(".glyphicon").removeClass("glyphicon-chevron-down").addClass("glyphicon-chevron-up");
+        }).on('hide.bs.collapse', function(){
+            $(this).parent().find(".glyphicon").removeClass("glyphicon-chevron-up").addClass("glyphicon-chevron-down");
+        });
+    });
+</script>

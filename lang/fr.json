@@ -72,7 +72,8 @@
     "settings": "Paramètres",
     "logout": "Déconnexion",
     "cancel": "Annuler",
-    "askLogout": "Voulez vous vraiment quitter la page d'administration ?"
+    "askLogout": "Voulez vous vraiment quitter la page d'administration ?",
+	"comiteDirector": "Comité directeur"
 
 
 
