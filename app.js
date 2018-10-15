@@ -1,3 +1,5 @@
+
+
 var createError = require('http-errors');
 var express = require('express');
 var path = require('path');
@@ -16,8 +18,27 @@ var choeursRouter = require('./routes/choeurs');
 var adminRouter = require('./routes/admin/admin');
 var formationRouter = require('./routes/formation');
 var projetsRouter = require('./routes/projetmusical');
+var UserTest = require('./models/usertest');
+
+// Database testing process
+
+const Sequelize = require('sequelize');
 
 
+
+
+
+
+const database ='chanterTest';
+const username = 'admin';
+const password = 'admin';
+
+
+const sequelize = new Sequelize(database, username, password, {
+    dialect: 'mysql',
+    host: "localhost",
+    port: 3306,
+})
 
 var app = express();
 
@@ -71,5 +92,52 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+
+
+// Database test
+
+
+sequelize
+    .authenticate()
+    .then(() => {
+        console.log('Connection has been established successfully.');
+    })
+    .catch(err => {
+        console.error('Unable to connect to the database:', err);
+    });
+
+
+
+const User = sequelize.define('user', {
+    firstName: {
+        type: Sequelize.STRING
+    },
+    lastName: {
+        type: Sequelize.STRING
+    }
+});
+
+// force: true will drop the table if it already exists
+User.sync({force: true}).then(() => {
+    // Table created
+    return User.create({
+        firstName: 'John',
+        lastName: 'Mayura'
+    });
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = app;

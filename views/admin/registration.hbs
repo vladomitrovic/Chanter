@@ -27,7 +27,7 @@
         <div class="card-header" id="headingTwo">
             <h5 class="mb-0">
                 <button class="btn btn-primary btn-lg btn-block collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                    Choeurs Details
+                    {{langs.chorus}} Details
                 </button>
             </h5>
         </div>
@@ -39,7 +39,7 @@
                         <div class="col-xs-12 col-sm-12 com-md-12 col-lg-12">
 
                             <form action="/" method="post" role="form" enctype="application/x-www-form-urlencoded">
-                                <legend>Enter Choir Registraton Information Here </legend>
+                                <legend>{{langs.registration_choir_messgae}} </legend>
 
                                 <div class="form-group">
                                     <label for="choir_name">{{langs.name}} du {{langs.choir}} </label>
@@ -112,14 +112,14 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="federationcanton">Federation Canton</label>
+                                    <label for="federationcanton">{{langs.federation_canton}}</label>
                                     <input type="radio" name="memberfscv" value="memberfscv" checked> Member FSCV</input>
                                     <input  type="radio" name="memberfscv" value="Nonmember">Non Member FSCV</input>
                                 </div>
 
 
                                 <div class="form-group">
-                                    <label for="dateentree">Date Entry Federation Canton</label>
+                                    <label for="dateentree">{{langs.date_canton_federaton_entry}}</label>
                                     <input type="text" class="form-control" maxlength="4" name="dateentree" id="dateentree">
                                 </div>
 

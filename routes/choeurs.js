@@ -20,4 +20,6 @@ router.get('/calendrier', function(req, res, next) {
     res.render('choeurs/calendrier', { title: 'calendrier'});
 });
 
+
+
 module.exports = router;
