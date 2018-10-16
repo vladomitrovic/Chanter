@@ -6,6 +6,7 @@ var logger = require('morgan');
 var mysql = require('mysql');
 var session = require('express-session');
 var i18n=require("i18n-express");
+var Sequelize = require("sequelize");
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -73,16 +74,16 @@ app.use(function(err, req, res, next) {
 });
 
 
-//
-
 const database = process.env.DB_DATABASE;
 const username = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
 
 
-const sequelize = new Sequelize(database, username, password, {
+const sequelizer = new Sequelize(database, username, password, {
     dialect: 'mysql',
     host: "192.168.99.100",
     port: process.env.DB_PORT,
-})
+});
+
+
 module.exports = app;
