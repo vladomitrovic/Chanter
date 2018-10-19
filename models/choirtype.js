@@ -1,11 +1,11 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
-  const choirtype = sequelize.define('choirtype', {
+  const ChoirType = sequelize.define('ChoirType', {
       choirType: DataTypes.STRING
   }, {});
-  choirtype.associate = function(models) {
+  ChoirType.associate = function(models) {
     // associations can be defined here
       //choirtype.hasMany(models.choir);
   };
-  return choirtype;
+  return ChoirType;
 };
