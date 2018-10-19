@@ -1,68 +1,68 @@
-<form action='/choeur/' method="post">
+<form action='/choeurs/' method="post">
 
 <div class='col-md-4'>
     <label for="inputsm">{{langs.membrefed}}</label>
     <div class="radio">
-        <label><input type="radio" name="optradio" checked>{{langs.yes}}</label>
+        <label><input type="radio" name="memberfc" value="null" checked>{{langs.all}}</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">{{langs.no}}</label>
+        <label><input type="radio" name="memberfc" value="1">{{langs.yes}}</label>
     </div>
-    <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>{{langs.all}}</label>
+    <div class="radio">
+        <label><input type="radio" name="memberfc" value="0">{{langs.no}}</label>
     </div>
 </div>
 
 <div class='col-md-4'>
     <label for="inputsm">{{langs.regionling}}</label>
     <div class="radio">
-        <label><input type="radio" name="optradio" checked>Haut-Valais</label>
+        <label><input type="radio" name="region" value="null" checked>{{langs.all}}</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">Bas-Valais</label>
+        <label><input type="radio" name="region" value="bas-valais">Haut-Valais</label>
     </div>
-    <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>{{langs.all}}</label>
+    <div class="radio">
+        <label><input type="radio" name="region" value="bas-valais">Bas-Valais</label>
     </div>
 </div>
 
 <div class='col-md-4'>
     <label for="inputsm">Groupement</label>
+    <div class="radio disabled">
+        <label><input type="radio" name="groupe" value="null" checked>{{langs.all}}</label>
+    </div>
     <div class="radio">
-        <label><input type="radio" name="optradio" checked>GSCBV</label>
+        <label><input type="radio" name="groupe" value="GSCBV">GSCBV</label>
 </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">UCC </label>
+        <label><input type="radio" name="groupe" value="UCC">UCC </label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">GCVC </label>
+        <label><input type="radio" name="groupe" value="GCGV">GCVC </label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">OCV</label>
-    </div>
-    <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>{{langs.all}}</label>
+        <label><input type="radio" name="groupe" value="OCV">OCV</label>
     </div>
 </div>
 <div class='col-md-4'>
     <label for="inputsm">{{langs.typeChoeur}}</label>
     <div class="radio">
-        <label><input type="radio" name="optradio" checked>{{langs.adultes}}</label>
+        <label><input type="radio" name="typechoeur" value="null" checked>{{langs.adultes}}</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="optradio">{{langs.mixte}}</label>
+        <label><input type="radio" name="typechoeur" value="mixte">{{langs.mixte}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>{{langs.hommes}}</label>
+        <label><input type="radio" name="typechoeur" value="hommes" disabled>{{langs.hommes}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>{{langs.jeunes}}</label>
+        <label><input type="radio" name="typechoeur" value="jeunes" disabled>{{langs.jeunes}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>{{langs.dames}}</label>
+        <label><input type="radio" name="typechoeur" value="dames" disabled>{{langs.dames}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="optradio" disabled>{{langs.enfants}}</label>
+        <label><input type="radio" name="typechoeur" value="enfants" disabled>{{langs.enfants}}</label>
     </div>
 </div>
 

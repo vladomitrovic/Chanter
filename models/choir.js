@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
       Choir.belongsTo(models.ChoirType);
       Choir.belongsTo(models.Groupe);
       Choir.belongsTo(models.Language);
+      Choir.belongsTo(models.Locality);
   };
   return Choir;
 };

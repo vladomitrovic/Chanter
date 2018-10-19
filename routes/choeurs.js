@@ -1,5 +1,8 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../models');
+var Sequelize = require('sequelize');
+const Op = Sequelize.Op;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -11,7 +14,26 @@ router.get('/', function(req, res, next) {
 
 // SEARCH CHOIR TO DO
 router.post('/', function(req, res, next) {
+    console.log("searhc result");
+    var memberfc = req.body.memberfc;
+    console.log(memberfc);
+    if (memberfc == "null")
+    {
+        memberfc = [0,1, null];
+    }
+    else
+    {
+        memberfc = [parseInt(memberfc)];
+    }
+    models.Choir.findAll(
+        {where: {memberfc: {[Op.or]:memberfc}},
+        include: [{// Notice `include` takes an ARRAY
+        model: models.Locality}]}
 
+        ).then((choeurs) => {
+        console.log(choeurs[0].locality);
+        res.render('choeurs/details', {choeurs: choeurs, title: 'listedecoeurs'}) ;
+    });
 });
 
 
