@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Article.associate = function(models) {
     // associations can be defined here
-      Article.hasOne(models.Person);
-      Article.hasOne(models.Category);
+      Article.belongsTo(models.Person);
+      Article.belongsTo(models.Category);
   };
   return Article;
 };

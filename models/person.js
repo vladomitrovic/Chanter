@@ -1,5 +1,5 @@
 'use strict';
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 const saltRounds = 10;
 module.exports = (sequelize, DataTypes) => {
   const Person = sequelize.define('Person', {
@@ -37,12 +37,12 @@ module.exports = (sequelize, DataTypes) => {
     password_hash: DataTypes.VIRTUAL
   }, {});
   Person.associate = function(models) {
-    // associations can be defined here
-      Person.hasOne(models.Gender);
-      Person.hasOne(models.Locality);
+    // associations can be defined herey
+      Person.belongsTo(models.Gender);
+      Person.belongsTo(models.Locality);
       Person.belongsToMany(models.Role, {through: 'Role_Person'});
       Person.belongsToMany(models.Comity, {through: 'Comity_Person'});
-      Person.belongsToMany(models.Function, {through: 'Person_Chorus'});
+      Person.hasMany(models.Function);
       Person.belongsToMany(models.Choir, {through: 'Person_Chorus'});
   };
   return Person;

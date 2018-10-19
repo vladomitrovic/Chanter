@@ -15,9 +15,9 @@ module.exports = (sequelize, DataTypes) => {
     remarks: DataTypes.STRING
   }, {});
   Choir.associate = function(models) {
-      Choir.hasOne(models.Choirtype);
-      Choir.hasMany(models.Group);
-      Choir.hasOne(models.Language);
+      Choir.belongsTo(models.ChoirType);
+      Choir.belongsTo(models.Groupe);
+      Choir.belongsTo(models.Language);
   };
   return Choir;
 };
