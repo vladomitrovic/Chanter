@@ -1,13 +1,13 @@
 <div class="container">
-<form action='/admin/newArticle' method="post">
+<form action="/admin/articles/add" method="post">
     <div class="form-group">
     <input required="true" type="text" class="form-control" name="title" placeholder="{{langs.titre}}" autofocus><br>
     </div>
     <div class="form-group">
-        <select required="true" class="form-control" id="categorie">
+        <select required="true" class="form-control" name="categorie">
             <option selected disabled>{{langs.categorie}}...</option>
             {{#each category}}
-                <option>{{this}}</option>
+                <option>{{this.categoryFR}}</option>
             {{/each}}
         </select>
     </div>
@@ -15,7 +15,7 @@
         <textarea class="form-control" rows="2" id="Chapeau" required="true" placeholder="{{langs.chapeau}}"></textarea>
     </div>
     <div class="form-group">
-      <textarea required="true" class="form-control" rows="8" id="text" placeholder="{{langs.text}}"></textarea>
+      <textarea required="true" class="form-control" rows="8" name="text" placeholder="{{langs.text}}"></textarea>
     </div>
     <div class="form-group">
         <label for="file">{{langs.image}}</label>

@@ -71,6 +71,10 @@
 	"registration_choir_messgae": "Mise à jour Choeurs",
 	"choirname":"Nom du Choeur",
 	"federation_canton":"Fédération cantonale",
-	"date_canton_federaton_entry": "Date Entrée dans la Fédération"
+	"date_canton_federaton_entry": "Date Entrée dans la Fédération",
+	"settings": "Paramètres",
+	"logout": "Déconnexion",
+	"cancel": "Annuler",
+	"askLogout": "Voulez vous vraiment quitter la page d'administration ?"
 
 }
