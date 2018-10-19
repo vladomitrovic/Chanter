@@ -79,7 +79,7 @@ const username = process.env.DB_USER;
 const password = process.env.DB_PASSWORD;
 
 
-const sequelizer = new Sequelize(database, username, password, {
+const sequelize = new Sequelize(database, username, password, {
     dialect: 'mysql',
     host: "192.168.99.100",
     port: process.env.DB_PORT,

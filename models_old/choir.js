@@ -1,4 +1,5 @@
-const Choir = sequelize.define('choir',{
+var Sequelize = require("sequelize");
+const Choir = Sequelize.define('choir',{
 
     choirName: Sequelize.STRING,
     address1: Sequelize.STRING,
@@ -14,7 +15,7 @@ const Choir = sequelize.define('choir',{
     entryGroup: Sequelize.DATE,
     remarks: Sequelize.STRING
 
-})
+});
 choir.hasOne(Choirtype)
 choir.hasMany(Group)
 choir.hasOne(Language)
