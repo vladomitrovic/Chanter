@@ -34,7 +34,7 @@ module.exports = (sequelize, DataTypes) => {
             }
         }
     },
-    password_hash: DataTypes.VIRTUAL
+    password_hash: DataTypes.STRING
   }, {});
   Person.associate = function(models) {
     // associations can be defined herey

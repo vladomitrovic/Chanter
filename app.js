@@ -7,6 +7,7 @@ var mysql = require('mysql');
 var session = require('express-session');
 var i18n=require("i18n-express");
 var Sequelize = require("sequelize");
+var flash = require('express-flash');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
@@ -44,6 +45,9 @@ app.use(i18n({
     textsVarName: "langs"
 }));
 
+// use flash
+app.use(flash());
+
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
@@ -51,11 +55,19 @@ app.use('/presentation', presentationRouter);
 app.use('/avcc', avccRouter);
 app.use('/service', serviceRouter);
 app.use('/choeurs', choeursRouter);
+//app.use('/admin', isAuthenticated, adminRouter);
 app.use('/admin', adminRouter);
 app.use('/formation', formationRouter);
 app.use('/projetmusical', projetsRouter);
 
 
+//Check if the user is logged
+function isAuthenticated(req, res, next){
+    if(req.session.authenticated != true)
+        res.redirect('/users');
+
+    next();
+}
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

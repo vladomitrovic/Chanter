@@ -4,3 +4,4 @@ docker-compose.yml
 .dockerignore
 .env
 node_modules*
+config*
