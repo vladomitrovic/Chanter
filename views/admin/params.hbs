@@ -1,12 +1,12 @@
 <form action="/admin/params/pwd" method="post">
     <div class="form-group">
-        <input required="true" type="text" class="form-control" name="actualPwd" placeholder="{{langs.actualPwd}}" autofocus>
+        <input required="true" type="password" class="form-control" name="actualPwd" placeholder="{{langs.actualPwd}}" autofocus>
     </div>
     <div class="form-group">
-        <input required="true" type="text" class="form-control" name="newPwd"  placeholder="{{langs.newPwd}}"></input>
+        <input required="true" type="password" class="form-control" name="newPwd"  placeholder="{{langs.newPwd}}"></input>
     </div>
     <div class="form-group">
-        <input required="true" type="text" class="form-control" name="newPwd2"  placeholder="{{langs.repeatNewPwd}}"></input>
+        <input required="true" type="password" class="form-control" name="newPwd2"  placeholder="{{langs.repeatNewPwd}}"></input>
     </div>
     {{#if messages.error}}
         <p>{{messages.error}}</p>

@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
-var articleRouter = require('./articles')
-var choeursRouter = require('./choeurs')
+var articleRouter = require('./articles');
+var choeursRouter = require('./choeurs');
 var models = require('../../models');
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
@@ -23,12 +23,15 @@ router.post('/params/pwd', function(req, res, next) {
     }
 
     var user = req.session.user;
+    var pwd = req.body.newPwd;
 
     bcrypt.compare(req.body.actualPwd, user.password_hash).then((correct) => {
         if (correct === true) {
-            models.Person.update({password: req.body.newPwd},
-            {where: user.id})
-        }
+            models.Person.update(
+                {password : pwd},
+                {where: {id: user.id}}
+                )
+    }
         else {
             req.flash('error', 'Password incorrect!');
             res.redirect('./');
