@@ -21,8 +21,6 @@
     "mysql2": "^1.6.1",
     "popper.js": "^1.14.3",
     "sequelize": "^4.39.0",
-    "sequelize-auto-migrations": "^1.0.2",
-    "sequelize-auto-migrations-ng": "^2.1.0",
     "sequelize-cli": "^4.1.1"
   },
   "description": "Project for 645-1 WebApp, remake chanter.ch",

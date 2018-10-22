@@ -31,8 +31,8 @@ router.post('/', function(req, res, next) {
         model: models.Locality}]}
 
         ).then((choeurs) => {
-        console.log(choeurs[0].locality);
-        res.render('choeurs/details', {choeurs: choeurs, title: 'listedecoeurs'}) ;
+        console.log(JSON.stringify(choeurs));
+        res.render('choeurs/choirList', {choeurs: choeurs, title: 'listedecoeurs'}) ;
     });
 });
 
