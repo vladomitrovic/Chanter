@@ -36,9 +36,12 @@ router.post('/add', function(req, res, next) {
 
 
         models.Article.create({
-            titleFR: req.body.title,
-            chapeauFR: req.body.chapeau,
-            textFR: req.body.text,
+            titleFR: req.body.titleFR,
+            chapeauFR: req.body.chapeauFR,
+            textFR: req.body.textFR,
+            titleDE: req.body.titleDE,
+            chapeauDE: req.body.chapeauDE,
+            textDE: req.body.textDE,
             refPicture: req.body.myFile,
             PersonId :user.id,
             CategoryId: categoryId
