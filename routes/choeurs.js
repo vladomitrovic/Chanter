@@ -6,25 +6,27 @@ const Op = Sequelize.Op;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    //To implement -> get list the director avalaible
-    var chefChoeur = [];
    models.Person.findAll({
         include: [{
         model: models.Function,
         where: { functionName: 'president' }
     }]}
     ).then((president) => {
-                console.log(JSON.stringify(president));
-            res.render('choeurs/index', {presidents:president, title:'titleChoose'});
-                })
-   // var chefChoeur = models.Person.findAll(
-    //    {where : {models.Function.functionName : 'chefChoeur'}}
-   // ).then((chefChoeur) => {
-   //     console.log(JSON.stringify(chefChoeur));
-
-//})
-
-})
+           models.Person.findAll
+           (
+               {
+               include: [{
+                   model: models.Function,
+                   where: { functionName: 'chefChoeur' }
+                        }]
+               }
+           ).then((chefChoeur)=>
+               {
+                console.log(chefChoeur);
+                console.log(president);
+                res.render('choeurs/index', {presidents:president, chefChoeur:chefChoeur, title:'titleChoose'});
+               })})
+   });
 
 // SEARCH CHOIR TO DO
 router.post('/', function(req, res, next) {
