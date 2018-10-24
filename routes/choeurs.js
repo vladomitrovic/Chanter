@@ -7,10 +7,24 @@ const Op = Sequelize.Op;
 /* GET home page. */
 router.get('/', function(req, res, next) {
     //To implement -> get list the director avalaible
-    var president = ["dir1", "dir2", "dir3"];
-    var chefchoeur = ["chef1", "chef2", "chef3"];
-    res.render('choeurs/index', {president:president, chefchoeur:chefchoeur, title:'titleChoose'});
-});
+    var chefChoeur = [];
+   models.Person.findAll({
+        include: [{
+        model: models.Function,
+        where: { functionName: 'president' }
+    }]}
+    ).then((president) => {
+                console.log(JSON.stringify(president));
+            res.render('choeurs/index', {presidents:president, title:'titleChoose'});
+                })
+   // var chefChoeur = models.Person.findAll(
+    //    {where : {models.Function.functionName : 'chefChoeur'}}
+   // ).then((chefChoeur) => {
+   //     console.log(JSON.stringify(chefChoeur));
+
+//})
+
+})
 
 // SEARCH CHOIR TO DO
 router.post('/', function(req, res, next) {
@@ -28,12 +42,12 @@ router.post('/', function(req, res, next) {
     models.Choir.findAll(
         {where: {memberfc: {[Op.or]:memberfc}},
         include: [{// Notice `include` takes an ARRAY
-        model: models.Locality}]}
+                    model: models.Locality}]}
 
         ).then((choeurs) => {
         console.log(JSON.stringify(choeurs));
         res.render('choeurs/choirList', {choeurs: choeurs, title: 'listedecoeurs'}) ;
-    });
+})
 });
 
 
@@ -41,7 +55,5 @@ router.get('/calendrier', function(req, res, next) {
 
     res.render('choeurs/calendrier', { title: 'calendrier'});
 });
-
-
 
 module.exports = router;
