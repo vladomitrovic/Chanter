@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var articleRouter = require('./articles');
 var choeursRouter = require('./choeurs');
+var listeRouter = require('./liste');
 var models = require('../../models');
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
@@ -14,6 +15,8 @@ router.get('/', function(req, res, next) {
 router.get('/params', function(req, res, next) {
     res.render('admin/params', {user: req.session.user,  layout:'admin/adminLayout'});
 });
+
+
 
 router.post('/params/pwd', function(req, res, next) {
 
@@ -44,6 +47,7 @@ router.post('/params/pwd', function(req, res, next) {
 
 router.use('/articles', articleRouter);
 router.use('/choeurs', choeursRouter);
+router.use('/liste', listeRouter)
 
 
 module.exports = router;
