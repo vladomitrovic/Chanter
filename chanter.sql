@@ -298,6 +298,7 @@ CREATE TABLE `People` (
   `mobile` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `lastupdate` datetime DEFAULT NULL,
   `username` varchar(255) COLLATE utf8_bin NOT NULL,
+  `password_hash` varchar(255) COLLATE utf8_bin DEFAULT NULL,
   `createdAt` datetime NOT NULL,
   `updatedAt` datetime NOT NULL,
   `GenderId` int(11) DEFAULT NULL,
@@ -309,9 +310,9 @@ CREATE TABLE `People` (
 -- Dumping data for table `People`
 --
 
-INSERT INTO `People` (`id`, `lastname`, `firstname`, `birthdate`, `address1`, `adress2`, `phone`, `phoneprof`, `fax`, `email`, `mobile`, `lastupdate`, `username`, `createdAt`, `updatedAt`, `GenderId`, `LanguageId`, `LocalityId`) VALUES
-(1, 'Doe', 'John', '1991-12-12', 'Rue de la rue 23', NULL, '0233216546', '1234567890', '1234567890', 'john@doe.com', '1234567890', '2018-10-02 00:00:00', 'johndoe', '2018-10-03 00:00:00', '2018-10-03 00:00:00', 1, 1, 1),
-(2, 'Mely', 'Emilie', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', NULL, 'user1', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3);
+INSERT INTO `People` (`id`, `lastname`, `firstname`, `birthdate`, `address1`, `adress2`, `phone`, `phoneprof`, `fax`, `email`, `mobile`, `lastupdate`, `username`, `password_hash`, `createdAt`, `updatedAt`, `GenderId`, `LanguageId`, `LocalityId`) VALUES
+(1, 'Doe', 'John', '1991-12-12', 'Rue de la rue 23', NULL, '0233216546', '1234567890', '1234567890', 'john@doe.com', '1234567890', '2018-10-02 00:00:00', 'johndoe', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-03 00:00:00', '2018-10-03 00:00:00', 1, 1, 1),
+(2, 'Mely', 'Emilie', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', NULL, 'user1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3);
 
 -- --------------------------------------------------------
 
