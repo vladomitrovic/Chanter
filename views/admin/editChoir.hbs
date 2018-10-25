@@ -1,0 +1,122 @@
+<form action="{{action}}" method="post" role="form" enctype="application/x-www-form-urlencoded">
+    <legend>{{langs.registration_choir_messgae}} </legend>
+
+    <div class="form-group">
+        <label for="choir_name">{{langs.name}} du {{langs.choir}} </label>
+        <input type="text" class="form-control" name="choir_name" id="choir_name" placeholder={{langs.name}}>
+    </div>
+
+
+    <div class="form-group">
+        <label for="npa">NPA</label>
+        <input type="text" maxlength="10" size="10" class="form-control" name="choir_npa" id="choir_npa" value="{{choeur.Locality.npa}}" placeholder="NPA">
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="lieu">Lieu</label>
+        <input type="text" class="form-control" name="choir_lieu" id="choir_lieu" value="{{choeur.Locality.localityName}}" placeholder = "Lieu">
+    </div>
+
+
+    <div class="form-group">
+        <label for="effectif">Effectif</label>
+        <input type="text" class="form-control" name="choir_effectif" id="choir_effectif" placeholder="effectif">
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="fondation">Fondation</label>
+        <input type="text" class="form-control" name="choir_fondation" id="choir_fondation" placeholder="Fondation">
+    </div>
+
+    <div class="form-group">
+        <label for="fondation">Home page</label>
+        <input type="text" class="form-control" name="choir_homepage" id="choir_homepage" placeholder="homepage">
+    </div>
+
+
+    <div class="form-group">
+        <label for="grpregion">Grpmts + Region</label>
+        <select name="grpregion">
+            <option value="0">UCC_Y</option>
+            <option value="1">Bas-Valais Membre GSCBV</option>
+            <option value="2">Bas-Valais Non Membre GSCBV</option>
+            <option value="3">Centre du Valais - Membre UCC</option>
+            <option value="4">Centre du Valais - Non Membre UCC</option>
+            <option value="5">Valais Central - Membre GCVC</option>
+            <option value="6">Valais Central - Non Membre GCVC</option>
+            <option value="5">Oberwallis - Membre OCV</option>
+            <option value="6">Oberwallis - Non Membre OCV</option>
+
+
+        </select>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="dekanat">Dekanat (Nur fur OCV)</label>
+        <select name="deknat">
+            <option value="0"></option>
+            <option value="1">Weltlich</option>
+            <option value="2">Leuk</option>
+            <option value="3">Raron</option>
+            <option value="4">Visp</option>
+            <option value="5">Brig</option>
+            <option value="6">Ernen</option>
+
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="federationcanton">{{langs.federation_canton}}</label>
+        <input type="radio" name="memberfscv" value="memberfscv" checked> Member FSCV</input>
+        <input  type="radio" name="memberfscv" value="Nonmember">Non Member FSCV</input>
+    </div>
+
+
+    <div class="form-group">
+        <label for="dateentree">{{langs.date_canton_federaton_entry}}</label>
+        <input type="text" class="form-control" maxlength="4" name="dateentree" id="dateentree">
+    </div>
+
+    <div class="form-group">
+        <label for="language">Langue </label>
+        <select name="language" id="language">
+            <option value="1">French</option>
+            <option value="2">Deutsch</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="typeofchoir">Type of Choir </label>
+        <select name="typeofchoir" id="typeofchoir">
+            <option value="1">CX</option>
+            <option value="2">Choir</option>
+            <option value="3">Choir</option>
+            <option value="4">Choir</option>
+            <option value="5">Choir</option>
+            <option value="6">Choir</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="stypeofchoir">Type of Choir </label>
+        <select name="stypeofchoir" id="stypeofchoir">
+            <option value="1">CX</option>
+            <option value="2">Choir</option>
+            <option value="3">Choir</option>
+            <option value="4">Choir</option>
+            <option value="5">Choir</option>
+            <option value="6">Choir</option>
+            <option value="7">Iej jfasfjasdfhasfksaf;l </option>
+        </select>
+    </div>
+
+
+    <button type="submit" class="">Choir Registration</button>
+
+</form>
