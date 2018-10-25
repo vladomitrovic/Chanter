@@ -1,21 +1,39 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../models');
+var Sequelize = require('sequelize');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('avcc/presentationavcc', { title: 'presentationavcc' });
+
+    // var lang = req.i18n_lang;
+    models.Article.findOne(
+        {where: {titleFR: 'Présentation AVCC'}},
+
+    ).then((presentation)=>
+    {
+        console.log(presentation)
+        res.render('avcc/presentationavcc', { presentation:presentation, title: 'presentationavcc' });
+    })
 });
 
 router.get('/historique', function(req, res, next) {
-    res.render('avcc/historique', { title: 'historiqueavcc' });
-});
 
+    models.Article.findOne(
+        {where: {titleFR: 'Historique AVCC'}},
+
+    ).then((historique)=>
+    {
+        console.log(historique)
+        res.render('avcc/historique',{historique:historique,  title: 'historiqueavcc' });
+    })
+
+});
 
 router.get('/comite', function (req, res, next) {
     res.render('avcc/comite', {title: 'comiteavcc'});
 
 });
-
 
 router.get('/fonds', function (req, res, next) {
     res.render('avcc/fonds', {title: 'fondsavcc'});

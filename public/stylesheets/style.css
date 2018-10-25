@@ -11,6 +11,23 @@ h4 {
 
     text-transform:none;
 }
+
+.row {
+    margin-right: 0px;
+    margin-left: 0px;
+}
+
+.row.text {
+    text-align:justify;
+    width:50%;
+}
+
+.row.text h3{
+    border-top:solid grey 1px;
+    padding-top:20px;
+
+}
+
 .containerTitle {
     position: relative;
     margin: 0 auto; /* Center it */
@@ -32,6 +49,7 @@ h4 {
     padding: 20px; /* Some padding */
     top: 0;
     height: 300px;
+    padding: 40px 5% 0 5%;
 
 }
 

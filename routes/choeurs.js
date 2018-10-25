@@ -6,20 +6,22 @@ const Op = Sequelize.Op;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-   models.Person.findAll({
-        include: [{
-        model: models.Function,
-        where: { functionName: 'president' }
-    }]}
+   models.Person.findAll(
+        {where: {FunctionId: 1}},
+        // include: [{
+        // model: models.Function,
+        // where: { functionName: 'President' }
+
     ).then((president) => {
            models.Person.findAll
            (
-               {
-               include: [{
-                   model: models.Function,
-                   where: { functionName: 'chefChoeur' }
-                        }]
-               }
+               {where: {FunctionId: 2}},
+               // {
+               // include: [{
+               //     model: models.Function,
+               //     where: { functionName: 'Director' }
+               //          }]
+               // }
            ).then((chefChoeur)=>
                {
                 console.log(chefChoeur);
