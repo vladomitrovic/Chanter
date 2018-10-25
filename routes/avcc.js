@@ -6,14 +6,15 @@ var Sequelize = require('sequelize');
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    // var lang = req.i18n_lang;
+    var lang = req.i18n_lang;
+
     models.Article.findOne(
         {where: {titleFR: 'Présentation AVCC'}},
 
     ).then((presentation)=>
     {
         console.log(presentation)
-        res.render('avcc/presentationavcc', { presentation:presentation, title: 'presentationavcc' });
+        res.render('avcc/presentationavcc', { presentation:presentation, bool:lang==='fr', title: 'presentationavcc' });
     })
 });
 
@@ -25,7 +26,7 @@ router.get('/historique', function(req, res, next) {
     ).then((historique)=>
     {
         console.log(historique)
-        res.render('avcc/historique',{historique:historique,  title: 'historiqueavcc' });
+        res.render('avcc/historique',{historique:historique, bool:lang==='fr', title: 'historiqueavcc' });
     })
 
 });
