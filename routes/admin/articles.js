@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
 // List articles
 router.get('/list', function(req, res, next) {
     models.Article.findAll().then((articles) => {
-        res.render('admin/listArticles', {articles:articles, user: req.session.user, layout:'admin/adminLayout'});
+        res.render('admin/Articles/listArticles', {articles:articles, user: req.session.user, layout:'admin/adminLayout'});
     });
 });
 
@@ -22,7 +22,7 @@ router.get('/list', function(req, res, next) {
 // New article from
 router.get('/new', function(req, res, next) {
     models.Category.findAll().then((categories) => {
-            res.render('admin/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout'});
+            res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout'});
     });
 });
 
@@ -32,7 +32,7 @@ router.get('/modify/:id', function(req, res, next) {
         where : {id:  req.params.id}
     }).then((article) => {
          models.Category.findAll().then((categories) => {
-                res.render('admin/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout',article: article });
+                res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout',article: article });
         });
     });
 });
@@ -67,7 +67,7 @@ router.post('/add', function(req, res, next) {
             PersonId :user.id,
             CategoryId: categoryId
         }).then(() => {
-            res.redirect('./new');
+            res.redirect('/admin/articles/list')
         })
     }).catch(console.error);
 });
@@ -93,7 +93,7 @@ router.post('/modify/:id', function(req, res, next) {
             CategoryId: categoryId},
             {where: {id: req.params.id}}
             ).then(() => {
-            res.redirect('./new');
+            res.redirect('/admin/articles/list')
         })
     }).catch(console.error);
 });
