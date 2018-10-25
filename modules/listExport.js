@@ -1,5 +1,5 @@
 var Excel = require('exceljs');
-var models = require('../models')
+var models = require('../models');
 
 // create workbook & add worksheet
 var workbook = new Excel.Workbook();
@@ -30,28 +30,17 @@ var self = module.exports = {
                     adress: person.address1,
                     phone: person.phone,
                     email: person.email
-                })
-
-                workbook.xlsx.writeFile('list.xlsx').then(function () {
-                    console.log("saved");
                 });
 
-                resolve();
+                workbook.xlsx.writeFile('list.xlsx').then(function () {
+                    resolve();
+                });
             })
-
-
-
-
-
         }).catch((error) => {
             reject(error);
         })
 
 
-
-
-        
-        
         });
     }
-}
+};
