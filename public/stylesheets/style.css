@@ -11,14 +11,13 @@ h4 {
 
     text-transform:none;
 }
-
 .row {
     margin-right: 0px;
     margin-left: 0px;
 }
 
 .row.text {
-    text-align:justify;
+    text-align:-webkit-left;
     width:50%;
 }
 
@@ -428,7 +427,7 @@ footer h3 {
 }
 
 ul {
-    padding-inline-start: 0px;
+    padding-inline-start: 10px;
 }
 
 footer .container-fluid {

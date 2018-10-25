@@ -3,11 +3,12 @@ var router = express.Router();
 var models = require('../models');
 var Sequelize = require('sequelize');
 
+
 /* GET home page. */
 router.get('/', function(req, res, next) {
 
-    var lang = req.i18n_lang;
 
+    var lang = req.i18n_lang;
     models.Article.findOne(
         {where: {titleFR: 'Présentation AVCC'}},
 
@@ -19,7 +20,7 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/historique', function(req, res, next) {
-
+    var lang = req.i18n_lang;
     models.Article.findOne(
         {where: {titleFR: 'Historique AVCC'}},
 
@@ -37,11 +38,27 @@ router.get('/comite', function (req, res, next) {
 });
 
 router.get('/fonds', function (req, res, next) {
-    res.render('avcc/fonds', {title: 'fondsavcc'});
+    var lang = req.i18n_lang;
+    models.Article.findOne(
+        {where: {titleFR: 'Fonds choral et Foyer AVCC'}},
+
+    ).then((fonds)=>
+    {
+        console.log(fonds)
+        res.render('avcc/fonds', { fonds:fonds, bool:lang==='fr', title: 'fondsavcc' });
+    })
 });
 
 router.get('/formation', function (req, res, next) {
-    res.render('avcc/formation', {title: 'formationavcc'});
+    var lang = req.i18n_lang;
+    models.Article.findOne(
+        {where: {titleFR: 'Prochaine formation AVCC'}},
+
+    ).then((formation)=>
+    {
+        console.log(formation)
+        res.render('avcc/formation', { formation:formation, bool:lang==='fr', title: 'formationavcc' });
+    })
 });
 
 
