@@ -75,6 +75,9 @@
 	"settings": "Paramètres",
 	"logout": "Déconnexion",
 	"cancel": "Annuler",
-	"askLogout": "Voulez vous vraiment quitter la page d'administration ?"
+	"askLogout": "Voulez vous vraiment quitter la page d'administration ?",
+	"actualPwd": "Mot de passe actuel",
+	"newPwd": "Nouveau mot de passe",
+	"repeatNewPwd":"Répétez le nouveau mot de passe"
 
 }

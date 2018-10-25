@@ -70,8 +70,8 @@
     <label for="inputsm">{{langs.president}}</label>
     <div class="form-group">
     <select class="selectpicker form-control input-sm" name="director" id="president">
-        {{#each president}}
-            <option>{{this}}</option>
+        {{#each presidents}}
+            <option>{{this.lastname}}</option>
         {{/each}}
     </select>
     </div>
@@ -82,8 +82,8 @@
     <label for="inputsm">{{langs.chefDeChoeur}}</label>
     <div class="form-group">
     <select class="selectpicker form-control input-sm" name="director" id="director">
-        {{#each director}}
-            <option>{{this}}</option>
+        {{#each chefChoeur}}
+            <option>{{this.lastname}}</option>
         {{/each}}
     </select>
     </div>

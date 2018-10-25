@@ -1,26 +1,23 @@
 {
   "development": {
-    "username": "admin",
-    "password": "admin",
-    "database": "chanter",
-    "host": "127.0.0.1",
-    "port":"3306",
+    "username": "user",
+    "password": "root1234",
+    "database": "dbChanter",
+    "host": "192.168.99.100",
     "dialect": "mysql"
   },
   "test": {
-    "username": "admin",
-    "password": "admin",
-    "database": "chanter",
-    "host": "127.0.0.1",
-    "port":"3306",
+    "username": "user",
+    "password": "root1234",
+    "database": "dbChanter",
+    "host": "192.168.99.100",
     "dialect": "mysql"
   },
   "production": {
-    "username": "admin",
-    "password": "admins",
-    "database": "chanter",
-    "host": "127.0.0.1",
-    "port":"3306",
+    "username": "user",
+    "password": "root1234",
+    "database": "dbChanter",
+    "host": "192.168.99.100",
     "dialect": "mysql"
   }
 }
