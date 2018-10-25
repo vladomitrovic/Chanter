@@ -1,5 +1,7 @@
 <div class="container">
-<form action="/admin/articles/add" method="post">
+
+
+<form action="/admin/articles/{{action}}" method="post">
 
 <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 
@@ -11,7 +13,7 @@
 
 <div id="fr" class="w3-container city">
     <div class="form-group">
-        <input required="true" type="text" class="form-control" name="titleFR" placeholder="Titre" autofocus><br>
+        <input required="true" type="text" class="form-control" name="titleFR" value="{{article.titleFR}}" placeholder="Titre" autofocus><br>
     </div>
     <div class="form-group">
         <select required="true" class="form-control" name="categorie">
@@ -22,16 +24,16 @@
         </select>
     </div>
     <div class="form-group">
-        <textarea class="form-control" rows="2" name="chapeauFR" required="true" placeholder="Chapeau"></textarea>
+        <textarea class="form-control" rows="2" name="chapeauFR" required="true"  placeholder="Chapeau">{{article.chapeauFR}}</textarea>
     </div>
     <div class="form-group">
-        <textarea required="true" class="form-control" rows="8" name="textFR" placeholder="Texte"></textarea>
+        <textarea required="true" class="form-control" rows="8" name="textFR"  placeholder="Texte">{{article.textFR}}</textarea>
     </div>
 </div>
 
 <div id="de" class="w3-container city" style="display:none">
     <div class="form-group">
-        <input required="true" type="text" class="form-control" name="titleDE" placeholder="Titel" autofocus><br>
+        <input required="true" type="text" class="form-control" name="titleDE" value="{{article.titleDE}}" placeholder="Titel" autofocus><br>
     </div>
     <div class="form-group">
         <select required="true" class="form-control" name="categorie">
@@ -42,10 +44,10 @@
         </select>
     </div>
     <div class="form-group">
-        <textarea class="form-control" rows="2" name="chapeauDE" required="true" placeholder="Chapeau en allemend"></textarea>
+        <textarea class="form-control" rows="2" name="chapeauDE" required="true" placeholder="Chapeau en allemend">{{article.chapeauDE}}</textarea>
     </div>
     <div class="form-group">
-        <textarea required="true" class="form-control" rows="8" name="textDE" placeholder="Tekst"></textarea>
+        <textarea required="true" class="form-control" rows="8" name="textDE"  placeholder="Text">{{article.textDE}}</textarea>
     </div>
 </div>
 
@@ -54,7 +56,7 @@
         <label for="file">{{langs.image}}</label>
         <input type="file"  name="myFile">
     </div>
-    <button type="submit" class="btn btn-primary">{{langs.ajouter}}</button>
+    <button type="submit" class="btn btn-primary">{{langs.save}}</button>
 </form>
 </div>
 
