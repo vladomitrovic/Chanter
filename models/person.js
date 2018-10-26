@@ -42,7 +42,7 @@ module.exports = (sequelize, DataTypes) => {
       Person.belongsTo(models.Locality);
       Person.belongsToMany(models.Role, {through: 'Role_Person'});
       Person.belongsToMany(models.Comity, {through: 'Comity_Person'});
-      Person.hasMany(models.Function);
+      Person.belongsTo(models.Function);
       Person.belongsToMany(models.Choir, {through: 'Person_Chorus'});
   };
   return Person;
