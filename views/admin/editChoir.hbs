@@ -1,55 +1,66 @@
+<script>
+    Handlebars.registerHelper ("setChecked", function (value, currentValue) {
+        if ( value == currentValue ) {
+            return "selected";
+        } else {
+            return "";
+        }
+    });
+</script>
+
 <form action="{{action}}" method="post" role="form" enctype="application/x-www-form-urlencoded">
-    <legend>{{langs.registration_choir_messgae}} </legend>
+    <legend>{{lookup langs action}} {{langs.choir}} </legend>
 
     <div class="form-group">
-        <label for="choir_name">{{langs.name}} du {{langs.choir}} </label>
+        <label for="choir_name">{{langs.name}} {{langs.of}} {{langs.choir}} </label>
         <input type="text" class="form-control" name="choir_name" id="choir_name" placeholder={{langs.name}}>
     </div>
 
 
     <div class="form-group">
-        <label for="npa">NPA</label>
-        <input type="text" maxlength="10" size="10" class="form-control" name="choir_npa" id="choir_npa" value="{{choeur.Locality.npa}}" placeholder="NPA">
+        <label for="npa">{{langs.npa}}</label>
+        <input type="text" maxlength="10" size="10" class="form-control" name="choir_npa" id="choir_npa" value="{{choeur.Locality.npa}}" placeholder="{{langs.npa}}">
 
     </div>
 
 
     <div class="form-group">
-        <label for="lieu">Lieu</label>
-        <input type="text" class="form-control" name="choir_lieu" id="choir_lieu" value="{{choeur.Locality.localityName}}" placeholder = "Lieu">
+        <label for="lieu">{{langs.lieu}}</label>
+        <input type="text" class="form-control" name="choir_lieu" id="choir_lieu" value="{{choeur.Locality.localityName}}" placeholder = "{{langs.lieu}}">
     </div>
 
 
     <div class="form-group">
-        <label for="effectif">Effectif</label>
-        <input type="text" class="form-control" name="choir_effectif" id="choir_effectif" placeholder="effectif">
+        <label for="effectif">{{langs.effectif}}</label>
+        <input type="text" class="form-control" name="choir_effectif" id="choir_effectif" value = "{{choeur.effectif}}" placeholder="{{langs.effectif}}">
     </div>
 
 
 
     <div class="form-group">
-        <label for="fondation">Fondation</label>
-        <input type="text" class="form-control" name="choir_fondation" id="choir_fondation" placeholder="Fondation">
+        <label for="fondation">{{langs.fondation}}</label>
+        <input type="text" class="form-control" name="choir_fondation" id="choir_fondation" value="{{choeur.yearOfCreation}}" placeholder="{{langs.fondation}}">
     </div>
 
     <div class="form-group">
-        <label for="fondation">Home page</label>
-        <input type="text" class="form-control" name="choir_homepage" id="choir_homepage" placeholder="homepage">
+        <label for="homepage">{{langs.homepage}}</label>
+        <input type="text" class="form-control" name="choir_homepage" id="choir_homepage" value="{{choeur.website}}" placeholder="{{langs.homepage}}">
     </div>
 
 
     <div class="form-group">
-        <label for="grpregion">Grpmts + Region</label>
+        <label for="grpregion">{{langs.groupements}} + {{langs.region}}</label>
+        <h2>TODO : GET GROUPS FROM DATABASE</h2>>
         <select name="grpregion">
-            <option value="0">UCC_Y</option>
-            <option value="1">Bas-Valais Membre GSCBV</option>
-            <option value="2">Bas-Valais Non Membre GSCBV</option>
-            <option value="3">Centre du Valais - Membre UCC</option>
-            <option value="4">Centre du Valais - Non Membre UCC</option>
-            <option value="5">Valais Central - Membre GCVC</option>
-            <option value="6">Valais Central - Non Membre GCVC</option>
-            <option value="5">Oberwallis - Membre OCV</option>
-            <option value="6">Oberwallis - Non Membre OCV</option>
+            <option value="0" {{{setChecked 0 choeur.Groupe.id}}}>UCC_Y</option>
+            <option value="1" {{{setChecked 1 choeur.Groupe.id}}}>Bas-Valais Membre GSCBV</option>
+            <option value="2" {{{setChecked 2 choeur.Groupe.id}}}>Bas-Valais Non Membre GSCBV</option>
+            <option value="3" {{{setChecked 3 choeur.Groupe.id}}}>Centre du Valais - Membre UCC</option>
+            <option value="4" {{{setChecked 4 choeur.Groupe.id}}}>Centre du Valais - Non Membre UCC</option>
+            <option value="5" {{{setChecked 5 choeur.Groupe.id}}}>Valais Central - Membre GCVC</option>
+            <option value="6" {{{setChecked 6 choeur.Groupe.id}}}>Valais Central - Non Membre GCVC</option>
+            <option value="7" {{{setChecked 7 choeur.Groupe.id}}}>Oberwallis - Membre OCV</option>
+            <option value="8" {{{setChecked 8 choeur.Groupe.id}}}>Oberwallis - Non Membre OCV</option>
 
 
         </select>
@@ -59,6 +70,7 @@
 
     <div class="form-group">
         <label for="dekanat">Dekanat (Nur fur OCV)</label>
+        <h2>TODO : GET DEKNAT FROM DATABASE if OCV SELECTED</h2>>
         <select name="deknat">
             <option value="0"></option>
             <option value="1">Weltlich</option>
@@ -117,6 +129,8 @@
     </div>
 
 
-    <button type="submit" class="">Choir Registration</button>
+    <button type="submit" class="btn btn-primary">{{lookup langs action}} {{langs.choir}}</button>
 
 </form>
+
+
