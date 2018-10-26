@@ -13,10 +13,8 @@ module.exports = (sequelize, DataTypes) => {
     fax: DataTypes.STRING,
     email: DataTypes.STRING,
     mobile: DataTypes.STRING,
-    lastupdate: DataTypes.DATE,
     username: {
         type: DataTypes.STRING,
-        allowNull: false,
         unique: true
     },
     password:  {
