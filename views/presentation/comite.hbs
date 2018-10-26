@@ -1,7 +1,22 @@
-<div class="row">
-    <div class="col-sm-3">
-        <h3>TestComite</h3>
 
+    <div class="col-sm-6 border">
+    <h3>Comité directeur</h3>
+    <div class="row ">
+        {{#each personnes}}
+            <h4>{{this.lastname}}    {{this.firstname}}</h4>
+            <p>{{this.address1}}<br/>
+                {{this.phone}}</p>
+        {{/each}}
     </div>
-
+    </div>
+    <div class="col-sm-6" border>
+        <h3>Présidents des groupements</h3>
+        <div class="row">
+            {{#each personnes}}
+                <h4>{{this.lastname}}    {{this.firstname}}</h4>
+                <p>{{this.address1}}<br/>
+                    {{this.phone}}</p>
+            {{/each}}
+        </div>
+    </div>
 </div>

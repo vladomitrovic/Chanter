@@ -25,9 +25,6 @@ Vielen Dank, dass Sie uns helfen, die AVCC bekannt zu machen! Zögern Sie nicht,
 
 
 
-
-
-
 (5, 'Fonds choral et Foyer AVCC', 'Fonds choral et Foyer AVCC', 'chapeau fr', 'chapeau de', '
 '
 'Le Foyer AVCC est un lieu de rencontre convivial où venir seul, avec sa commission de musique ou avec son comité pour consulter des partitions et des documents avant de bâtir un programme. Tous les documents sont à consulter sur place. Ils sont visibles dans le catalogue RERO, avec une multitude de renseignements utiles aux chefs de chœurs. Dès le début 2018, une partie de cette musique a été placée au libre accès de la Médiathèque-Valais pour être consultée librement. Cependant, il sera encore possible de prendre rendez-vous avec l’archiviste pour une recherche spécifique ou des conseils.
@@ -102,6 +99,41 @@ Inscriptions jusqu’au 10 novembre 2018 à associationavcc@gmail.com ou au 079 
 Kostenloser Kurs für AVCC-Mitglieder, CHF 40 für nicht AVCC-Mitglieder / Mahlzeiten: CHF 25 / Abholung vor Ort.
 
 Anmeldungen bis zum 10. November 2018 unter associationavcc@gmail.com oder 079 930 25 43. Bitte geben Sie an, ob Sie das Essen mit den anderen Teilnehmern teilen möchten.',
+'article1.jpg', '2018-10-24 00:00:00', '2018-10-24 00:00:00', 1, 1),
+
+
+(7, 'Présentation', 'Presentation', 'chapeau fr', 'chapeau de',
+'La Fédération des Sociétés de Chant du Valais (FSCV) est une association membre de l’Union Suisse des Chorales (USC) regroupant des chœurs d’adultes, de jeunes et d’enfants du Valais Romand et du Haut-Valais.
+
+Fondée en 1906, elle chapeaute l’Association Valaisanne des Chefs de Chœurs (AVCC) et 4 groupements régionaux : le Groupement des Sociétés de Chant du Bas-Valais (GSCBV), l’Union Chorale du Centre (UCC), le Groupement des Chanteurs du Valais Central (GCVC) et le Oberwalliser Chor- und Cäcilien Verband (OCV).
+
+A ce jour, plus de 160 chorales d’adultes avec plus de 5000 chanteurs sont réunis au sein de la Fédération. Les chœurs de jeunes et d’enfants sont également membres de la Fédération, ce qui leur permet d’accéder aux offres de formation et au soutien des chorales d’adultes.
+
+
+<h3>Organisation</h3>
+La FSCV est présidée avec compétence et enthousiasme par Laurent Bovier. Elle est composée d’un comité directeur, d’un comité cantonal et de la commission de musique. Les présidents des groupements régionaux et de l’AVCC sont également membres d’office du comité directeur.',
+'Die Fédération des Sociétés de Chant du Valais (FSCV) ist Mitglied im Schweizerischen Chorverband (USC), der Chöre von Erwachsenen, Jugendlichen und Kindern aus dem Wallis Romand und Haut-Valais vereint.
+
+Sie wurde 1906 gegründet und betreut den Verband der Walliser Köche (AVCC) und 4 regionale Gruppen: die Groupement des Sociétés de Chant du Bas-Valais (GSCBV), die Union Chorale du Centre (UCC), die Groupement des Chanteurs du Valais Central (GCVC) und den Oberwalliser Chor- und Cäcilien Verband (OCV).
+
+Bis heute haben sich mehr als 160 Erwachsenenchöre mit mehr als 5000 Sängern dem Verband angeschlossen. Jugend- und Kinderchöre sind ebenfalls Mitglieder des Verbandes, was ihnen den Zugang zu Ausbildungsmöglichkeiten und Unterstützung durch Erwachsenenchöre ermöglicht.
+
+<h3>Unternehmen</h3>
+Der FSCV wird von Laurent Bovier mit Kompetenz und Begeisterung geleitet. Er besteht aus einem Lenkungsausschuss, einem kantonalen Ausschuss und der Musikkommission. Die Präsidenten der Regionalzusammenschlüsse und des AVCC sind ebenfalls von Amts wegen Mitglieder des Lenkungsausschusses.',
 'article1.jpg', '2018-10-24 00:00:00', '2018-10-24 00:00:00', 1, 1);
+
+
+INSERT INTO `People` (`id`, `lastname`, `firstname`, `birthdate`, `address1`, `adress2`, `phone`, `phoneprof`, `fax`, `email`, `mobile`, `lastupdate`, `username`, `password_hash`, `createdAt`, `updatedAt`, `GenderId`, `LanguageId`, `LocalityId`) VALUES
+(3, 'Bovier', 'Laurent ', '1991-12-12', 'Rue de la rue 23', NULL, '0233216546', '1234567890', '1234567890', 'john@doe.com', '1234567890', '2018-10-02 00:00:00', 'j', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-03 00:00:00', '2018-10-03 00:00:00', 1, 1, 1),
+(4, 'Dayer', 'Valentin ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', NULL, 'use', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3),
+(5, 'Lovisa', 'Blaise ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', NULL, 'usr1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3),
+(6, 'Meyer', 'Nadine ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', NULL, 'er1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3);
+
+
+INSERT INTO `Comity_Person` (`createdAt`, `updatedAt`, `ComityId`, `PersonId`) VALUES
+('2018-10-24 00:00:00', '2018-10-24 00:00:00', 2, 3),
+('2018-10-24 00:00:00', '2018-10-24 00:00:00', 2, 4),
+('2018-10-24 00:00:00', '2018-10-24 00:00:00', 2, 5),
+('2018-10-24 00:00:00', '2018-10-24 00:00:00', 2, 6);
 
 -- --------------------------------------------------------
