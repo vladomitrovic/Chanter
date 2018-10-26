@@ -71,7 +71,7 @@ module.exports = {
     president: 'Président',
     chefDeChoeur: 'Chef de choeur',
     rechercher: 'Rechercher',
-    connexion: 'Connexion',
+    connexion: 'Connexion'
 
 
 
