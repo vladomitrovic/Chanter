@@ -6,6 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   Groupe.associate = function(models) {
     // associations can be defined here
       Groupe.hasMany(models.Choir);
+      Groupe.hasMany(models.Event);
+
   };
   return Groupe;
 };
