@@ -3,6 +3,8 @@ var router = express.Router();
 var articleRouter = require('./articles');
 var choeursRouter = require('./choeurs');
 var listeRouter = require('./liste');
+var personRouter = require('./person');
+var eventRouter = require('./event');
 var models = require('../../models');
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
@@ -47,7 +49,10 @@ router.post('/params/pwd', function(req, res, next) {
 
 router.use('/articles', articleRouter);
 router.use('/choeurs', choeursRouter);
-router.use('/liste', listeRouter)
+router.use('/liste', listeRouter);
+router.use('/event', eventRouter);
+router.use('/liste', listeRouter);
+router.use('/person', personRouter);
 
 
 module.exports = router;

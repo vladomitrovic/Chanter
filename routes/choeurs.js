@@ -57,7 +57,15 @@ router.post('/', function(req, res, next) {
 
 router.get('/calendrier', function(req, res, next) {
 
-    res.render('choeurs/calendrier', { title: 'calendrier'});
+    models.Event.findAll().then((events) => {
+        models.Groupe.findAll().then((groupes) => {
+            res.render('choeurs/calendrier', {
+                title: 'calendrier',
+                events: encodeURIComponent(JSON.stringify(events)),
+                groupes: groupes
+            },);
+        });
+        });
 });
 
 module.exports = router;

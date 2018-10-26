@@ -1,0 +1,250 @@
+<form action="{{action}}" method="post" role="form" enctype="application/x-www-form-urlencoded">
+    <legend>{{langs.registration_person_message}} </legend>
+
+    <div class="form-group">
+        <label for="person_name">{{langs.lastname}} du {{langs.person}} </label>
+        <input type="text" class="form-control" name="last_name" id="last_name" value= "{{person.lastname}}" placeholder={{langs.lastname}}>
+    </div>
+
+
+    <div class="form-group">
+        <label for="firstname">{{langs.firstname}}</label>
+        <input type="text"  size="10" class="form-control" name="firstname" id="firstname" value="{{person.firstname}}" placeholder={{langs.firstname}}>
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="birthdate">{{langs.birthdate}}</label>
+        <input type="date" class="form-control" name="birthdate" id="birthdate" value="{{person.birthdate}}" placeholder = {{langs.birthdate}}>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="address1">{{langs.address}} - 1</label>
+        <input type="text" class="form-control" name="address1" id="address1" value= "{{person.address1}}" placeholder={{langs.address}}>
+    </div>
+
+    <div class="form-group">
+        <label for="address1">{{langs.address}} - 2</label>
+        <input type="text" class="form-control" name="address2" id="address2" value="{{person.address2}}" placeholder={{langs.address}}>
+    </div>
+
+
+    <div class="form-group">
+        <label for="npa">NPA</label>
+        <input type="number" maxlength="5" size="5" class="form-control" name="personnpa" id="personnpa" placeholder="NPA">
+
+    </div>
+
+    <div class="form-group">
+        <label for="telephone">{{langs.telephone}}</label>
+
+            <input class="form-control" type="tel" value="{{person.phone}}" id="telephone" placeholder={{langs.telephone}}>
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="workphone"> {{langs.work}} {{langs.telephone}}</label>
+        <input class="form-control" type="telephoneprof" value="{{person.phoneprof}}" id="telephoneprof" placeholder= "{{langs.work}} {{langs.telephone}}">
+
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="fax">fax</label>
+        <input type="tel" class="form-control" name="fax" id="fax" placeholder="fax" value="{{person.fax}}">
+    </div>
+
+    <div class="form-group">
+        <label for="mobilephone">{{langs.mobile}} {{langs.telephone}}</label>
+        <input type="tel" class="form-control" name="mobilephone" id="mobilephone" placeholder="{{langs.mobile}} {{langs.telephone}}">
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="email" >Email</label>
+
+            <input class="form-control" type="email" id="email" value="{{person.email}}" placeholder="email">
+
+    </div>
+
+
+
+    <div class="form-group>
+    <label for="memberlist"> {{langs.memberlist}} </label><br/>
+    <input type="checkbox" name="director" value="director"> {{langs.director}}<br />
+    <input type="checkbox" name="president" value="president"> {{langs.president}}<br />
+    <input type="checkbox" name="director" value="cashier"> {{langs.cashier}}<br />
+    <input type="checkbox" name="president" value="secretary"> {{langs.secretary}}<br />
+    <input type="checkbox" name="president" value="comity"> {{langs.comitees}}<br />
+    <input type="checkbox" name="director" value="divers"> Divers<br />
+    <input type="checkbox" name="president" value="avccmember"> {{langs.president}}<br />
+    <br />
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <div class="form-group">
+
+
+
+        <div class="container">
+
+            <p>{{langs.comitees}}</p>
+            <table class="table table-striped">
+                <thead>
+                <tr>
+                    <td></td>
+                    <td>CO</td>
+                    <td>CM</td>
+                    <td>MH</td>
+                    <td>Vide</td>
+                </tr>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>FSCV</td>
+                    <td><input type="radio" id="cofscv" name="fscv"></td>
+                    <td><input type="radio" id="cmfscv" name="fscv"></td>
+                    <td><input type="radio" id="mhfscv" name="fscv"></td>
+                    <td><input type="radio" id="videfscv" name="fscv"></td>
+
+                </tr>
+
+
+                <tr>
+                    <td>GSCBV</td>
+                    <td><input type="radio" id="cogscbv" name="gscbv"></td>
+                    <td><input type="radio" id="cmgscbv" name="gscbv"></td>
+                    <td><input type="radio" id="mhgscbv" name="gscbv"></td>
+                    <td><input type="radio" id="videgscbv" name="gscbv"></td>
+
+                </tr>
+
+
+                <tr>
+                    <td>UCC</td>
+                    <td><input type="radio" id="coucc" name="ucc"></td>
+                    <td><input type="radio" id="cmucc" name="ucc"></td>
+                    <td><input type="radio" id="mhucc" name="ucc"></td>
+                    <td><input type="radio" id="videucc" name="ucc"></td>
+
+                </tr>
+
+
+                <tr>
+                    <td>GCVC</td>
+                    <td><input type="radio" id="cogcvc" name="gcvc"></td>
+                    <td><input type="radio" id="cmgcvc" name="gcvc"></td>
+                    <td><input type="radio" id="mhgcvc" name="gcvc"></td>
+                    <td><input type="radio" id="videgcvc" name="gcvc"></td>
+
+                </tr>
+
+
+                <tr>
+                    <td>VOG</td>
+                    <td><input type="radio" id="covog" name="vog"></td>
+                    <td><input type="radio" id="cmvog" name="vog"></td>
+                    <td><input type="radio" id="mhvog" name="vog"></td>
+                    <td><input type="radio" id="videvog" name="vog"></td>
+
+                </tr>
+
+
+                <tr>
+                    <td>AVCC</td>
+                    <td><input type="radio" id="cavcc" name="avcc"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" id="videucc" name="avcc"></td>
+
+                </tr>
+
+                <tr>
+                    <td>OCV</td>
+                    <td><input type="radio" id="coocv" name="ocv"></td>
+                    <td><input type="radio" id="cmocv" name="ocv"></td>
+                    <td><input type="radio" id="mhocv" name="ocv"></td>
+                    <td><input type="radio" id="videocv" name="ocv"></td>
+
+                </tr>
+
+
+                <tr>
+                    <td>USC</td>
+                    <td><input type="radio" id="cavsc" name="usc"></td>
+                    <td><input type="radio" id="cmusc" name="usc"></td>
+                    <td></td>
+                    <td><input type="radio" id="videusc" name="usc"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Autres</td>
+                    <td><input type="radio" id="caautres" name="autres"></td>
+                    <td></td>
+                    <td></td>
+                    <td><input type="radio" id="videautres" name="autres"></td>
+
+                </tr>
+
+                <tr>
+                    <td>Ancien</td>
+                    <td class="col-xs-2" colspan="3"><input type="text" id="anciencomite" name="anciencomite"></td>
+
+
+                </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+
+    </div>
+
+
+
+
+
+
+
+
+
+<hr />
+
+
+
+    <div class="form-group">
+
+    </div>
+
+
+
+
+
+
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">{{langs.register}}</button>
+
+</form>
