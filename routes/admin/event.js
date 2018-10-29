@@ -52,28 +52,26 @@ router.post('/add', function(req, res, next) {
 });
 
 router.post('/modify/:id', function(req, res, next) {
-    models.Category.findOne({
+    models.Groupe.findOne({
         where: {
-            [Op.or]: [{categoryFR: req.body.categorie}, {categoryDE: req.body.categorie}]
-        }
-    }).then((category) => {
-        var categoryId = category.id;
-        var user = req.session.user;
+            groupName: req.body.groupe}
 
+    }).then((groupe) => {
 
-        models.Article.update({
-                titleFR: req.body.titleFR,
-                chapeauFR: req.body.chapeauFR,
-                textFR: req.body.textFR,
-                titleDE: req.body.titleDE,
-                chapeauDE: req.body.chapeauDE,
-                textDE: req.body.textDE,
-                refPicture: req.body.myFile,
-                CategoryId: categoryId},
-            {where: {id: req.params.id}}
-        ).then(() => {
-            res.redirect('/admin/articles/list')
+        var groupeid = groupe.id;
+
+        models.Event.update({
+            title: req.body.title,
+            info: req.body.info,
+            start: req.body.start,
+            end: req.body.end,
+            GroupeId: groupeid},
+            {where: {id: req.params.id}
+    }).then(() => {
+            res.redirect('/admin/event/list')
         })
+
+
     }).catch(console.error);
 });
 

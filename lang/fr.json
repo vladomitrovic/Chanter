@@ -3,8 +3,6 @@
 	"presentation": "Présentation",
 	"comite": "Comité de la FSCV",
 	"commission": "Commission de musique",
-    "address": "adresse",
-    "telephone": "Téléphone",
 	"groupements": "Groupements",
 	"membresH": "Membres d'honneurs",
 	"chorus": "Choeurs",
@@ -15,12 +13,6 @@
 	"username": "Nom d'utilisateur",
 	"password": "Mot de passe",
 	"login": "Connexion",
-    "register": "registre",
-    "mobile": "Natel",
-    "delete": "effacer",
-    "person": "Personne",
-    "membershiplist": "appartenance aux liste",
-    "lastname": "nom de famille",
 	"cantonalFest": "Fête cantonale",
 	"musicalProject": "Projets musicaux",
 	"generalPlan": "Plan général",
@@ -98,6 +90,15 @@
 	"region":"Region",
 	"new":"Nouveau",
 	"update":"Mise à jour",
-	"of":"du"
+	"of":"du",
+	"repeatNewPwd":"Répétez le nouveau mot de passe",
+	"delete": "Supprimer",
+	"update": "Modifier,",
+	"save": "Enregistrer",
+	"event": "Evénements",
+	"details": "Détails",
+	"title": "Titre",
+	"start": "Début",
+	"end": "Fin"
 
 }

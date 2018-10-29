@@ -1,7 +1,6 @@
 
-
 {{#if event}}
-    <form action="/admin/event/modify/{{article.id}}" method="post">
+    <form action="/admin/event/modify/{{event.id}}" method="post">
 {{else}}
     <form action="/admin/event/add" method="post">
 {{/if}}
@@ -34,5 +33,6 @@
 
     <button type="submit" class="btn btn-primary">{{langs.save}}</button>
 </form>
+
 
 

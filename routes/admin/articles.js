@@ -91,8 +91,8 @@ router.post('/modify/:id', function(req, res, next) {
             textDE: req.body.textDE,
             refPicture: req.body.myFile,
             CategoryId: categoryId},
-            {where: {id: req.params.id}}
-            ).then(() => {
+            {where: {id: req.params.id}
+            }).then(() => {
             res.redirect('/admin/articles/list')
         })
     }).catch(console.error);
