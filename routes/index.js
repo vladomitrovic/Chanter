@@ -1,16 +1,22 @@
 var express = require('express');
 var router = express.Router();
-
+var models = require('../models');
+var Sequelize = require('sequelize');
 /* GET home page. */
 
 //TOTO
 router.get('/', function(req, res, next) {
 
-  var news =  [
-        {"titre":"new1", "descr":"Cette journée animée par Charles Barbier se veut interactive et propose de réfléchir aux aspects cachés de notre pratique de chefs de chœur, notamment la communication non verbale et les choix que nous faisons avant même d’être face au chœur. En choisissant comme fil rouge la prise de risque, nous aurons l’occasion de partager des […]"},
-        {"titre":"new2", "descr":"Cette journée animée par Charles Barbier se veut interactive et propose de réfléchir aux aspects cachés de notre pratique de chefs de chœur, notamment la communication non verbale et les choix que nous faisons avant même d’être face au chœur. En choisissant comme fil rouge la prise de risque, nous aurons l’occasion de partager des […]"},
-    ]
-  res.render('index', {news:news, title: 'News'});
+    var lang = req.i18n_lang;
+    models.Article.findAll(
+        {where: {categoryId: 2}},
+
+    ).then((news)=>
+    {
+        console.log(news)
+        res.render('index',{news:news, bool:lang==='fr', title: 'news' });
+    })
+
 });
 
 

@@ -1,8 +1,8 @@
-INSERT INTO `People` (`id`, `lastname`, `firstname`, `birthdate`, `address1`, `adress2`, `phone`, `phoneprof`, `fax`, `email`, `mobile`, `username`, `password_hash`, `createdAt`, `updatedAt`, `GenderId`, `LanguageId`, `LocalityId`, `FunctionId`) VALUES
-(3, 'Bovier', 'Laurent ', '1991-12-12', 'Rue de la rue 23', NULL, '0233216546', '1234567890', '1234567890', 'john@doe.com', '1234567890', 'j', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-03 00:00:00', '2018-10-03 00:00:00', 1, 1, 1,1),
-(4, 'Dayer', 'Valentin ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777',  'use', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1),
-(5, 'Lovisa', 'Blaise ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', 'usr1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1),
-(6, 'Meyer', 'Nadine ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', 'er1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1);
+INSERT INTO `People` (`id`, `lastname`, `firstname`, `birthdate`, `address1`, `adress2`, `phone`, `phoneprof`, `fax`, `email`,`refPicture`, `mobile`, `username`, `password_hash`, `createdAt`, `updatedAt`, `GenderId`, `LanguageId`, `LocalityId`, `FunctionId`) VALUES
+(3, 'Bovier', 'Laurent ', '1991-12-12', 'Rue de la rue 23', NULL, '0233216546', '1234567890', '1234567890', 'john@doe.com','lbovier.jpg', '1234567890', 'j', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-03 00:00:00', '2018-10-03 00:00:00', 1, 1, 1,1),
+(4, 'Dayer', 'Valentin ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me','', '0777777777',  'use', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1),
+(5, 'Lovisa', 'Blaise ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me','', '0777777777', 'usr1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1),
+(6, 'Meyer', 'Nadine ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me','', '0777777777', 'er1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1);
 
 INSERT INTO `Articles`(`id`, `titleFR`, `titleDE`, `chapeauFR`, `chapeauDE`, `textFR`, `textDE`, `refPicture`, `createdAt`, `updatedAt`, `PersonId`, `CategoryId`) VALUES
 (3, 'Historique AVCC', 'AVCC-Historie', 'chapeau fr', 'chapeau de', '<h3>Objectif</h3>Soucieuse d’offrir aux responsables de la musique chorale l’occasion de parfaire leur formation auprès d’animateurs compétents ou de partager soucis et joies entre collègues, l’AVCC poursuit son activité initiale en proposant ses encouragements et ses services.<h3>Fondation</h3>
@@ -145,7 +145,7 @@ Bis heute haben sich mehr als 160 Erwachsenenchöre mit mehr als 5000 Sängern d
 
 <h3>Unternehmen</h3>
 Der FSCV wird von Laurent Bovier mit Kompetenz und Begeisterung geleitet. Er besteht aus einem Lenkungsausschuss, einem kantonalen Ausschuss und der Musikkommission. Die Präsidenten der Regionalzusammenschlüsse und des AVCC sind ebenfalls von Amts wegen Mitglieder des Lenkungsausschusses.',
-'article1.jpg', '2018-10-24 00:00:00', '2018-10-24 00:00:00', 1, 1),
+'organigrammeFSCV.png', '2018-10-24 00:00:00', '2018-10-24 00:00:00', 1, 1),
 
 
 (8, 'Présentation', 'Presentation', 'chapeau fr', 'chapeau de',
