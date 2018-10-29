@@ -1,16 +1,13 @@
-    <div class="row">
-        <div class="row">
-            {{#each news}}
-            <div class="col-sm-3">
 
+        <div class="row">
+            <div class="col-sm-3">
+            {{#each news}}
                 {{#if bool}}
                     <h3>{{this.titleFR}}</h3>  <p>{{this.textFR}}</p>
-
                 {{else}}
                     <h3>{{this.titleDE}}</h3>  <p>{{this.textDE}}</p>
                 {{/if}}
 
             {{/each}}
         </div>
-    </div>
     </div>

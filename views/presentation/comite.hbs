@@ -1,24 +1,61 @@
 
-    <div class="col-sm-6 border">
-    <h3>Comité directeur</h3>
-    <div class="row border">
+    <div class="col-sm-4 border">
+    <h3>Comité<br/> directeur</h3>
+
         {{#each personnes}}
+        <div class="row border">
+            <div class="col-sm-6 nomargin" style="padding-top:20px">
+                <img style="width:100%; margin-bottom:20px;" src="/images/persons/{{this.refPicture}}">
+            </div>
+            <div class="col-sm-6 nomargin" style="padding-top: 10px;">
             <h4>{{this.lastname}}    {{this.firstname}}</h4>
-            <p>{{this.address1}}<br/>
+            <p>{{{this.address1}}}<br/>
                 {{this.phone}}</p>
-            <img style="width:200px" src="/images/persons/{{this.refPicture}}">
-        {{/each}}
-    </div>
-    </div>
-    <div class="col-sm-6" border>
-        <h3>Présidents des groupements</h3>
-        <div class="row">
-            {{#each personnes}}
-                <h4>{{this.lastname}}    {{this.firstname}}</h4>
-                <p>{{this.address1}}<br/>
-                    {{this.phone}}</p>
-                <img style="width:200px" src="/images/persons/{{this.refPicture}}">
-            {{/each}}
+            </div>
+
         </div>
+        {{/each}}
+
     </div>
+
+    <div class="col-sm-4 border">
+        <h3>Présidents <br/>des groupements</h3>
+
+            <div class="row border">
+                <div class="col-sm-6 nomargin" style="padding-top:20px">
+                    <img style="width:100%;
+; margin-bottom:20px;" src="/images/persons/{{personnes.2.refPicture}}">
+                </div>
+                <div class="col-sm-6 nomargin" style="padding-top: 10px;">
+                    <h4>{{personnes.2.lastname}}    {{personnes.2.firstname}}</h4>
+                    <p>{{{personnes.2.address1}}}<br/>
+                        {{personnes.2.phone}}</p>
+                </div>
+
+            </div>
+
+
+    </div>
+    <div class="col-sm-4 border">
+        <h3>Co-Présidents <br/>de la Commission de Musique</h3>
+
+        <div class="row border">
+            <div class="col-sm-6 nomargin" style="padding-top:20px">
+                <img style="width:100%;
+; margin-bottom:20px;" src="/images/persons/{{personnes.3.refPicture}}">
+            </div>
+            <div class="col-sm-6 nomargin" style="padding-top: 10px;">
+                <h4>{{personnes.3.lastname}}    {{personnes.3.firstname}}</h4>
+                <p>{{{personnes.3.address1}}}<br/>
+                    {{personnes.3.phone}}</p>
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    </div>
+
 </div>

@@ -3,12 +3,23 @@ body {background-color:white;}
     border-top: solid 1px grey;
 }
 
+.col-sm-6.nomargin {
+
+   padding-left:0px;
+}
+
+.dropdown-menu>li>a:focus, .dropdown-menu>li>a:hover {
+    color: #262626;
+    text-decoration: none;
+    background-color: grey;
+}
+
 h1,h2,h3,h4,h5 {
     font-weight:bold;
-    text-transform:uppercase;
+    text-transform:none;
 }
 h4 {
-
+    margin-bottom:0px;
     text-transform:none;
 }
 .row {
