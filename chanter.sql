@@ -303,7 +303,8 @@ CREATE TABLE `People` (
   `updatedAt` datetime NOT NULL,
   `GenderId` int(11) DEFAULT NULL,
   `LanguageId` int(11) DEFAULT NULL,
-  `LocalityId` int(11) DEFAULT NULL
+  `LocalityId` int(11) DEFAULT NULL,
+  `FunctionId` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_bin;
 
 --
@@ -486,7 +487,8 @@ ALTER TABLE `People`
   ADD UNIQUE KEY `username` (`username`),
   ADD KEY `GenderId` (`GenderId`),
   ADD KEY `LanguageId` (`LanguageId`),
-  ADD KEY `LocalityId` (`LocalityId`);
+  ADD KEY `LocalityId` (`LocalityId`),
+  ADD KEY `FunctionId` (`FunctionId`);
 
 --
 -- Indexes for table `Person_Chorus`
@@ -617,7 +619,8 @@ ALTER TABLE `Comity_Person`
 ALTER TABLE `People`
   ADD CONSTRAINT `People_ibfk_1` FOREIGN KEY (`GenderId`) REFERENCES `Genders` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
   ADD CONSTRAINT `People_ibfk_2` FOREIGN KEY (`LanguageId`) REFERENCES `Languages` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
-  ADD CONSTRAINT `People_ibfk_3` FOREIGN KEY (`LocalityId`) REFERENCES `Localities` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
+  ADD CONSTRAINT `People_ibfk_3` FOREIGN KEY (`LocalityId`) REFERENCES `Localities` (`id`) ON DELETE SET NULL ON UPDATE CASCADE,
+  ADD CONSTRAINT `People_ibfk_4` FOREIGN KEY (`FunctionId`) REFERENCES `Functions` (`id`) ON DELETE SET NULL ON UPDATE CASCADE;
 
 --
 -- Constraints for table `Person_Chorus`

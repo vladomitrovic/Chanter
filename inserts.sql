@@ -1,3 +1,8 @@
+INSERT INTO `People` (`id`, `lastname`, `firstname`, `birthdate`, `address1`, `adress2`, `phone`, `phoneprof`, `fax`, `email`, `mobile`, `username`, `password_hash`, `createdAt`, `updatedAt`, `GenderId`, `LanguageId`, `LocalityId`, `FunctionId`) VALUES
+(3, 'Bovier', 'Laurent ', '1991-12-12', 'Rue de la rue 23', NULL, '0233216546', '1234567890', '1234567890', 'john@doe.com', '1234567890', 'j', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-03 00:00:00', '2018-10-03 00:00:00', 1, 1, 1,1),
+(4, 'Dayer', 'Valentin ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777',  'use', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1),
+(5, 'Lovisa', 'Blaise ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', 'usr1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1),
+(6, 'Meyer', 'Nadine ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', 'er1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1);
 
 INSERT INTO `Articles`(`id`, `titleFR`, `titleDE`, `chapeauFR`, `chapeauDE`, `textFR`, `textDE`, `refPicture`, `createdAt`, `updatedAt`, `PersonId`, `CategoryId`) VALUES
 (3, 'Historique AVCC', 'AVCC-Historie', 'chapeau fr', 'chapeau de', '<h3>Objectif</h3>Soucieuse d’offrir aux responsables de la musique chorale l’occasion de parfaire leur formation auprès d’animateurs compétents ou de partager soucis et joies entre collègues, l’AVCC poursuit son activité initiale en proposant ses encouragements et ses services.<h3>Fondation</h3>
@@ -45,8 +50,8 @@ Vielen Dank, dass Sie uns helfen, die AVCC bekannt zu machen! Zögern Sie nicht,
 
 
 
-(5, 'Fonds choral et Foyer AVCC', 'Fonds choral et Foyer AVCC', 'chapeau fr', 'chapeau de', '
-'
+(5, 'Fonds choral et Foyer AVCC', 'Fonds choral et Foyer AVCC', 'chapeau fr', 'chapeau de',
+
 'Le Foyer AVCC est un lieu de rencontre convivial où venir seul, avec sa commission de musique ou avec son comité pour consulter des partitions et des documents avant de bâtir un programme. Tous les documents sont à consulter sur place. Ils sont visibles dans le catalogue RERO, avec une multitude de renseignements utiles aux chefs de chœurs. Dès le début 2018, une partie de cette musique a été placée au libre accès de la Médiathèque-Valais pour être consultée librement. Cependant, il sera encore possible de prendre rendez-vous avec l’archiviste pour une recherche spécifique ou des conseils.
 
 La Médiathèque Valais à Sion se trouve à la Rue de Lausanne 45.
@@ -76,7 +81,7 @@ Des livres et des documentaires</li>
 <li>Enregistrements</li>
 <li>Revues liturgiques (Choristes, Voix Nouvelles, Signes Musiques, Chantons en Eglise, etc.)</li>
 <li>Documents sur la liturgie, ses acteurs, ses rites, etc.</li>
-</ul>'
+</ul>',
 'Das AVCC Foyer ist ein freundlicher Treffpunkt, an dem Sie allein, mit Ihrem Musikkomitee oder mit Ihrem Komitee kommen können, um Partituren und Dokumente einzusehen, bevor Sie ein Programm erstellen. Alle Dokumente sind vor Ort einzusehen. Sie sind im RERO-Katalog zu finden, mit einer Fülle von Informationen, die für Chorleiter nützlich sind. Ab Anfang 2018 wurde ein Teil dieser Musik in den freien Zugang des Médiathèque-Valais gestellt und kostenlos konsultiert. Es ist jedoch weiterhin möglich, einen Termin mit dem Archivar für eine gezielte Recherche oder Beratung zu vereinbaren.
 
 Die Médiathèque Wallis in Sion befindet sich an der Rue de Lausanne 45.
@@ -113,7 +118,7 @@ Bücher und Dokumentationen
 
 Cours gratuit pour les membres cotisants AVCC, 40.- CHF pour les non cotisants à l’AVCC / Repas : 25.- CHF / Encaissement sur place.
 
-Inscriptions jusqu’au 10 novembre 2018 à associationavcc@gmail.com ou au 079 930 25 43. Merci d’indiquer si vous souhaitez partager le repas avec les autres participants.'
+Inscriptions jusqu’au 10 novembre 2018 à associationavcc@gmail.com ou au 079 930 25 43. Merci d’indiquer si vous souhaitez partager le repas avec les autres participants.',
 'Dieser Tag unter der Leitung von Charles Barbier soll interaktiv sein und schlägt vor, über die verborgenen Aspekte unserer Praxis als Chorleiter nachzudenken, insbesondere die nonverbale Kommunikation und die Entscheidungen, die wir treffen, bevor wir überhaupt dem Chor gegenüber stehen. Wenn wir uns für die Risikobereitschaft als gemeinsamen Nenner entscheiden, haben wir die Möglichkeit, neue Perspektiven auf unsere Praktiken auszutauschen. Welche Risiken werden bei der Entwicklung eines Konzertprogramms eingegangen? Ohne Stimme, setzen wir die Sänger in Gefahr? Besteht das Risiko, dass man bei der Probe nicht auf die Wortwahl achtet?
 
 Kostenloser Kurs für AVCC-Mitglieder, CHF 40 für nicht AVCC-Mitglieder / Mahlzeiten: CHF 25 / Abholung vor Ort.
@@ -140,7 +145,7 @@ Bis heute haben sich mehr als 160 Erwachsenenchöre mit mehr als 5000 Sängern d
 
 <h3>Unternehmen</h3>
 Der FSCV wird von Laurent Bovier mit Kompetenz und Begeisterung geleitet. Er besteht aus einem Lenkungsausschuss, einem kantonalen Ausschuss und der Musikkommission. Die Präsidenten der Regionalzusammenschlüsse und des AVCC sind ebenfalls von Amts wegen Mitglieder des Lenkungsausschusses.',
-'article1.jpg', '2018-10-24 00:00:00', '2018-10-24 00:00:00', 1, 1);
+'article1.jpg', '2018-10-24 00:00:00', '2018-10-24 00:00:00', 1, 1),
 
 
 (8, 'Présentation', 'Presentation', 'chapeau fr', 'chapeau de',
@@ -161,11 +166,6 @@ r',
 
 
 
-INSERT INTO `People` (`id`, `lastname`, `firstname`, `birthdate`, `address1`, `adress2`, `phone`, `phoneprof`, `fax`, `email`, `mobile`, `lastupdate`, `username`, `password_hash`, `createdAt`, `updatedAt`, `GenderId`, `LanguageId`, `LocalityId`,, `FunctionId`) VALUES
-(3, 'Bovier', 'Laurent ', '1991-12-12', 'Rue de la rue 23', NULL, '0233216546', '1234567890', '1234567890', 'john@doe.com', '1234567890', '2018-10-02 00:00:00', 'j', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-03 00:00:00', '2018-10-03 00:00:00', 1, 1, 1,1),
-(4, 'Dayer', 'Valentin ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', NULL, 'use', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1),
-(5, 'Lovisa', 'Blaise ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', NULL, 'usr1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1),
-(6, 'Meyer', 'Nadine ', '1989-01-01', 'Rue de la dixence 13', NULL, '', NULL, NULL, 'donotcont@me', '0777777777', NULL, 'er1', '$2a$10$PpSWF8s1l/qf1HDrmQsj/.aerK96nCfNO3ynjxX88MIXy1LnZxANq', '2018-10-07 00:00:00', '2018-10-07 00:00:00', 3, 2, 3,1);
 
 
 INSERT INTO `Comity_Person` (`createdAt`, `updatedAt`, `ComityId`, `PersonId`) VALUES
