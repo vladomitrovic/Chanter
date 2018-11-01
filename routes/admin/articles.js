@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 var models = require('../../models');
 var i18n = require ('i18n-express');
-var Sequelize = require('Sequelize');
+var Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 
 /* GET home page. */
