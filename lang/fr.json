@@ -96,6 +96,18 @@
 	"details": "Détails",
 	"title": "Titre",
 	"start": "Début",
-	"end": "Fin"
+	"end": "Fin",
+	"details": "Détails",
+	"address": "Adresse",
+	"complement": "Complément",
+	"siteweb": "Site web",
+	"creation": "Création",
+	"langue": "Langue",
+	"cheglise": "Choeur Eglise",
+	"chgospel": "Choeur Gospel",
+	"memberfc": "Membre FC",
+	"localite": "Localité",
+	"remarks": "Remarques"
+
 
 }
