@@ -2,19 +2,18 @@
     <div class="col-sm-4 border">
     <h3>Comité<br/> directeur</h3>
 
-        {{#each personnes}}
         <div class="row border">
             <div class="col-sm-6 nomargin" style="padding-top:20px">
-                <img style="width:100%; margin-bottom:20px;" src="/images/persons/{{this.refPicture}}">
+                <img style="width:100%;
+; margin-bottom:20px;" src="/images/persons/{{personnes.0.refPicture}}">
             </div>
             <div class="col-sm-6 nomargin" style="padding-top: 10px;">
-            <h4>{{this.lastname}}    {{this.firstname}}</h4>
-            <p>{{{this.address1}}}<br/>
-                {{this.phone}}</p>
+                <h4>{{personnes.0.lastname}}    {{personnes.0.firstname}}</h4>
+                <p>{{{personnes.0.address1}}}<br/>
+                    {{personnes.0.phone}}</p>
             </div>
 
         </div>
-        {{/each}}
 
     </div>
 

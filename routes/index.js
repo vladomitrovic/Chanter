@@ -14,7 +14,7 @@ router.get('/', function(req, res, next) {
     ).then((news)=>
     {
         console.log(news)
-        res.render('index',{news:news, bool:lang==='fr', title: 'news' });
+        res.render('index',{news:news, bool:lang==='fr', title: 'news'});
     })
 
 });
