@@ -2,19 +2,19 @@
     <div class="col-sm-4 border">
     <h3>Comité<br/> directeur</h3>
 
-        {{#each personnes}}
         <div class="row border">
             <div class="col-sm-6 nomargin" style="padding-top:20px">
-                <img style="width:100%; margin-bottom:20px;" src="/images/persons/{{this.refPicture}}">
+                <img style="width:100%;
+; margin-bottom:20px;" src="/images/persons/{{personnes.0.refPicture}}">
             </div>
             <div class="col-sm-6 nomargin" style="padding-top: 10px;">
-            <h4>{{this.lastname}}    {{this.firstname}}</h4>
-            <p>{{{this.address1}}}<br/>
-                {{this.phone}}</p>
+                <h4>{{personnes.0.lastname}}    {{personnes.0.firstname}}</h4>
+                <b>{{{personnes.0.Function.functionName}}}</b><br/>
+                <p>{{{personnes.0.address1}}}<br/>
+                    {{personnes.0.mobile}}</p>
             </div>
 
         </div>
-        {{/each}}
 
     </div>
 
@@ -28,8 +28,9 @@
                 </div>
                 <div class="col-sm-6 nomargin" style="padding-top: 10px;">
                     <h4>{{personnes.2.lastname}}    {{personnes.2.firstname}}</h4>
+                    <b>{{{personnes.2.Function.functionName}}}</b><br/>
                     <p>{{{personnes.2.address1}}}<br/>
-                        {{personnes.2.phone}}</p>
+                        {{personnes.2.mobile}}</p>
                 </div>
 
             </div>
@@ -45,12 +46,15 @@
 ; margin-bottom:20px;" src="/images/persons/{{personnes.3.refPicture}}">
             </div>
             <div class="col-sm-6 nomargin" style="padding-top: 10px;">
+
                 <h4>{{personnes.3.lastname}}    {{personnes.3.firstname}}</h4>
+                <b>{{{personnes.3.Function.functionName}}}</b><br/>
                 <p>{{{personnes.3.address1}}}<br/>
-                    {{personnes.3.phone}}</p>
+                    {{personnes.3.mobile}}</p>
             </div>
 
         </div>
+
 
 
     </div>

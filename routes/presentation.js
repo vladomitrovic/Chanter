@@ -23,7 +23,10 @@ router.get('/comite', function(req, res, next) {
     models.Person.findAll({
         include: [{
             model: models.Comity,
-            where: { comityName: 'Comite FCVS' }}]}
+            where: { comityName: 'Comite FCVS' }}],
+        include: [{
+            model: models.Function,
+        }]}
 
     ).then((personnes) => {
         console.log(personnes);
@@ -34,11 +37,34 @@ router.get('/comite', function(req, res, next) {
 });
 
 router.get('/commission', function(req, res, next) {
-    res.render('presentation/commission',{ title: 'commission' });
+
+    models.Person.findAll({
+        include: [{
+            model: models.Comity,
+            where: { comityName: 'Comission de la musique' }}],
+        include: [{
+            model: models.Function,
+            }]}
+
+    ).then((pers) => {
+        console.log(pers);
+        res.render('presentation/commission',{personnes:pers, title: 'commission' });
+
+    })
 });
 
 router.get('/groupement', function(req, res, next) {
-    res.render('presentation/groupement',{ title: 'groupements'});
+
+
+    models.Groupe.findAll(
+    ).then((groups) => {
+        console.log(JSON.stringify(groups));
+        res.render('presentation/groupement', {groups: groups, title: 'groupements'});
+
+    })
+
+
+
 });
 
 router.get('/honneur', function(req, res, next) {
