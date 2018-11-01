@@ -23,7 +23,10 @@ router.get('/comite', function(req, res, next) {
     models.Person.findAll({
         include: [{
             model: models.Comity,
-            where: { comityName: 'Comite FCVS' }}]}
+            where: { comityName: 'Comite FCVS' }}],
+        include: [{
+            model: models.Function,
+        }]}
 
     ).then((personnes) => {
         console.log(personnes);
