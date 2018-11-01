@@ -9,7 +9,6 @@ router.get('/', function(req, res, next) {
     var lang = req.i18n_lang;
     models.Article.findOne(
         {where: {titleFR: 'Présentation'}},
-
     ).then((presentation)=>
     {
         console.log(presentation)
@@ -21,6 +20,7 @@ router.get('/', function(req, res, next) {
 router.get('/comite', function(req, res, next) {
 
     models.Person.findAll({
+        where:comity
         include: [{
             model: models.Comity,
             where: { comityName: 'Comite FCVS' }}],
@@ -29,9 +29,19 @@ router.get('/comite', function(req, res, next) {
         }]}
 
     ).then((personnes) => {
-        console.log(personnes);
-        res.render('presentation/comite', {personnes:personnes, title:'comite'});
+         models.Person.findAll({
+            include: [{
+                model: models.Comity,
+                where: { comityName: 'groupements'}}],
+            include: [{
+                model: models.Function,
+            }]}
 
+        ).then((persGroupements)=>
+        {
+            console.log(persGroupements);
+            res.render('presentation/comite', {personnes: personnes,persGroupements:persGroupements, title: 'comite'});
+        })
         })
 
 });
