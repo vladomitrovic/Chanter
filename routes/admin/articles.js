@@ -32,7 +32,7 @@ router.get('/modify/:id', function(req, res, next) {
         where : {id:  req.params.id}
     }).then((article) => {
          models.Category.findAll().then((categories) => {
-                res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout',article: article });
+             res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout',article: article });
         });
     });
 });
@@ -80,7 +80,6 @@ router.post('/modify/:id', function(req, res, next) {
     }).then((category) => {
         var categoryId = category.id;
         var user = req.session.user;
-
 
         models.Article.update({
             titleFR: req.body.titleFR,

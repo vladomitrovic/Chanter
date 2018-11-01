@@ -1,14 +1,59 @@
-<div class="row">
 
-        {{#each choeurs}}
-        <div class="row border">
-            <div class="col-sm-3"><h3>{{this.choirName}}</h3></div>
-            <div class="col-sm-3"><h3>{{this.choir.Locality.localityName}}</h3></div>
-            <div class="col-sm-3"><h3>{{this.choir.personn}}</h3></div>
-            <div class="col-sm-3"><h3>{{this.website}}</h3></div>
-        </div>
-        {{/each}}
 
+<div class=" col-md-9 col-lg-9 ">
+    <h4>{{choir.choirName}}</h4>
+    <br>
+    <br>
+    <table class="table table-user-information">
+        <tbody>
+        <tr>
+            <td>{{langs.typeChoeur}} :</td>
+            <td>{{choir.ChoirType.choirType}}</td>
+        </tr>
+        <tr>
+            <td>{{langs.groupements}} :</td>
+            <td>{{choir.Groupe.groupName}}</td>
+        </tr>
+        <tr>
+            <td>{{langs.address}} :</td>
+            <td>{{choir.address1}}</td>
+        </tr>
+        <tr>
+            <td>{{langs.complement}} :</td>
+            <td>{{choir.address2}}</td>
+        </tr>
+        <tr>
+            <td>{{langs.localite}} :</td>
+            <td> {{choir.Locality.npa}} {{choir.Locality.localityName}}</td>
+        </tr>
+        <tr>
+            <td>{{langs.siteweb}} :</td>
+            <td><a href="{{choir.website}}">{{choir.website}}</a></td>
+        </tr>
+        <tr>
+            <td>{{langs.creation}} :</td>
+            <td>{{choir.yearOfCreation}}</td>
+        </tr>
+        <tr>
+            <td>{{langs.langue}} :</td>
+            <td>{{choir.Language.language}}</td>
+        </tr>
+
+        <tr>
+            <td>{{langs.cheglise}} :</td>
+            <td><input type="checkbox" disabled="true" value="{{choir.chEglise}}"></td>
+        </tr>
+            <td>{{langs.chgospel}} :</td>
+            <td><input type="checkbox" disabled="true" value="{{choir.chGospel}}"></td>
+        </tr>
+        </tr>
+            <td>{{langs.memberfc}} :</td>
+            <td><input type="checkbox" disabled="true" value="{{choir.memberfc}}"></td>
+        </tr>
+        </tr>
+        <td>{{langs.remarks}} :</td>
+        <td><input type="checkbox" disabled="true" value="{{choir.remarks}}"></td>
+        </tr>
+        </tbody>
+    </table>
 </div>
-
-
