@@ -13,15 +13,31 @@
 
         var jsEvents = [];
 
-        var lang = document.cookie.ulang;
-        console.log(lang + '-----------------------');
-
-
         for(var k in eventsDB) {
 
 
+            var color = '#4a4a4a';
+            var textColor = '#ffffff'
+            if(eventsDB[k].GroupeId=='1'){
+                color='#f60';
+            }
+            if(eventsDB[k].GroupeId=='2'){
+                color='#ff0';
+                textColor ='#000000';
+            }
+            if(eventsDB[k].GroupeId=='3'){
+                color='#90c';
+            }
+            if(eventsDB[k].GroupeId=='4'){
+                color='#0f0';
+                textColor ='#000000';
+            }
+            if(eventsDB[k].GroupeId=='5'){
+                color='#000000';
+            }
 
-            var temp = {title: eventsDB[k].title, start: eventsDB[k].start, end: eventsDB[k].end, allDay: false}
+
+            var temp = {title: eventsDB[k].title, start: eventsDB[k].start, end: eventsDB[k].end, allDay: false, color: color, textColor:textColor}
 
             jsEvents.push(temp);
         }
@@ -35,10 +51,20 @@
             },
             navLinks: true, // can click day/week names to navigate views
             editable: false,
+            timezone: 'local',
             eventLimit: true, // allow "more" link when too many events
             events: jsEvents,
-            locale: 'fr',
-            timeFormat: 'HH(:mm)'
+            locale: "{{{lang}}}",
+            timeFormat: 'HH(:mm)',
+            eventClick: function(calEvent, jsEvent, view) {
+
+                alert(calEvent.title + 'Time:  ...');
+
+                // change the border color just for fun
+                $(this).css('border-color', 'red');
+
+            }
+
         });
 
     });
@@ -48,5 +74,12 @@
 <div id = 'wrap'>
     <div id='calendar'></div>
     <div style='clear:both'></div>
+
 </div>
+
+<h4 style="color:#f60;padding-bottom:10px;">Groupement des Sociétés de Chant du Bas-Valais (GSCBV)</h4>
+<h4 style="color:#ff0;padding-bottom:10px;">Union Chorale du Centre (UCC)</h4>
+<h4 style="color:#90c;padding-bottom:10px;">Groupement des Chanteurs du Valais Central (GCVC)<h4>
+    <h4 style="color:#0f0;padding-bottom:10px;">Oberwalliser Chor- und Cäcilien Verband (OCV)</h4>
+
 

@@ -1,5 +1,9 @@
 <h3>{{langs.comiteDirector}}</h3>
 
+{{#each object}}
+    {{@key}}: {{this}}
+{{/each}}
+
     <div class="panel-group" id="accordion">
         <div >
             <text type="text" data-toggle="collapse" data-parent="#accordion" href="#collapseOne"><span class="glyphicon glyphicon-chevron-down"></span>Laurent Bovier, <b>Président de la FSCV</b></text>
