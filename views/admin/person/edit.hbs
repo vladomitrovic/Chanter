@@ -1,0 +1,200 @@
+
+<form action="/admin/person{{action}}" method="post" role="form" enctype="application/x-www-form-urlencoded">
+    <legend>{{langs.registration_person_message}} </legend>
+
+    <div class="form-group">
+        <label for="person_name">{{langs.lastname}} du {{langs.person}} </label>
+        <input type="text" class="form-control" name="lastname" id="lastname" value= "{{person.lastname}}" placeholder={{langs.lastname}}>
+    </div>
+
+
+    <div class="form-group">
+        <label for="firstname">{{langs.firstname}}</label>
+        <input type="text"  size="10" class="form-control" name="firstname" id="firstname" value="{{person.firstname}}" placeholder={{langs.firstname}}>
+
+    </div>
+
+
+    <div class="form-group">
+
+        <select name="gender" id="gender" class="custom-select">
+
+
+            <option selected>{{langs.titre}}</option>
+            <option value="1">Female</option>
+            <option value="2">Male</option>
+            <option value="3">Other</option>
+
+        </select>
+    </div>
+
+
+    <div class="form-group">
+        <label for="birthdate">{{langs.birthdate}}</label>
+        <input type="date" class="form-control" name="birthdate" id="birthdate" value="{{person.birthdate}}" placeholder = {{langs.birthdate}}>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="address1">{{langs.address}} - 1</label>
+        <input type="text" class="form-control" name="address1" id="address1" value= "{{person.address1}}" placeholder={{langs.address}}>
+    </div>
+
+    <div class="form-group">
+        <label for="address2">{{langs.address}} - 2</label>
+        <input type="text" class="form-control" name="address2" id="address2" value="{{person.address2}}" placeholder={{langs.address}}>
+    </div>
+
+
+    <div class="form-group">
+        <label for="npa">NPA</label>
+        <input type="number" maxlength="5" size="5" class="form-control" name="personnpa" value={{person.Locality.npa}} id="personnpa" placeholder="NPA">
+
+    </div>
+
+    <div class="form-group">
+        <label for="telephone">{{langs.telephone}}</label>
+
+            <input class="form-control" type="tel" value="{{person.phone}}" id="phone" name="phone" placeholder={{langs.telephone}}>
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="workphone"> {{langs.work}} {{langs.telephone}}</label>
+        <input class="form-control" type="tel" value="{{person.phoneprof}}" id="phoneprof" name= "phoneprof" placeholder= "{{langs.work}} {{langs.telephone}}">
+
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="fax">fax</label>
+        <input type="tel" class="form-control" name="fax" id="fax" placeholder="fax" value="{{person.fax}}">
+    </div>
+
+
+    <div class="form-group">
+        <label for="mobilephone">{{langs.mobile}} {{langs.telephone}}</label>
+        <input type="tel" class="form-control" name="mobilephone" id="mobilephone" placeholder="{{langs.mobile}} {{langs.telephone}}">
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="email" >Email</label>
+        <input class="form-control" type="email" id="email" value="{{person.email}}" placeholder="email">
+
+    </div>
+
+
+    <div class="form-group">
+
+        <label for="role" >{{langs.memberlist}}</label>
+        <select name="role" id="role" class="custom-select">
+
+
+            <option selected>{{langs.memberlist}} </option>
+            <option value="1">{{langs.president}}</option>
+            <option value="2">{{langs.director}}</option>
+            <option value="3">{{langs.secretary}}</option>
+            <option value="4">{{langs.comitees}}</option>
+            <option value="5">Divers</option>
+            <option value="6">{{langs.memberavcc}}</option>
+
+
+        </select>
+    </div>
+
+
+
+
+
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+            // Select the function of the person from the checkbox
+          //  console.log('//////////////')
+            //console.log("{{{person.GenderId}}}");
+
+            $("select[id=gender] option[value=" + {{{person.GenderId}}} + "]").attr("selected", "selected");
+
+
+
+
+
+
+
+
+            var memList = [];
+
+            $('input[type="checkbox"]').click(function(){
+
+                if($(this).is(":checked")){
+                    var functionName = this.value;
+                    memList.push(functionName);
+                }
+                else if($(this).is(":not(:checked)")){
+                    functionName = this.value;
+                    var index = memList.indexOf(functionName);
+                    if(index > -1){
+                        memList.splice(index, 1);
+                    }
+                }
+            });
+        });
+    </script>
+
+
+    <div class="form-group">
+        <div class="container">
+            <p>{{langs.comitees}}</p>
+            <div class="form-group">
+                <input type="checkbox" name="fscv" value="fscv" id="fscv" /> FSCV <br />
+                <input type="checkbox" name="gscbv" value="gscbv" id="gscbv"/> GSCBV<br />
+                <input type="checkbox" name="ucc" value="ucc" id="ucc"/> UCC<br />
+                <input type="checkbox" name="gcvc" value="gcvc" /> GCVC<br />
+                <input type="checkbox" name="vog" value="vog"> VOG<br />
+                <input type="checkbox" name="avcc" value="avcc"> AVCC<br />
+                <input type="checkbox" name="ocv" value="ocv"> OCV<br />
+                <input type="checkbox" name="usc" value="usc"> USC<br />
+                <input type="checkbox" name="autres" value="autres"> Autres<br />
+                <br />
+            </div>
+
+
+
+
+                <tr>
+                    <td>Ancien</td>
+                    <td class="col-xs-2" colspan="3"><input type="text" id="anciencomite" name="anciencomite"></td>
+
+
+                </tr>
+
+
+
+                </tbody>
+            </table>
+        </div>
+
+
+    </div>
+
+
+    <div class="form-group">
+
+    </div>
+
+<hr />
+
+    <div class="form-group">
+
+    </div>
+
+
+    <button type="submit" class="btn btn-primary btn-lg btn-block">{{langs.register}}</button>
+
+</form>
