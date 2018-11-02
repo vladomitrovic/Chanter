@@ -65,20 +65,28 @@
 <script>
 
     $( document ).ready(function() {
+        console.log('ready');
         $("select[id=selectFR] option[id=" + {{{article.CategoryId}}} + "]").attr("selected", "selected");
-        $("select[id=selectDE] option[id=" + {{{article.CategoryId}}} + "]").attr("selected", "selected");
+        //$("select[id=selectDE] option[id=" + {{{article.CategoryId}}} + "]").attr("selected", "selected");
 
-    });
+     });
+    
+    function selectcategory() {
+        
+    }
 
     function openTab(tab) {
+
         console.log('open tab');
         var i;
         var x = document.getElementsByClassName("city");
         for (i = 0; i < x.length; i++) {
-            x[i].style.display = "none";
+           x[i].style.display = "none";
             console.log('open tab none');
         }
         document.getElementById(tab).style.display = "block";
         console.log('open tab end');
     }
+
+
 </script>

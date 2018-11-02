@@ -7,5 +7,9 @@ module.exports = (sequelize, DataTypes) => {
         message: DataTypes.STRING,
         statut:DataTypes.STRING
     }, {});
+    Ticket.associate = function(models) {
+        // associations can be defined here
+        Ticket.belongsTo(models.Category);
+    };
     return Ticket;
 };

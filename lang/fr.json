@@ -97,9 +97,12 @@
 	"title": "Titre",
 	"start": "Début",
 	"end": "Fin",
+
 	"contact":"Contact",
 	"emailSend":"Email envoyé",
 	"details": "Détails",
+
+	"emailSend":"Email envoyé",
 	"address": "Adresse",
 	"complement": "Complément",
 	"siteweb": "Site web",
@@ -110,12 +113,15 @@
 	"memberfc": "Membre FC",
 	"localite": "Localité",
 	"remarks": "Remarques",
+
 	"person":"Personnes",
 	"tickets":"Tickets",
 	"subject":"Sujet",
 	"email":"Email",
-	"message":"Message"
+	"message":"Message",
 
-
+	"choirdeletesure": "Voulez vous vraiment supprimer ce choeur ?",
+	"confirm": "Confirmer",
+	"contact":"Contact"
 
 }
