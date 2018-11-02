@@ -96,6 +96,8 @@
 	"details": "Détails",
 	"title": "Titre",
 	"start": "Début",
-	"end": "Fin"
+	"end": "Fin",
+	"contact":"Contact",
+	"emailSend":"Email envoyé"
 
 }

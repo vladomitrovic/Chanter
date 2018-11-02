@@ -4,11 +4,15 @@
     <h3>Comité<br/> directeur</h3>
 
 
+
+
+
+
     {{#each personnes}}
         <div class="panel-group" id="accordion">
             <div class="row border" style=" padding-top: 10px">
-                <text type="text" data-toggle="collapse" data-parent="#accordion" href="#{{@key}}"><span class="glyphicon glyphicon-chevron-down"></span>{{this.lastname}}    {{this.firstname}}<b>{{{this.Function.functionName}}}</b></b></text>
-                <div id="{{@key}}" class="panel-collapse collapse">
+                <text type="text" data-toggle="collapse" data-parent="#accordion" href="#{{this.id}}"><span class="glyphicon glyphicon-chevron-down"></span>{{this.lastname}}    {{this.firstname}}<b>{{{this.Function.functionName}}}</b></b></text>
+                <div id="{{this.id}}" class="panel-collapse collapse">
                     <div class="row " style="margin-top:10px;">
                             <div class="col-sm-6 nomargin" style="padding-top:20px"><img style="width:100%;
 ; margin-bottom:20px;" src="/images/persons/{{this.refPicture}}"></div>
@@ -30,8 +34,8 @@
         {{#each persGroupements}}
             <div class="panel-group" id="accordion">
                 <div class="row border" style=" padding-top: 10px">
-                    <text type="text" data-toggle="collapse" data-parent="#accordion" href="#{{@key}}"><span class="glyphicon glyphicon-chevron-down"></span>{{this.lastname}}    {{this.firstname}}<b>{{{this.Function.functionName}}}</b></b></text>
-                    <div id="{{@key}}" class="panel-collapse collapse">
+                    <text type="text" data-toggle="collapse" data-parent="#accordion" href="#{{this.id}}"><span class="glyphicon glyphicon-chevron-down"></span>{{this.lastname}}    {{this.firstname}}<b>{{{this.Function.functionName}}}</b></b></text>
+                    <div id="{{this.id}}" class="panel-collapse collapse">
                         <div class="row " style="margin-top:10px;">
                             <div class="col-sm-6 nomargin" style="padding-top:20px"><img style="width:100%;
 ; margin-bottom:20px;" src="/images/persons/{{this.refPicture}}"></div>

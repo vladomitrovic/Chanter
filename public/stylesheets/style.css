@@ -444,3 +444,27 @@ ul {
 footer .container-fluid {
     background-color:#333;
 }
+.red{
+    color:red;
+}
+.form-area
+{
+    padding: 10px 40px 60px;
+    margin: 10px 0px 60px;
+}
+
+#dialog {
+    width:100px;
+    height:200px;
+    background-color:darkgrey;
+
+
+
+}
+
+.fade {
+    opacity: 1;
+    -webkit-transition: opacity .15s linear;
+    -o-transition: opacity .15s linear;
+    transition: opacity .15s linear;
+}

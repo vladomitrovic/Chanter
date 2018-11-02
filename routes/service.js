@@ -1,5 +1,6 @@
 var express = require('express');
 var router = express.Router();
+var models = require('../models');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -30,7 +31,25 @@ router.get('/servicedep', function (req, res, next) {
     res.render('service/servicedep', {title: 'servicedep'});
 });
 
-router.get('/contact', function (req, res, next) {
+router.get('/contacts', function (req, res, next) {
     res.render('service/contacts', {title: 'contact'});
 });
+
+
+router.post('/contacts', function (req, res, next) {
+    console.log(req.body.name);
+    console.log(JSON.stringify(req.body));
+    models.Ticket.create({
+        nom: req.body.name,
+        email: req.body.email,
+        sujet: req.body.sujet,
+        message: req.body.message,
+        statut: "toAnswer"
+
+    }).then(() => {
+        console.log("ok create");
+        res.send(200)
+});
+});
+
 module.exports = router;

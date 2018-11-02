@@ -19,30 +19,41 @@ router.get('/', function(req, res, next) {
 
 router.get('/comite', function(req, res, next) {
 
+    // models.Comity.findOne(
+    //     {where:{id:2}},{
+    //     include: [{
+    //         model: models.Person}]}
+    //
+    //
+    // ).then((personC2)=>
+    //     {
+    //         console.log(JSON.stringify(personC2));
+    //         res.render('presentation/comite', {personC2: personC2 ,title: 'comite'});
+    //     })
+
     models.Person.findAll({
-        where:comity
         include: [{
-            model: models.Comity,
-            where: { comityName: 'Comite FCVS' }}],
-        include: [{
-            model: models.Function,
-        }]}
+                model: models.Comity,
+                trough: { where: { ComityId: 2 }}}]
+            }
 
     ).then((personnes) => {
-         models.Person.findAll({
-            include: [{
-                model: models.Comity,
-                where: { comityName: 'groupements'}}],
-            include: [{
-                model: models.Function,
-            }]}
-
-        ).then((persGroupements)=>
-        {
-            console.log(persGroupements);
-            res.render('presentation/comite', {personnes: personnes,persGroupements:persGroupements, title: 'comite'});
+        models.Person.findAll({
+                 include: [{
+                    model: models.Comity,
+                    trough: {where:{ ComityId: 3 }}
+                }]
+            }
+        ).then((persGroupements) => {
+            console.log(JSON.stringify(personnes));
+            console.log(JSON.stringify(persGroupements));
+            res.render('presentation/comite', {
+                personnes: personnes,
+                persGroupements: persGroupements,
+                title: 'comite'
+            });
         })
-        })
+    })
 
 });
 
