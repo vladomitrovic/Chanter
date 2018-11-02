@@ -55,14 +55,31 @@ router.post('/', function(req, res, next) {
 });
 
 
+router.get('/:id', function(req, res, next) {
+
+    models.Choir.findOne(
+        {where: {id: req.params.id},
+            include: [{ all: true}]}
+
+        ).then((choir) => {
+        console.log(JSON.stringify(choir))
+            res.render('choeurs/details', {
+                title: 'details',
+                choir: choir
+            },);
+        });
+});
+
 router.get('/calendrier', function(req, res, next) {
 
     models.Event.findAll().then((events) => {
+        var lang = req.i18n_lang;
         models.Groupe.findAll().then((groupes) => {
             res.render('choeurs/calendrier', {
                 title: 'calendrier',
                 events: encodeURIComponent(JSON.stringify(events)),
-                groupes: groupes
+                groupes: encodeURIComponent(JSON.stringify(groupes)),
+                lang : lang
             },);
         });
         });

@@ -1,0 +1,129 @@
+<form action="/admin/choeurs/{{action}}" method="post" role="form" enctype="application/x-www-form-urlencoded">
+    <legend>{{lookup langs action}} {{langs.choir}} </legend>
+
+    <div class="form-group">
+        <label for="choirName">{{langs.name}} {{langs.of}} {{langs.choir}} </label>
+        <input type="text" class="form-control" name="choirName" id="choirName" value="{{choeur.choirName}}" placeholder={{langs.name}}>
+    </div>
+
+    <div class="form-group">
+        <label for="address1">{{langs.address1}}</label>
+        <input type="text" class="form-control" name="address1" id="address1" value="{{choeur.address1}}" placeholder="{{langs.address1}}">
+    </div>
+
+    <div class="form-group">
+        <label for="address2">{{langs.address2}}</label>
+        <input type="text" class="form-control" name="address2" id="address2" value="{{choeur.address2}}" placeholder="{{langs.address2}}">
+    </div>
+
+
+    <div class="form-group">
+        <label for="npa">{{langs.npa}}</label>
+        <input type="text" maxlength="10" size="10" class="form-control" name="npa" id="npa" value="{{choeur.Locality.npa}}" placeholder="{{langs.npa}}">
+
+    </div>
+
+
+    <div class="form-group">
+        <label for="localityName">{{langs.lieu}}</label>
+        <input type="text" class="form-control" name="localityName" id="localityName" value="{{choeur.Locality.localityName}}" placeholder = "{{langs.lieu}}">
+    </div>
+
+
+    <!--div class="form-group">
+        <label for="effectif">{{langs.effectif}}</label>
+        <input type="text" class="form-control" name="choir_effectif" id="choir_effectif" value = "{{choeur.effectif}}" placeholder="{{langs.effectif}}">
+    </div-->
+
+
+
+    <div class="form-group">
+        <label for="yearOfCreation">{{langs.fondation}}</label>
+        <input type="date" class="form-control" name="yearOfCreation" id="yearOfCreation" value="{{choeur.yearOfCreation}}" placeholder="{{langs.fondation}}">
+    </div>
+
+    <div class="form-group">
+        <label for="website">{{langs.homepage}}</label>
+        <input type="text" class="form-control" name="website" id="website" value="{{choeur.website}}" placeholder="{{langs.homepage}}">
+    </div>
+
+
+    <div class="form-group">
+        <label for="GroupeId">{{langs.groupements}} + {{langs.region}}</label>
+
+        <select name="GroupeId">
+            <option value="0">UCC_Y</option>
+            <option value="1">Bas-Valais Membre GSCBV</option>
+            <option value="2">Bas-Valais Non Membre GSCBV</option>
+            <option value="3">Centre du Valais - Membre UCC</option>
+            <option value="4">Centre du Valais - Non Membre UCC</option>
+            <option value="5">Valais Central - Membre GCVC</option>
+            <option value="6">Valais Central - Non Membre GCVC</option>
+            <option value="7">Oberwallis - Membre OCV</option>
+            <option value="8">Oberwallis - Non Membre OCV</option>
+
+
+        </select>
+    </div>
+
+
+
+    <!--div class="form-group">
+        <h2>TODO : GET DEKANAT FROM DATABASE if OCV SELECTED</h2>>
+        <label for="dekanat">Dekanat (Nur fur OCV)</label>
+        <select name="dekanat">
+            <option value="0"></option>
+            <option value="1">Weltlich</option>
+            <option value="2">Leuk</option>
+            <option value="3">Raron</option>
+            <option value="4">Visp</option>
+            <option value="5">Brig</option>
+            <option value="6">Ernen</option>
+
+        </select>
+    </div-->
+
+    <div class="form-group">
+        <label for="memberfc">{{langs.federation_canton}}</label>
+        <input type="checkbox" name="memberfc"> Member FSCV</input>
+        <input  type="radio" name="memberfc" value="0">Non Member FSCV</input>
+    </div>
+
+    <div class="form-group">
+        <label for="chEglise"></label>
+        <input type="radio" name="chEglise" value="1"> Choeur Eglise</input>
+        <input  type="radio" name="chEglise" value="0">Pas choeur eglise</input>
+    </div>
+
+
+    <div class="form-group">
+        <label for="entryfc">{{langs.date_canton_federaton_entry}}</label>
+        <input type="date" class="form-control" maxlength="4" name="entryfc" id="entryfc" value="{{choeur.entryfc}}">
+    </div>
+
+    <div class="form-group">
+        <label for="LanguageId">Langue </label>
+        <select name="LanguageId" id="LanguageId">
+            <option value="1">French</option>
+            <option value="2">Deutsch</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="ChoirTypeId">Type of Choir </label>
+        <select name="ChoirTypeId" id="ChoirTypeId">
+            <option value="1">CX</option>
+            <option value="2">Choir</option>
+            <option value="3">Choir</option>
+            <option value="4">Choir</option>
+            <option value="5">Choir</option>
+            <option value="6">Choir</option>
+        </select>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">{{lookup langs action}} {{langs.choir}}</button>
+
+</form>
+
+

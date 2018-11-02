@@ -99,5 +99,17 @@
 	"end": "Fin",
 	"contact":"Contact",
 	"emailSend":"Email envoyé"
+	"details": "Détails",
+	"address": "Adresse",
+	"complement": "Complément",
+	"siteweb": "Site web",
+	"creation": "Création",
+	"langue": "Langue",
+	"cheglise": "Choeur Eglise",
+	"chgospel": "Choeur Gospel",
+	"memberfc": "Membre FC",
+	"localite": "Localité",
+	"remarks": "Remarques"
+
 
 }
