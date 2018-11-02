@@ -97,6 +97,14 @@
 	"title": "Titel",
 	"start": "Anfang",
 	"end": "Ende",
+
+	"contact":"Kontact",
+	"person":"",
+	"tickets":"",
+	"subject":"",
+	"email":"Email",
+	"message":"",
+
     "emailSend":"Email gesendet",
 	"address": "Adresse",
 	"complement": "Zusatz",

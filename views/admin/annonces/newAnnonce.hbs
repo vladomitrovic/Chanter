@@ -1,0 +1,22 @@
+
+
+
+
+{{#if annonce}}
+    <form action="/admin/annonce/modify/{{annonce.id}}" method="post">
+{{else}}
+    <form action="/admin/annonce/add" method="post">
+{{/if}}
+
+
+
+    <div class="form-group">
+        <input required="true" type="text" class="form-control" name="titleFR" value="{{annonce.titleFR}}" placeholder="Titre" autofocus><br>
+    </div>
+    <div class="form-group">
+        <textarea required="true" class="form-control" rows="8" name="textFR"  placeholder="Texte">{{annonce.textFR}}</textarea>
+    </div>
+    <button type="submit" class="btn btn-primary">{{langs.save}}</button>
+</form>
+
+

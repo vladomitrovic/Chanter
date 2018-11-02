@@ -5,6 +5,8 @@ var choeursRouter = require('./choeurs');
 var listeRouter = require('./liste');
 var personRouter = require('./person');
 var eventRouter = require('./event');
+var annonceRouter = require('./annonce');
+var ticketRouter = require('./tickets');
 var models = require('../../models');
 const bcrypt = require('bcryptjs');
 const saltRounds = 10;
@@ -35,8 +37,8 @@ router.post('/params/pwd', function(req, res, next) {
             models.Person.update(
                 {password : pwd},
                 {where: {id: user.id}}
-                )
-    }
+            )
+        }
         else {
             req.flash('error', 'Password incorrect!');
             res.redirect('./');
@@ -53,6 +55,8 @@ router.use('/liste', listeRouter);
 router.use('/event', eventRouter);
 router.use('/liste', listeRouter);
 router.use('/person', personRouter);
+router.use('/annonce', annonceRouter);
+router.use('/tickets', ticketRouter);
 
 
 module.exports = router;

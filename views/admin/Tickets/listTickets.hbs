@@ -1,0 +1,76 @@
+<div class="container">
+
+
+
+    <table>
+        <h3>Tickets non-traités</h3>
+        <tr>
+            <th>id</th>
+            <th>date</th>
+            <th>{{langs.name}}</th>
+            <th>{{langs.subject}}</th>
+            <th>{{langs.message}}</th>
+            <th>{{langs.email}}</th>
+            <th></th>
+        </tr>
+        {{#each ticketsNonTraite}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.createdAt }}</td>
+            <td>{{this.nom}}</td>
+            <td>{{this.Category.categoryFR}}</td>
+            <td>{{this.message }}</td>
+            <td>{{this.email}}</td>
+            <td><button class="btn btn-danger" onclick="location.href='/admin/tickets/modify/{{this.id}}'">Traité</button></td>
+        {{/each}}
+    </table>
+
+    <table style="margin-bottom:40px" >
+
+        <h3>Tickets traités</h3>
+        <tr>
+            <th>id</th>
+            <th>date</th>
+            <th>{{langs.name}}</th>
+            <th>{{langs.subject}}</th>
+            <th>{{langs.message}}</th>
+            <th>{{langs.email}}</th>
+
+
+        </tr>
+        {{#each ticketsTraite}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.createdAt }}</td>
+            <td>{{this.nom}}</td>
+            <td>{{this.Category.categoryFR}}</td>
+            <td>{{this.message }}</td>
+            <td>{{this.email}}</td>
+
+        {{/each}}
+    </table>
+</div>
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<script>
+
+
+
+</script>
