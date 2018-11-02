@@ -115,18 +115,8 @@
 
         $(document).ready(function(){
 
-            // Select the function of the person from the checkbox
-          //  console.log('//////////////')
-            //console.log("{{{person.GenderId}}}");
-
             $("select[id=gender] option[value=" + {{{person.GenderId}}} + "]").attr("selected", "selected");
-
-
-
-
-
-
-
+            $("select[id=role] option[value=" + {{{person.FunctionId}}} + "]").attr("selected", "selected");
 
             var memList = [];
 
@@ -152,47 +142,38 @@
         <div class="container">
             <p>{{langs.comitees}}</p>
             <div class="form-group">
-                <input type="checkbox" name="fscv" value="fscv" id="fscv" /> FSCV <br />
-                <input type="checkbox" name="gscbv" value="gscbv" id="gscbv"/> GSCBV<br />
-                <input type="checkbox" name="ucc" value="ucc" id="ucc"/> UCC<br />
-                <input type="checkbox" name="gcvc" value="gcvc" /> GCVC<br />
-                <input type="checkbox" name="vog" value="vog"> VOG<br />
-                <input type="checkbox" name="avcc" value="avcc"> AVCC<br />
-                <input type="checkbox" name="ocv" value="ocv"> OCV<br />
-                <input type="checkbox" name="usc" value="usc"> USC<br />
-                <input type="checkbox" name="autres" value="autres"> Autres<br />
+                <input type="checkbox" name="comity[]" value="fscv" id="fscv" /> FSCV <br />
+                <input type="checkbox" name="comity[]" value="gscbv" id="gscbv"/> GSCBV<br />
+                <input type="checkbox" name="comity[]" value="ucc" id="ucc"/> UCC<br />
+                <input type="checkbox" name="comity[]" value="gcvc" /> GCVC<br />
+                <input type="checkbox" name="comity[]" value="vog"> VOG<br />
+                <input type="checkbox" name="comity[]" value="avcc"> AVCC<br />
+                <input type="checkbox" name="comity[]" value="ocv"> OCV<br />
+                <input type="checkbox" name="comity[]" value="usc"> USC<br />
+                <input type="checkbox" name="comity[]" value="autres"> Autres<br />
                 <br />
             </div>
 
 
 
 
-                <tr>
-                    <td>Ancien</td>
-                    <td class="col-xs-2" colspan="3"><input type="text" id="anciencomite" name="anciencomite"></td>
-
-
-                </tr>
+                <div class="form-group">
+                    Ancien <input type="text" id="anciencomite" name="anciencomite">
+                </div>
 
 
 
-                </tbody>
-            </table>
-        </div>
+
+
 
 
     </div>
 
 
-    <div class="form-group">
 
-    </div>
 
 <hr />
 
-    <div class="form-group">
-
-    </div>
 
 
     <button type="submit" class="btn btn-primary btn-lg btn-block">{{langs.register}}</button>

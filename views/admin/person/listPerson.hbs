@@ -1,0 +1,45 @@
+<div class="container">
+<table>
+    <tr>
+        <th>id</th>
+        <th>{{langs.firstname}}</th>
+        <th>{{langs.lastname}}</th>
+        <th></th>
+        <th></th>
+    </tr>
+    {{#each person}}
+        <tr>
+            <td>{{this.id}}</td>
+            <td>{{this.firstname}}</td>
+            <td>{{this.lastname }}</td>
+            <td><button class="btn btn-secondary" onclick="location.href='/admin/person/update/{{this.id}}'">Modifier</button></td>
+            <td><button class="btn btn-danger" onclick="location.href='/admin/person/delete/{{this.id}}'">Supprimer</button></td>
+        </tr>
+    {{/each}}
+</table>
+
+</div>
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+
+<script>
+
+
+
+</script>
