@@ -1,6 +1,8 @@
 <form action="/admin/choeurs/{{action}}" method="post" role="form" enctype="application/x-www-form-urlencoded">
     <legend>{{lookup langs action}} {{langs.choir}} </legend>
 
+    <input type="hidden" name="id" value="{{choeur.id}}"/>
+
     <div class="form-group">
         <label for="choirName">{{langs.name}} {{langs.of}} {{langs.choir}} </label>
         <input type="text" class="form-control" name="choirName" id="choirName" value="{{choeur.choirName}}" placeholder={{langs.name}}>

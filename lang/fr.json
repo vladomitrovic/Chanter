@@ -109,7 +109,9 @@
 	"chgospel": "Choeur Gospel",
 	"memberfc": "Membre FC",
 	"localite": "Localité",
-	"remarks": "Remarques"
+	"remarks": "Remarques",
+	"choirdeletesure": "Voulez vous vraiment supprimer ce choeur ?",
+	"confirm": "Confirmer"
 
 
 }

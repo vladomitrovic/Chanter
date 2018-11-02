@@ -97,5 +97,17 @@
 	"title": "Titel",
 	"start": "Anfang",
 	"end": "Ende",
+	"address": "Adresse",
+	"complement": "Zusatz",
+	"siteweb": "Webseite",
+	"creation": "Stiftung",
+	"langue": "Sprache",
+	"cheglise": "Chor Kirche",
+	"chgospel": "Chor Gospel",
+	"memberfc": "Mitglied FC",
+	"localite": "Ort",
+	"remarks": "Bemerkungen",
+	"choirdeletesure": "Wollen Sie wirklich diesen Chor löschen",
+	"confirm": "Bestätigen"
 	"contact":"Kontact"
 }

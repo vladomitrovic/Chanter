@@ -1,0 +1,7 @@
+<h1>{{langs.choirdeletesure}}</h1>
+<form action="/admin/choeurs/delete" method="post">
+    <input type="hidden" name="id" value="{{id}}"/>
+    <input type="submit" name="confirm" class="btn btn-danger" value="{{langs.confirm}}"/>
+</form>
+<br/>
+<button class="btn btn-secondary" onclick="location.href='/admin/choeurs/'">{{langs.cancel}}</button>
