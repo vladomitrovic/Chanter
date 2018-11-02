@@ -97,9 +97,7 @@
 	"title": "Titre",
 	"start": "Début",
 	"end": "Fin",
-	"contact":"Contact",
-	"emailSend":"Email envoyé"
-	"details": "Détails",
+	"emailSend":"Email envoyé",
 	"address": "Adresse",
 	"complement": "Complément",
 	"siteweb": "Site web",
@@ -111,7 +109,8 @@
 	"localite": "Localité",
 	"remarks": "Remarques",
 	"choirdeletesure": "Voulez vous vraiment supprimer ce choeur ?",
-	"confirm": "Confirmer"
+	"confirm": "Confirmer",
+	"contact":"Contact"
 
 
 }
