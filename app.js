@@ -8,6 +8,8 @@ var session = require('express-session');
 var i18n=require("i18n-express");
 var Sequelize = require("sequelize");
 var flash = require('express-flash');
+var handlebars = require('hbs')
+handlebars.registerHelper('dateFormat', require('handlebars-dateformat'));
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');

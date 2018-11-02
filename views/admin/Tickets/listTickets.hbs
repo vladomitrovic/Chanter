@@ -16,7 +16,7 @@
         {{#each ticketsNonTraite}}
         <tr>
             <td>{{this.id}}</td>
-            <td>{{this.createdAt }}</td>
+            <td>{{dateFormat this.createdAt 'YYYY MM DD'}}</td>
             <td>{{this.nom}}</td>
             <td>{{this.Category.categoryFR}}</td>
             <td>{{this.message }}</td>
@@ -41,7 +41,7 @@
         {{#each ticketsTraite}}
         <tr>
             <td>{{this.id}}</td>
-            <td>{{this.createdAt }}</td>
+            <td>{{dateFormat this.createdAt "dddd, MMMM Do YYYY, h:mm"}}</td>
             <td>{{this.nom}}</td>
             <td>{{this.Category.categoryFR}}</td>
             <td>{{this.message }}</td>
