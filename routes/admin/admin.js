@@ -5,6 +5,7 @@ var choeursRouter = require('./choeurs');
 var listeRouter = require('./liste');
 var personRouter = require('./person');
 var eventRouter = require('./event');
+var annonceRouter = require('./annonce');
 var ticketRouter = require('./tickets');
 var models = require('../../models');
 const bcrypt = require('bcryptjs');
@@ -54,6 +55,7 @@ router.use('/liste', listeRouter);
 router.use('/event', eventRouter);
 router.use('/liste', listeRouter);
 router.use('/person', personRouter);
+router.use('/annonce', annonceRouter);
 router.use('/tickets', ticketRouter);
 
 

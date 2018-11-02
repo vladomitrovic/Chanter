@@ -13,7 +13,11 @@ router.get('/', function(req, res, next) {
 
 // List articles
 router.get('/list', function(req, res, next) {
-    models.Article.findAll().then((articles) => {
+    models.Article.findAll(
+        {where: {CategoryId: {
+            [Op.ne]: null
+        }}
+    }).then((articles) => {
         res.render('admin/Articles/listArticles', {articles:articles, user: req.session.user, layout:'admin/adminLayout'});
     });
 });

@@ -10,7 +10,15 @@ router.get('/', function(req, res, next) {
 });
 
 router.get('/annonces', function(req, res, next) {
-    res.render('service/petites', { title: 'annonces' });
+    models.Article.findAll({
+        where : {CategoryId:  null},
+        include: [{
+            model: models.Person}]
+    }).then((annonces) => {
+        console.log(annonces)
+        res.render('service/petites', { title: 'annonces' , annonces: annonces});
+    });
+
 });
 
 router.get('/forumpres', function (req, res, next) {

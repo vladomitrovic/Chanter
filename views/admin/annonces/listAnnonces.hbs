@@ -1,0 +1,37 @@
+<div class="container">
+    <table>
+        <tr>
+            <th>id</th>
+            <th>{{langs.titre}}</th>
+            <th></th>
+            <th></th>
+        </tr>
+        {{#each annonces}}
+            <tr>
+                <td>{{this.id}}</td>
+                <td>{{this.titleFR}}</td>
+                <td><button class="btn btn-secondary" onclick="location.href='/admin/annonce/modify/{{this.id}}'">Modifier</button></td>
+                <td><button class="btn btn-danger" onclick="location.href='/admin/annonce/delete/{{this.id}}'">Supprimer</button></td>
+            </tr>
+        {{/each}}
+    </table>
+
+</div>
+
+
+<style>
+    table {
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>

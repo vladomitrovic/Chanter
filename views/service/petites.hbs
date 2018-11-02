@@ -1,1 +1,24 @@
 
+{{#each annonces}}
+    <hr/>
+    <div class="news-content">
+        <a href="#"><h2>{{this.titleFR}}</h2></a>
+        <p>{{this.textFR}}</p>
+
+    </div>
+    <div class="news-footer">
+        <div class="news-author">
+            <ul class="list-inline list-unstyled">
+                <li class="list-inline-item text-secondary">
+                    <i class="fa fa-user"></i>
+                    {{this.Person.lastname}} {{this.Person.firstname}}
+                </li>
+                <li class="list-inline-item text-secondary">
+                    <i class="fa fa-calendar"></i>
+                    {{this.updatedAt}}
+                </li>
+            </ul>
+        </div>
+    </div>
+    <hr/>
+{{/each}}
