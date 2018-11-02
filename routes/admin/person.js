@@ -92,7 +92,7 @@ router.post('/new', function (req, res, next) {
 
         }).then(
 
-           //models.Comity.add(person, {through: {FunctionId:FunctionId}});
+          // models.Comity.add(person, {through: {FunctionId:FunctionId}});
 
 
             res.redirect("admin/person/new"));
