@@ -98,7 +98,7 @@
 	"start": "Début",
 	"end": "Fin",
 	"contact":"Contact",
-	"emailSend":"Email envoyé"
+	"emailSend":"Email envoyé",
 	"details": "Détails",
 	"address": "Adresse",
 	"complement": "Complément",
@@ -109,7 +109,13 @@
 	"chgospel": "Choeur Gospel",
 	"memberfc": "Membre FC",
 	"localite": "Localité",
-	"remarks": "Remarques"
+	"remarks": "Remarques",
+	"person":"Personnes",
+	"tickets":"Tickets",
+	"subject":"Sujet",
+	"email":"Email",
+	"message":"Message"
+
 
 
 }

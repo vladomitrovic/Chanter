@@ -49,7 +49,7 @@ router.post('/contacts', function (req, res, next) {
     }).then(() => {
         console.log("ok create");
         res.send(200)
-});
+    });
 });
 
 module.exports = router;

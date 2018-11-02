@@ -22,7 +22,7 @@ router.get('/list', function(req, res, next) {
 // New article from
 router.get('/new', function(req, res, next) {
     models.Category.findAll().then((categories) => {
-            res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout'});
+        res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout'});
     });
 });
 
@@ -31,8 +31,8 @@ router.get('/modify/:id', function(req, res, next) {
     models.Article.findOne({
         where : {id:  req.params.id}
     }).then((article) => {
-         models.Category.findAll().then((categories) => {
-             res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout',article: article });
+        models.Category.findAll().then((categories) => {
+            res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout',article: article });
         });
     });
 });
@@ -82,14 +82,14 @@ router.post('/modify/:id', function(req, res, next) {
         var user = req.session.user;
 
         models.Article.update({
-            titleFR: req.body.titleFR,
-            chapeauFR: req.body.chapeauFR,
-            textFR: req.body.textFR,
-            titleDE: req.body.titleDE,
-            chapeauDE: req.body.chapeauDE,
-            textDE: req.body.textDE,
-            refPicture: req.body.myFile,
-            CategoryId: categoryId},
+                titleFR: req.body.titleFR,
+                chapeauFR: req.body.chapeauFR,
+                textFR: req.body.textFR,
+                titleDE: req.body.titleDE,
+                chapeauDE: req.body.chapeauDE,
+                textDE: req.body.textDE,
+                refPicture: req.body.myFile,
+                CategoryId: categoryId},
             {where: {id: req.params.id}
             }).then(() => {
             res.redirect('/admin/articles/list')

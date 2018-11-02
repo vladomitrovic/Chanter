@@ -97,5 +97,10 @@
 	"title": "Titel",
 	"start": "Anfang",
 	"end": "Ende",
-	"contact":"Kontact"
+	"contact":"Kontact",
+	"person":"",
+	"tickets":"",
+	"subject":"",
+	"email":"Email",
+	"message":""
 }
