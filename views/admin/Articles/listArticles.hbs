@@ -11,7 +11,7 @@
         <tr>
             <td>{{this.id}}</td>
             <td>{{this.titleFR}}</td>
-            <td>{{this.createdAt }}</td>
+            <td>{{dateFormat this.createdAt 'YYYY / MM / DD'}}</td>
             <td><button class="btn btn-secondary" onclick="location.href='/admin/articles/modify/{{this.id}}'">Modifier</button></td>
             <td><button class="btn btn-danger" onclick="location.href='/admin/articles/delete/{{this.id}}'">Supprimer</button></td>
         </tr>

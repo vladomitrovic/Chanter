@@ -12,8 +12,8 @@
             <tr>
                 <td>{{this.id}}</td>
                 <td>{{this.title}}</td>
-                <td>{{this.start}}</td>
-                <td>{{this.end}}</td>
+                <td>{{dateFormat this.start 'YYYY / MM / DD'}}</td>
+                <td>{{dateFormat this.end 'YYYY / MM / DD'}}</td>
                 <td><button class="btn btn-secondary" onclick="location.href='/admin/event/modify/{{this.id}}'">Modifier</button></td>
                 <td><button class="btn btn-danger" onclick="location.href='/admin/event/delete/{{this.id}}'">Supprimer</button></td>
             </tr>

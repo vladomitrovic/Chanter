@@ -20,29 +20,36 @@ router.get('/', function(req, res, next) {
 router.get('/comite', function(req, res, next) {
 
     models.Person.findAll({
-        where:comity,
         include: [{
                 model: models.Comity,
-                trough: { where: { ComityId: 2 }}}]
+                where: { id: 2 }}]
             }
-
     ).then((personnes) => {
         models.Person.findAll({
                  include: [{
                     model: models.Comity,
-                    trough: {where:{ ComityId: 3 }}
-                }]
+                     where:{ id: 3 }}]
+
             }
-        ).then((persGroupements) => {
+        ).then((personnes3) => {
+            models.Person.findAll({
+                    include: [{
+                        model: models.Comity,
+                        where:{ id: 4 }}]
+
+                }
+            ).then((persGroupements) => {
             console.log(JSON.stringify(personnes));
             console.log(JSON.stringify(persGroupements));
             res.render('presentation/comite', {
                 personnes: personnes,
+                personnes3: personnes3,
                 persGroupements: persGroupements,
                 title: 'comite'
             });
-        })
-    })
+        });
+    });
+    });
 
 });
 
