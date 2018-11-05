@@ -43,6 +43,16 @@ module.exports = (sequelize, DataTypes) => {
       Person.belongsToMany(models.Comity, {through: 'Comity_Person'});
       Person.belongsTo(models.Function);
       Person.belongsToMany(models.Choir, {through: 'Person_Chorus'});
+
+
+
+
+      // Testing for the Comity_Person model inject
+     // Promise.all([Person.create()])
+       //   .then(([person, comity]) => Comity_Person.create({personId: person.id, comityId: comity.id}));
+
+
+      //-------------------------------
   };
   return Person;
 };
