@@ -54,8 +54,6 @@ router.post('/', function(req, res, next) {
     })
 });
 
-
-
 router.get('/calendrier', function(req, res, next) {
 
     models.Event.findAll().then((events) => {
@@ -70,7 +68,6 @@ router.get('/calendrier', function(req, res, next) {
         });
     });
 });
-
 router.get('/:id', function(req, res, next) {
 
     models.Choir.findOne(
@@ -96,6 +93,7 @@ router.get('/:id', function(req, res, next) {
         });
     });
 });
+
 
 
 module.exports = router;

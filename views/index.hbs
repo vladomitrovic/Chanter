@@ -1,17 +1,21 @@
 
         <div class="row">
             {{#each news}}
-            <div class="col-sm-4">
 
-                {{#if bool}}
-                    <h3>{{this.titleFR}}</h3>  <p>{{this.textFR}}</p>
-                    <img style="width:100%; margin-bottom:20px;" src="/images/news/{{this.refPicture}}">
-                {{else}}
-                    <h3>{{this.titleDE}}</h3>  <p>{{this.textDE}}</p>
-                    <img style="width:100%; margin-bottom:20px;" src="/images/news/{{this.refPicture}}">
-                {{/if}}
+                <div class="col-sm-3">
+                    <div class="card">
+                        <div class="card-body">
+                            {{#if bool}}
+                                <h3>{{this.titleFR}}</h3>  <p>{{this.textFR}}</p>
+                                <img style="width:100%; margin-bottom:20px;" src="/images/news/{{this.refPicture}}">
+                            {{else}}
+                                <h3>{{this.titleDE}}</h3>  <p>{{this.textDE}}</p>
+                                <img style="width:100%; margin-bottom:20px;" src="/images/news/{{this.refPicture}}">
+                            {{/if}}
 
-
-        </div>
+                        </div>
+                    </div>
+                </div>
             {{/each}}
+
     </div>
