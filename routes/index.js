@@ -7,7 +7,7 @@ var Sequelize = require('sequelize');
 //TOTO
 router.get('/', function(req, res, next) {
 
-    var lang = req.i18n_lang;
+    var lang = 'fr';
     models.Article.findAll(
         {where: {categoryId: 2}},
 

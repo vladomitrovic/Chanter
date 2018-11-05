@@ -2,7 +2,7 @@
 {{#each annonces}}
     <hr/>
     <div class="news-content">
-        <a href="#"><h2>{{this.titleFR}}</h2></a>
+        <h2>{{this.titleFR}}</h2>
         <p>{{this.textFR}}</p>
 
     </div>
@@ -15,7 +15,7 @@
                 </li>
                 <li class="list-inline-item text-secondary">
                     <i class="fa fa-calendar"></i>
-                    {{this.updatedAt}}
+                    {{dateFormat this.updatedAt 'YYYY / MM / DD'}}
                 </li>
             </ul>
         </div>
