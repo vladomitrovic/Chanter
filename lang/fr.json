@@ -138,6 +138,7 @@
 	"choirdeletesure": "Voulez vous vraiment supprimer ce choeur ?",
 	"confirm": "Confirmer",
 	"contact":"Contact",
-	"news":"News"
+	"news":"News",
+	"persondeletemessage":"Voulez-vous vraiment supprimer cette personne?"
 
 }

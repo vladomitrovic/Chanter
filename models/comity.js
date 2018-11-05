@@ -5,7 +5,13 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Comity.associate = function(models) {
     // associations can be defined here
-      Comity.belongsToMany(models.Person, {through: 'Comity_Person'});
+      Comity.belongsToMany(models.Person, {through: 'Comity_Person', foreignKey: 'comity.id'});
+
   };
+  //Comity.addPerson = function (Person) {}
   return Comity;
+
+
+
+
 };

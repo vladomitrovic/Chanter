@@ -2,6 +2,9 @@
 <form action="/admin/person{{action}}" method="post" role="form" enctype="application/x-www-form-urlencoded">
     <legend>{{langs.registration_person_message}} </legend>
 
+    <input type="hidden" name="id" value="{{person.id}}"/>
+
+
     <div class="form-group">
         <label for="person_name">{{langs.lastname}} du {{langs.person}} </label>
         <input type="text" class="form-control" name="lastname" id="lastname" value= "{{person.lastname}}" placeholder={{langs.lastname}}>
@@ -142,15 +145,16 @@
         <div class="container">
             <p>{{langs.comitees}}</p>
             <div class="form-group">
-                <input type="checkbox" name="comity[]" value="fscv" id="fscv" /> FSCV <br />
-                <input type="checkbox" name="comity[]" value="gscbv" id="gscbv"/> GSCBV<br />
-                <input type="checkbox" name="comity[]" value="ucc" id="ucc"/> UCC<br />
-                <input type="checkbox" name="comity[]" value="gcvc" /> GCVC<br />
-                <input type="checkbox" name="comity[]" value="vog"> VOG<br />
-                <input type="checkbox" name="comity[]" value="avcc"> AVCC<br />
-                <input type="checkbox" name="comity[]" value="ocv"> OCV<br />
-                <input type="checkbox" name="comity[]" value="usc"> USC<br />
-                <input type="checkbox" name="comity[]" value="autres"> Autres<br />
+
+                <input type="checkbox" name="comitymem[]" value="1" id="fscv" /> FSCV <br />
+                <input type="checkbox" name="comitymem[]" value="2" id="gscbv"/> GSCBV<br />
+                <input type="checkbox" name="comitymem[]" value="3" id="ucc"/> UCC<br />
+                <input type="checkbox" name="comitymem[]" value="4" /> GCVC<br />
+                <input type="checkbox" name="comitymem[]" value="vog"> VOG<br />
+                <input type="checkbox" name="comitymem[]" value="avcc"> AVCC<br />
+                <input type="checkbox" name="comitymem[]" value="ocv"> OCV<br />
+                <input type="checkbox" name="comitymem[]" value="usc"> USC<br />
+                <input type="checkbox" name="comitymem[]" value="autres"> Autres<br />
                 <br />
             </div>
 
@@ -176,6 +180,6 @@
 
 
 
-    <button type="submit" class="btn btn-primary btn-lg btn-block">{{langs.register}}</button>
+    <button type="submit" class="btn btn-primary btn-lg btn-block">{{lookup langs action}} {{langs.person}}</button>
 
 </form>
