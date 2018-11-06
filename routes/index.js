@@ -7,14 +7,14 @@ var Sequelize = require('sequelize');
 //TOTO
 router.get('/', function(req, res, next) {
 
-    var lang = 'fr';
+    var lang = req.i18n_lang;
     models.Article.findAll(
         {where: {categoryId: 2}},
 
     ).then((news)=>
     {
         console.log(news)
-        res.render('index',{news:news, bool:lang==='fr', title: 'news'});
+        res.render('index',{news:news, bool:lang==='fr', title: 'bienvenue'});
     })
 
 });

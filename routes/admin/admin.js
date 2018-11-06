@@ -13,14 +13,17 @@ const saltRounds = 10;
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-    res.render('admin/index', { title: 'Admin', user: req.session.user,  layout:'admin/adminLayout'});
+    var user = req.session.user;
+    if(user.roleName!='Administrator'){
+        res.render('admin/index', { title: 'Admin', user: req.session.user,  layout:'admin/otherLayout'});
+    }else
+        res.render('admin/index', { title: 'Admin', user: req.session.user,  layout:'admin/adminLayout'});
+
 });
 
 router.get('/params', function(req, res, next) {
     res.render('admin/params', {user: req.session.user,  layout:'admin/adminLayout'});
 });
-
-
 
 router.post('/params/pwd', function(req, res, next) {
 

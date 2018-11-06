@@ -7,16 +7,19 @@ const Op = Sequelize.Op;
 /* GET home page. */
 router.get('/', function(req, res, next) {
     res.render('service/index', { title: '' });
+    var lang = req.i18n_lang;
 });
 
 router.get('/annonces', function(req, res, next) {
+
+    var lang = req.i18n_lang;
     models.Article.findAll({
         where : {CategoryId:  null},
         include: [{
             model: models.Person}]
     }).then((annonces) => {
         console.log(annonces)
-        res.render('service/petites', { title: 'annonces' , annonces: annonces});
+        res.render('service/petites', { title: 'annonces' , bool:lang==='fr', annonces: annonces});
     });
 
 });
