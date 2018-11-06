@@ -37,7 +37,7 @@
             }
 
 
-            var temp = {title: eventsDB[k].title, start: eventsDB[k].start, end: eventsDB[k].end, allDay: false, color: color, textColor:textColor}
+            var temp = {title: eventsDB[k].title, start: eventsDB[k].start, end: eventsDB[k].end, allDay: false, color: color, textColor:textColor, url:'/choeurs/calendrier/'+eventsDB[k].id}
 
             jsEvents.push(temp);
         }
@@ -57,8 +57,6 @@
             locale: "{{{lang}}}",
             timeFormat: 'HH(:mm)',
             eventClick: function(calEvent, jsEvent, view) {
-
-                alert(calEvent.title + 'Time:  ...');
 
                 // change the border color just for fun
                 $(this).css('border-color', 'red');

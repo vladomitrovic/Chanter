@@ -1,0 +1,23 @@
+
+
+<div class=" col-md-9 col-lg-9 ">
+    <h4>{{event.title}}</h4>
+    <br>
+    <br>
+    <table class="table table-user-information">
+        <tbody>
+        <tr>
+            <td>{{langs.start}} :</td>
+            <td>{{dateFormat event.start 'DD/MM/YYYY  HH:mm'}}</td>
+        </tr>
+        <tr>
+            <td>{{langs.end}} :</td>
+            <td>{{dateFormat event.end 'DD/MM/YYYY  HH:mm'}}</td>
+        </tr>
+        <tr>
+            <td>{{langs.details}} :</td>
+            <td>{{event.info}}</td>
+        </tr>
+        </tbody>
+    </table>
+</div>
