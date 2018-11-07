@@ -68,6 +68,20 @@ router.get('/calendrier', function(req, res, next) {
         });
     });
 });
+
+
+
+router.get('/calendrier/:id', function(req, res, next) {
+
+    models.Event.findOne({
+        where : {id:  req.params.id},
+        include: [{
+            model: models.Groupe}]
+    }).then((event) => {
+        res.render('choeurs/calendarDetail', {event: event, title: 'detailEvent'}) ;
+    });
+});
+
 router.get('/:id', function(req, res, next) {
 
     models.Choir.findOne(

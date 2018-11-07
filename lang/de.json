@@ -4,6 +4,7 @@
 	"presentation": "Präsentation",
 	"commission": "Musikkommission",
 	"groupements": "Gruppen",
+	"groupement": "Gruppe",
 	"membresH": "Ehrenmitglied",
 	"chorus": "Chöre",
 	"searchChorus": "Chor suchen",
@@ -119,5 +120,7 @@
 	"choirdeletesure": "Wollen Sie wirklich diesen Chor löschen",
 	"confirm": "Bestätigen",
 	"contact":"Kontact",
-	"bienvenue":"Willkomen"
+	"bienvenue":"Willkomen",
+
+	"detailEvent":"Detail der Veranstaltung"
 }

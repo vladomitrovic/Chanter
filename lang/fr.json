@@ -95,7 +95,7 @@
 	"effectif":"Effectif",
 	"fondation":"Fondation",
 	"homepage":"Homepage",
-	"groupements":"Groupements",
+	"groupement":"Groupement",
 	"region":"Region",
 	"new":"Nouveau",
 	"update":"Mise à jour",
@@ -140,6 +140,7 @@
 	"contact":"Contact",
 	"news":"News",
 	"persondeletemessage":"Voulez-vous vraiment supprimer cette personne?",
-	"bienvenue":"Bienvenue"
+	"bienvenue":"Bienvenue",
+	"detailEvent":"Détail de l'événement"
 
 }

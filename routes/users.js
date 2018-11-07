@@ -15,7 +15,14 @@ router.get('/', function(req, res, next) {
 
 
 router.post('/login', function(req, res, next) {
-    models.Person.findOne({where: {username: req.body.username}}).then((user) => {
+
+    models.Person.findOne(
+        {
+            where: {username: req.body.username},
+            include: [{
+                model: models.Role}]
+
+        }).then((user) => {
         if(user !== null) {
             bcrypt.compare(req.body.password, user.password_hash).then((correct) => {
                 if (correct === true) {

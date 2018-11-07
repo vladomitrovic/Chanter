@@ -14,10 +14,19 @@ const saltRounds = 10;
 /* GET home page. */
 router.get('/', function(req, res, next) {
     var user = req.session.user;
-    if(user.roleName!='Administrator'){
-        res.render('admin/index', { title: 'Admin', user: req.session.user,  layout:'admin/otherLayout'});
-    }else
-        res.render('admin/index', { title: 'Admin', user: req.session.user,  layout:'admin/adminLayout'});
+
+    switch(user.Roles[0].roleName){
+
+        case 'SuperAdmin':
+            res.render('admin/index', { title: 'Admin', user: req.session.user,  layout:'admin/adminLayout'});
+        case 'Editeur':
+           res.render('admin/index', { title: 'Editeur', user: req.session.user,  layout:'admin/editeurLayout'});
+       case 'Webmaster':
+             res.render('admin/index', { title: 'Webmaster', user: req.session.user,  layout:'admin/webmasterLayout'});
+             break;
+    }
+    console.log(user);
+    console.log(user.Roles[0].roleName);
 
 });
 

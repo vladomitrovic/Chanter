@@ -2,13 +2,14 @@
 {{#each annonces}}
     <hr/>
     <div class="news-content">
-    {{#if bool}}
+    {{#if ../bool}}
         <h2>{{{this.titleFR}}}</h2>
         <p>{{{this.textFR}}}</p>
     {{else}}
             <h2>{{{this.titleDE}}}</h2>
             <p>{{{this.textDE}}}</p>
     {{/if}}
+
     </div>
     <div class="news-footer">
         <div class="news-author">
