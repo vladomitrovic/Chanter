@@ -57,8 +57,7 @@ app.use('/presentation', presentationRouter);
 app.use('/avcc', avccRouter);
 app.use('/service', serviceRouter);
 app.use('/choeurs', choeursRouter);
-//app.use('/admin', isAuthenticated, adminRouter);
-app.use('/admin', adminRouter);
+app.use('/admin', isAuthenticated, adminRouter);
 app.use('/formation', formationRouter);
 app.use('/projetmusical', projetsRouter);
 
