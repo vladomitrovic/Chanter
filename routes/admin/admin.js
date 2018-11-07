@@ -20,13 +20,11 @@ router.get('/', function(req, res, next) {
         case 'SuperAdmin':
             res.render('admin/index', { title: 'Admin', user: req.session.user,  layout:'admin/adminLayout'});
         case 'Editeur':
-           res.render('admin/index', { title: 'Editeur', user: req.session.user,  layout:'admin/editeurLayout'});
-       case 'Webmaster':
-             res.render('admin/index', { title: 'Webmaster', user: req.session.user,  layout:'admin/webmasterLayout'});
-             break;
+            res.render('admin/index', { title: 'Editeur', user: req.session.user,  layout:'admin/editeurLayout'});
+        case 'Webmaster':
+            res.render('admin/index', { title: 'Webmaster', user: req.session.user,  layout:'admin/webmasterLayout'});
+            break;
     }
-    console.log(user);
-    console.log(user.Roles[0].roleName);
 
 });
 

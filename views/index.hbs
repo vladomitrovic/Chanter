@@ -1,19 +1,19 @@
 
-        <div class="row">
-            {{#each news}}
+<div class="row">
+    {{#each news}}
 
-                <div class="col-sm-3">
-                    <div class="card">
-                        <div class="card-body">
-                            {{#if ../bool}}
-                                <h3>{{this.titleFR}}</h3>  <p>{{this.textFR}}</p>
-                            {{else}}
-                                <h3>{{this.titleDE}}</h3>  <p>{{this.textDE}}</p>
-                            {{/if}}
-                            <img style="width:100%; margin-bottom:20px;" src="/images/news/{{this.refPicture}}">
-                        </div>
-                    </div>
+        <div class="col-sm-3">
+            <div class="card">
+                <div class="card-body">
+                    {{#if ../bool}}
+                        <h3>{{this.titleFR}}</h3>  <p>{{this.textFR}}</p>
+                    {{else}}
+                        <h3>{{this.titleDE}}</h3>  <p>{{this.textDE}}</p>
+                    {{/if}}
+                    <img style="width:100%; margin-bottom:20px;" src="/images/news/{{this.refPicture}}">
                 </div>
-            {{/each}}
+            </div>
+        </div>
+    {{/each}}
 
-    </div>
+</div>
