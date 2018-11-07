@@ -141,6 +141,8 @@
 	"news":"News",
 	"persondeletemessage":"Voulez-vous vraiment supprimer cette personne?",
 	"bienvenue":"Bienvenue",
-	"detailEvent":"Détail de l'événement"
+	"detailEvent":"Détail de l'événement",
+	"langues":"Langue"
+
 
 }

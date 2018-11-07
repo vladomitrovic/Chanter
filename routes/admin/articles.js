@@ -13,36 +13,42 @@ router.get('/', function(req, res, next) {
 
 // List articles
 router.get('/list', function(req, res, next) {
+    var user = req.session.user;
+
     models.Article.findAll(
         {where: {CategoryId: {
             [Op.ne]: null
         }}
     }).then((articles) => {
-        res.render('admin/Articles/listArticles', {articles:articles, user: req.session.user, layout:'admin/adminLayout'});
+        res.render('admin/Articles/listArticles', {articles:articles, user: req.session.user, layout:user.Roles[0].layout});
     });
 });
 
 
 // New article from
 router.get('/new', function(req, res, next) {
+    var user = req.session.user;
+
     models.Category.findAll().then((categories) => {
-        res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout'});
+        res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:user.Roles[0].layout});
     });
 });
 
 router.get('/modify/:id', function(req, res, next) {
+    var user = req.session.user;
 
     models.Article.findOne({
         where : {id:  req.params.id}
     }).then((article) => {
         models.Category.findAll().then((categories) => {
-            res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:'admin/adminLayout',article: article });
+            res.render('admin/Articles/newArticle', {category:categories , user: req.session.user, layout:user.Roles[0].layout,article: article });
         });
     });
 });
 
 
 router.get('/delete/:id',  (req, res) => {
+
     models.Article.destroy({
         where : {id:  req.params.id}
     }).then(() => {

@@ -5,25 +5,30 @@ var models = require('../../models');
 
 // New ads form
 router.get('/new', function(req, res, next) {
-        res.render('admin/annonces/newAnnonce', { user: req.session.user, layout:'admin/adminLayout'});
+    var user = req.session.user;
+
+    res.render('admin/annonces/newAnnonce', { user: req.session.user, layout:user.Roles[0].layout});
 });
 
 // List ads
 router.get('/list', function(req, res, next) {
+    var user = req.session.user;
+
     models.Article.findAll({
         where : {CategoryId:  null}
     }).then((annonces) => {
-        res.render('admin/annonces/listAnnonces', {annonces:annonces, user: req.session.user, layout:'admin/adminLayout'});
+        res.render('admin/annonces/listAnnonces', {annonces:annonces, user: req.session.user, layout:user.Roles[0].layout});
     });
 });
 
 // Update ads
 router.get('/modify/:id', function(req, res, next) {
+    var user = req.session.user;
 
     models.Article.findOne({
         where : {id:  req.params.id}
     }).then((annonce) => {
-            res.render('admin/annonces/newAnnonce', {annonce:annonce , user: req.session.user, layout:'admin/adminLayout'});
+            res.render('admin/annonces/newAnnonce', {annonce:annonce , user: req.session.user, layout:user.Roles[0].layout});
     });
 });
 

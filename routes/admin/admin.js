@@ -15,16 +15,7 @@ const saltRounds = 10;
 router.get('/', function(req, res, next) {
     var user = req.session.user;
 
-    switch(user.Roles[0].roleName){
-
-        case 'SuperAdmin':
-            res.render('admin/index', { title: 'Admin', user: req.session.user,  layout:'admin/adminLayout'});
-        case 'Editeur':
-            res.render('admin/index', { title: 'Editeur', user: req.session.user,  layout:'admin/editeurLayout'});
-        case 'Webmaster':
-            res.render('admin/index', { title: 'Webmaster', user: req.session.user,  layout:'admin/webmasterLayout'});
-            break;
-    }
+    res.render('admin/index', { title: user.Roles[0].roleName, user: req.session.user,  layout:user.Roles[0].layout});
 
 });
 

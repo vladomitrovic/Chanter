@@ -2,29 +2,33 @@ var express = require('express');
 var router = express.Router();
 var models = require('../../models');
 
-
 // New event form
 router.get('/new', function(req, res, next) {
+    var user = req.session.user;
+
     models.Groupe.findAll().then((groupes) => {
-        res.render('admin/events/newEvents', {groupes:groupes , user: req.session.user, layout:'admin/adminLayout'});
+        res.render('admin/events/newEvents', {groupes:groupes , user: req.session.user, layout:user.Roles[0].layout});
     });
 });
 
 // List events
 router.get('/list', function(req, res, next) {
     models.Event.findAll().then((events) => {
-        res.render('admin/events/listEvents', {events:events, user: req.session.user, layout:'admin/adminLayout'});
+        var user = req.session.user;
+
+        res.render('admin/events/listEvents', {events:events, user: req.session.user, layout:user.Roles[0].layout});
     });
 });
 
 
 router.get('/modify/:id', function(req, res, next) {
+    var user = req.session.user;
 
     models.Event.findOne({
         where : {id:  req.params.id}
     }).then((event) => {
         models.Groupe.findAll().then((groupes) => {
-            res.render('admin/events/newEvents', {groupes:groupes , user: req.session.user, layout:'admin/adminLayout',event: event });
+            res.render('admin/events/newEvents', {groupes:groupes , user: req.session.user, layout:user.Roles[0].layout,event: event });
         });
     });
 });
