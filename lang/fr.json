@@ -142,7 +142,9 @@
 	"persondeletemessage":"Voulez-vous vraiment supprimer cette personne?",
 	"bienvenue":"Bienvenue",
 	"detailEvent":"Détail de l'événement",
-	"langues":"Langue"
+	"langues":"Langue",
+	"function":"Fonction"
+
 
 
 }

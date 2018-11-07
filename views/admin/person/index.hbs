@@ -4,7 +4,7 @@
             <th>id</th>
             <th>{{langs.firstname}}</th>
             <th>{{langs.lastname}}</th>
-            <th></th>
+            <th>Role</th>
             <th></th>
         </tr>
         {{#each person}}
@@ -12,6 +12,7 @@
                 <td>{{this.id}}</td>
                 <td>{{this.firstname}}</td>
                 <td>{{this.lastname}}</td>
+                <td>{{this.Roles.0.roleName}}</td>
                 <td><button class="btn btn-secondary" onclick="location.href='/admin/person/edit/{{this.id}}'">{{../langs.modifier}}</button></td>
                 <td>
                     <form action="/admin/person/delete" method="post">

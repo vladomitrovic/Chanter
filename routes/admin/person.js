@@ -9,7 +9,11 @@ var models = require('../../models');
 
 router.get('/', function (req, res, next) {
 
-        models.Person.findAll().then((person) => {
+        models.Person.findAll(
+
+            { include: [{
+                model: models.Role}]}
+        ).then((person) => {
             res.render('admin/person/index', {person:person, user: req.session.user, layout:'admin/adminLayout'});
         });
 
