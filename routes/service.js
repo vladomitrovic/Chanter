@@ -58,7 +58,7 @@ router.get('/contacts', function (req, res, next) {
 router.post('/contacts', function (req, res, next) {
 
     //Server side validation
-    if(req.body.name=='' || req.body.email=='' || req.body.sujet=='' || req.body.message==''){
+    if(req.body.name=='' || req.body.email=='' || req.body.categorie=='' || req.body.message==''){
         res.redirect(422, '/contacts');
         return;
     }
