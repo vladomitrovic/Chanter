@@ -45,14 +45,13 @@
 	"travailLocal": "Travail local",
 	"titre": "Titre",
 	"titleChoose": "Rechercher un choeur",
-	"title": "Titre",
-
+	"news":"News",
 	"chapeau": "Chapeau",
 	"ajouter": "Ajouter",
 	"text": "Text",
 	"image": "Image",
 	"categorie" : "Catégorie",
-	"membrefed" : "Membre fédération",
+	"membrefed" : "Membre fédération cantonale",
 	"yes": "Oui",
 	"no": "Non",
 	"all": "Tous",
@@ -121,7 +120,7 @@
 	"details": "Détails",
 	"emailSend":"Email envoyé",
 	"address": "Adresse",
-	"complement": "Complément",
+	"complement": "Complément d'addresse",
 	"siteweb": "Site web",
 	"creation": "Création",
 	"langue": "Langue",
@@ -139,12 +138,10 @@
 	"confirm": "Confirmer",
 	"contact":"Contact",
 	"news":"News",
-	"persondeletemessage":"Voulez-vous vraiment supprimer cette personne?",
-	"bienvenue":"Bienvenue",
-	"detailEvent":"Détail de l'événement",
-	"langues":"Langue",
-	"function":"Fonction"
-
-
+    "persondeletemessage":"Voulez-vous vraiment supprimer cette personne?",
+    "bienvenue":"Bienvenue",
+    "detailEvent":"Détail de l'événement",
+    "langues":"Langue",
+    "function":"Fonction"
 
 }

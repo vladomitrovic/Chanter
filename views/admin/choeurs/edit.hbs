@@ -1,3 +1,6 @@
+<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script src="/javascripts/formhelper.js"></script>
+
 <form action="/admin/choeurs/{{action}}" method="post" role="form" enctype="application/x-www-form-urlencoded">
     <legend>{{lookup langs action}} {{langs.choir}} </legend>
 
@@ -9,12 +12,12 @@
     </div>
 
     <div class="form-group">
-        <label for="address1">{{langs.address1}}</label>
+        <label for="address1">{{langs.address}}</label>
         <input type="text" class="form-control" name="address1" id="address1" value="{{choeur.address1}}" placeholder="{{langs.address1}}">
     </div>
 
     <div class="form-group">
-        <label for="address2">{{langs.address2}}</label>
+        <label for="address2">{{langs.complement}}</label>
         <input type="text" class="form-control" name="address2" id="address2" value="{{choeur.address2}}" placeholder="{{langs.address2}}">
     </div>
 
@@ -51,75 +54,72 @@
 
 
     <div class="form-group">
-        <label for="GroupeId">{{langs.groupements}} + {{langs.region}}</label>
-
-        <select name="GroupeId">
-            <option value="0">UCC_Y</option>
-            <option value="1">Bas-Valais Membre GSCBV</option>
-            <option value="2">Bas-Valais Non Membre GSCBV</option>
-            <option value="3">Centre du Valais - Membre UCC</option>
-            <option value="4">Centre du Valais - Non Membre UCC</option>
-            <option value="5">Valais Central - Membre GCVC</option>
-            <option value="6">Valais Central - Non Membre GCVC</option>
-            <option value="7">Oberwallis - Membre OCV</option>
-            <option value="8">Oberwallis - Non Membre OCV</option>
-
-
+        <label for="GroupeId">{{langs.groupements}}</label>
+        <select class="custom-select" id="GroupeId" name="GroupeId">
+            {{#each groups}}
+                <option value="{{this.id}}">{{this.groupName}}</option>
+            {{/each}}
         </select>
     </div>
 
-
-
-    <!--div class="form-group">
-        <h2>TODO : GET DEKANAT FROM DATABASE if OCV SELECTED</h2>>
-        <label for="dekanat">Dekanat (Nur fur OCV)</label>
-        <select name="dekanat">
-            <option value="0"></option>
-            <option value="1">Weltlich</option>
-            <option value="2">Leuk</option>
-            <option value="3">Raron</option>
-            <option value="4">Visp</option>
-            <option value="5">Brig</option>
-            <option value="6">Ernen</option>
-
-        </select>
-    </div-->
-
     <div class="form-group">
-        <label for="memberfc">{{langs.federation_canton}}</label>
-        <input type="checkbox" name="memberfc"> Member FSCV</input>
-        <input  type="radio" name="memberfc" value="0">Non Member FSCV</input>
+        <label for="entryGroup">{{langs.date_group_entry}}</label>
+        <input type="date" class="form-control" maxlength="4" name="entryGroup" id="entryGroup" value="{{choeur.entryGroup}}">
     </div>
 
     <div class="form-group">
-        <label for="chEglise"></label>
-        <input type="radio" name="chEglise" value="1"> Choeur Eglise</input>
-        <input  type="radio" name="chEglise" value="0">Pas choeur eglise</input>
+        <label for="memberfc">{{langs.membrefed}}</label>
+        <div class="form-check">
+            <input type="radio" name="memberfc" value="true"/>
+            <label class="form-check-label" for="memberfc">{{langs.yes}}</label>
+            <input  type="radio" name="memberfc" value="false" checked/>
+            <label class="form-check-label" for="memberfc">{{langs.no}}</label>
+        </div>
     </div>
-
 
     <div class="form-group">
         <label for="entryfc">{{langs.date_canton_federaton_entry}}</label>
         <input type="date" class="form-control" maxlength="4" name="entryfc" id="entryfc" value="{{choeur.entryfc}}">
     </div>
 
+
     <div class="form-group">
-        <label for="LanguageId">Langue </label>
-        <select name="LanguageId" id="LanguageId">
-            <option value="1">French</option>
-            <option value="2">Deutsch</option>
+        <label for="chEglise">{{langs.cheglise}}</label>
+        <div class="form-check">
+            <input type="radio" name="chEglise" value="true"/>
+            <label class="form-check-label" for="chEglise">{{langs.yes}}</label>
+            <input  type="radio" name="chEglise" value="false" checked/>
+            <label class="form-check-label" for="chEglise">{{langs.no}}</label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="chGospel">{{langs.chgospel}}</label>
+        <div class="form-check">
+            <input type="radio" name="chGospel" value="true"/>
+            <label class="form-check-label" for="chGospel">{{langs.yes}}</label>
+            <input  type="radio" name="chGospel" value="false" checked/>
+            <label class="form-check-label" for="chGospel">{{langs.no}}</label>
+        </div>
+    </div>
+
+
+
+    <div class="form-group">
+        <label for="LanguageId">{{langs.langue}} </label>
+        <select class="custom-select" name="LanguageId" id="LanguageId">
+            {{#each languages}}
+                <option value="{{this.id}}">{{this.language}}</option>
+            {{/each}}
         </select>
     </div>
 
     <div class="form-group">
-        <label for="ChoirTypeId">Type of Choir </label>
-        <select name="ChoirTypeId" id="ChoirTypeId">
-            <option value="1">CX</option>
-            <option value="2">Choir</option>
-            <option value="3">Choir</option>
-            <option value="4">Choir</option>
-            <option value="5">Choir</option>
-            <option value="6">Choir</option>
+        <label for="ChoirTypeId">{{langs.typeChoeur}}</label>
+        <select class="custom-select" id="ChoirTypeId" name="ChoirTypeId">
+            {{#each choirTypes}}
+                <option value="{{this.id}}">{{this.choirType}}</option>
+            {{/each}}
         </select>
     </div>
 
@@ -127,5 +127,18 @@
     <button type="submit" class="btn btn-primary">{{lookup langs action}} {{langs.choir}}</button>
 
 </form>
+
+<script defer>
+    $(document).ready(function(){
+    setSelectOption('GroupeId', {{choeur.GroupeId}});
+    setRadiobuttonChecked('memberfc',{{choeur.memberfc}});
+    var GroupeId ;
+    var membrefc ;
+    var chEglise ;
+    var chGospel;
+    var LanguageId;
+    var ChoirtypeId;
+    });
+</script>
 
 

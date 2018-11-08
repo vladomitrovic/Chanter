@@ -32,19 +32,15 @@ router.get('/', function(req, res, next) {
 
 // SEARCH CHOIR TO DO
 router.post('/', function(req, res, next) {
-    console.log("searhc result");
-    var memberfc = req.body.memberfc;
-    console.log(memberfc);
-    if (memberfc == "null")
-    {
-        memberfc = [0,1, null];
-    }
-    else
-    {
-        memberfc = [parseInt(memberfc)];
-    }
+    var search = {};
+    if (req.body.memberfc !== "all") {search.memberfc = parseInt(req.body.memberfc);}
+    if (req.body.region !== "all") {}
+    if (req.body.groupe !== "all") {search.GroupeId = parseInt(req.body.groupe);}
+    if (req.body.typechoeur !== "all") {search.ChoirTypeId = parseInt(req.body.typechoeur);}
+    if (req.body.president !== "all") {}
+    if (req.body.director !== "all") {}
     models.Choir.findAll(
-        {where: {memberfc: {[Op.or]:memberfc}},
+        {where: search/*{memberfc: {[Op.or]:memberfc}}*/,
             include: [{// Notice `include` takes an ARRAY
                 model: models.Locality}]}
 
@@ -54,33 +50,6 @@ router.post('/', function(req, res, next) {
     })
 });
 
-router.get('/calendrier', function(req, res, next) {
-
-    models.Event.findAll().then((events) => {
-        var lang = req.i18n_lang;
-        models.Groupe.findAll().then((groupes) => {
-            res.render('choeurs/calendrier', {
-                title: 'calendrier',
-                events: encodeURIComponent(JSON.stringify(events)),
-                groupes: encodeURIComponent(JSON.stringify(groupes)),
-                lang : lang
-            },);
-        });
-    });
-});
-
-
-
-router.get('/calendrier/:id', function(req, res, next) {
-
-    models.Event.findOne({
-        where : {id:  req.params.id},
-        include: [{
-            model: models.Groupe}]
-    }).then((event) => {
-        res.render('choeurs/calendarDetail', {event: event, title: 'detailEvent'}) ;
-    });
-});
 
 router.get('/:id', function(req, res, next) {
 
@@ -108,6 +77,30 @@ router.get('/:id', function(req, res, next) {
     });
 });
 
+router.get('/calendrier', function(req, res, next) {
 
+    models.Event.findAll().then((events) => {
+        var lang = req.i18n_lang;
+        models.Groupe.findAll().then((groupes) => {
+            res.render('choeurs/calendrier', {
+                title: 'calendrier',
+                events: encodeURIComponent(JSON.stringify(events)),
+                groupes: encodeURIComponent(JSON.stringify(groupes)),
+                lang : lang
+            },);
+        });
+    });
+});
+
+router.get('/calendrier/:id', function(req, res, next) {
+
+    models.Event.findOne({
+        where : {id:  req.params.id},
+        include: [{
+            model: models.Groupe}]
+    }).then((event) => {
+        res.render('choeurs/calendarDetail', {event: event, title: 'detailEvent'}) ;
+    });
+});
 
 module.exports = router;

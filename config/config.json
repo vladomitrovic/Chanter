@@ -3,21 +3,21 @@
     "username": "user",
     "password": "root1234",
     "database": "chanter",
-    "host": "192.168.99.100",
+    "host": "db",
     "dialect": "mysql"
   },
   "test": {
     "username": "user",
     "password": "root1234",
     "database": "chanter",
-    "host": "192.168.99.100",
+    "host": "db",
     "dialect": "mysql"
   },
   "production": {
     "username": "user",
     "password": "root1234",
     "database": "chanter",
-    "host": "192.168.99.100",
+    "host": "db",
     "dialect": "mysql"
   }
 }

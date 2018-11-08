@@ -3,7 +3,7 @@
 <div class='col-md-4'>
     <label for="inputsm">{{langs.membrefed}}</label>
     <div class="radio">
-        <label><input type="radio" name="memberfc" value="null" checked>{{langs.all}}</label>
+        <label><input type="radio" name="memberfc" value="all" checked>{{langs.all}}</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="memberfc" value="1">{{langs.yes}}</label>
@@ -16,7 +16,7 @@
 <div class='col-md-4'>
     <label for="inputsm">{{langs.regionling}}</label>
     <div class="radio">
-        <label><input type="radio" name="region" value="null" checked>{{langs.all}}</label>
+        <label><input type="radio" name="region" value="all" checked>{{langs.all}}</label>
     </div>
     <div class="radio">
         <label><input type="radio" name="region" value="bas-valais">Haut-Valais</label>
@@ -29,49 +29,53 @@
 <div class='col-md-4'>
     <label for="inputsm">Groupement</label>
     <div class="radio disabled">
-        <label><input type="radio" name="groupe" value="null" checked>{{langs.all}}</label>
+        <label><input type="radio" name="groupe" value="all" checked>{{langs.all}}</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="groupe" value="GSCBV">GSCBV</label>
+        <label><input type="radio" name="groupe" value="1">GSCBV</label>
 </div>
     <div class="radio">
-        <label><input type="radio" name="groupe" value="UCC">UCC </label>
+        <label><input type="radio" name="groupe" value="2">UCC </label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="groupe" value="GCGV">GCVC </label>
+        <label><input type="radio" name="groupe" value="3">GCVC </label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="groupe" value="OCV">OCV</label>
+        <label><input type="radio" name="groupe" value="4">OCV</label>
     </div>
 </div>
 <div class='col-md-4'>
     <label for="inputsm">{{langs.typeChoeur}}</label>
     <div class="radio">
-        <label><input type="radio" name="typechoeur" value="null" checked>{{langs.adultes}}</label>
+        <label><input type="radio" name="typechoeur" value="all" checked>{{langs.all}}</label>
     </div>
     <div class="radio">
-        <label><input type="radio" name="typechoeur" value="mixte">{{langs.mixte}}</label>
+        <label><input type="radio" name="typechoeur" value="1">{{langs.adultes}}</label>
+    </div>
+    <div class="radio">
+        <label><input type="radio" name="typechoeur" value="2">{{langs.mixte}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="typechoeur" value="hommes" disabled>{{langs.hommes}}</label>
+        <label><input type="radio" name="typechoeur" value="3" disabled>{{langs.hommes}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="typechoeur" value="jeunes" disabled>{{langs.jeunes}}</label>
+        <label><input type="radio" name="typechoeur" value="4" disabled>{{langs.jeunes}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="typechoeur" value="dames" disabled>{{langs.dames}}</label>
+        <label><input type="radio" name="typechoeur" value="5" disabled>{{langs.dames}}</label>
     </div>
     <div class="radio disabled">
-        <label><input type="radio" name="typechoeur" value="enfants" disabled>{{langs.enfants}}</label>
+        <label><input type="radio" name="typechoeur" value="6" disabled>{{langs.enfants}}</label>
     </div>
 </div>
 
 <div class='col-md-4'>
     <label for="inputsm">{{langs.president}}</label>
     <div class="form-group">
-    <select class="selectpicker form-control input-sm" name="director" id="president">
+    <select class="selectpicker form-control input-sm" name="president" id="president">
+        <option value="all">{{langs.all}}</option>
         {{#each presidents}}
-            <option>{{this.lastname}}</option>
+            <option value="{{this.id}}">{{this.lastname}}</option>
         {{/each}}
     </select>
     </div>
@@ -82,6 +86,7 @@
     <label for="inputsm">{{langs.chefDeChoeur}}</label>
     <div class="form-group">
     <select class="selectpicker form-control input-sm" name="director" id="director">
+        <option value="all">{{langs.all}}</option>
         {{#each chefChoeur}}
             <option>{{this.lastname}}</option>
         {{/each}}
