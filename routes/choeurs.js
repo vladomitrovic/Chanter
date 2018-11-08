@@ -16,12 +16,7 @@ router.get('/', function(req, res, next) {
         models.Person.findAll
         (
             {where: {FunctionId: 2}},
-            // {
-            // include: [{
-            //     model: models.Function,
-            //     where: { functionName: 'Director' }
-            //          }]
-            // }
+
         ).then((chefChoeur)=>
         {
             console.log(chefChoeur);

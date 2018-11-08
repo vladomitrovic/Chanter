@@ -82,7 +82,6 @@ router.post('/contacts', function (req, res, next) {
             res.send(200)
         });
     });
-
 });
 
     module.exports = router;
