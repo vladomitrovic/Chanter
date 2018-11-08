@@ -8,9 +8,6 @@ const Op = Sequelize.Op;
 router.get('/', function(req, res, next) {
     models.Person.findAll(
         {where: {FunctionId: 1}},
-        // include: [{
-        // model: models.Function,
-        // where: { functionName: 'President' }
 
     ).then((president) => {
         models.Person.findAll
@@ -19,8 +16,6 @@ router.get('/', function(req, res, next) {
 
         ).then((chefChoeur)=>
         {
-            console.log(chefChoeur);
-            console.log(president);
             res.render('choeurs/index', {presidents:president, chefChoeur:chefChoeur, title:'titleChoose'});
         })})
 });
@@ -40,37 +35,10 @@ router.post('/', function(req, res, next) {
                 model: models.Locality}]}
 
     ).then((choeurs) => {
-        console.log(JSON.stringify(choeurs));
         res.render('choeurs/choirList', {choeurs: choeurs, title: 'listedecoeurs'}) ;
     })
 });
 
-
-router.get('/:id', function(req, res, next) {
-
-    models.Choir.findOne(
-        {where: {id: req.params.id},
-            include: [{ all: true}]}
-    ).then((choir) => {
-        models.Person.findAll(
-            {include: [{
-                    model: models.Choir,
-                    where: { id: choir.id}},
-                    {
-                        model: models.Function,
-                        where: { [Op.or]: [{id: 1}, {id: 2}]}}
-                ]}
-        ).then((people) => {
-
-            res.render('choeurs/details', {
-                title: 'details',
-                choir: choir,
-                director :people.find(o => o.Function.functionName == 'Director'),
-                president : people.find(o => o.Function.functionName == 'President')
-            });
-        });
-    });
-});
 
 router.get('/calendrier', function(req, res, next) {
 
@@ -95,6 +63,32 @@ router.get('/calendrier/:id', function(req, res, next) {
             model: models.Groupe}]
     }).then((event) => {
         res.render('choeurs/calendarDetail', {event: event, title: 'detailEvent'}) ;
+    });
+});
+
+router.get('/:id', function(req, res, next) {
+
+    models.Choir.findOne(
+        {where: {id: req.params.id},
+            include: [{ all: true}]}
+    ).then((choir) => {
+        models.Person.findAll(
+            {include: [{
+                    model: models.Choir,
+                    where: { id: choir.id}},
+                    {
+                        model: models.Function,
+                        where: { [Op.or]: [{id: 1}, {id: 2}]}}
+                ]}
+        ).then((people) => {
+
+            res.render('choeurs/details', {
+                title: 'details',
+                choir: choir,
+                director :people.find(o => o.Function.functionName == 'Director'),
+                president : people.find(o => o.Function.functionName == 'President')
+            });
+        });
     });
 });
 

@@ -29,7 +29,6 @@ router.post('/new', function (req, res, next) {
         where:{npa:req.body.npa}, defaults:{localityName: req.body.localityName}
     }).spread((locality, created)=>{
 
-        console.log(JSON.stringify(locality));
 
         models.Choir.create({
             choirName: req.body.choirName,
@@ -64,7 +63,6 @@ router.get('/edit/:id', async function(req, res, next) {
     languages = await models.Language.findAll().then((languages) => {return languages});
 
     models.Choir.findOne({where:{id: req.params.id}, include: models.Locality}).then((choir) => {
-        console.log(JSON.stringify(choir));
         res.render('admin/choeurs/edit', {layout:'admin/adminLayout', user: req.session.user, choeur: choir, groups: groups, languages: languages, choirTypes : choirTypes, action: "edit"});
     });
 });
@@ -75,7 +73,6 @@ router.post('/edit', function(req, res, next) {
         where:{npa:req.body.npa}, defaults:{localityName: req.body.localityName}
     }).spread((locality, created)=>{
 
-        console.log(JSON.stringify(locality));
 
         models.Choir.update({
             choirName: req.body.choirName,

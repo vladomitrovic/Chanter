@@ -100,11 +100,11 @@
 	"end": "Ende",
 
 	"contact":"Kontact",
-	"person":"",
-	"tickets":"",
-	"subject":"",
+	"person":"Personen",
+	"tickets":"Tickets",
+	"subject":"Subject",
 	"email":"Email",
-	"message":"",
+	"message":"Content",
 
     "emailSend":"Email gesendet",
 	"address": "Adresse",

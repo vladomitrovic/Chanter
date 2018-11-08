@@ -11,7 +11,6 @@ router.get('/', function(req, res, next) {
         {where: {titleFR: 'Présentation'}},
     ).then((presentation)=>
     {
-        console.log(presentation)
         res.render('presentation/index', { presentation:presentation, bool:lang==='fr', title: 'presentation' });
     })
 
@@ -39,8 +38,6 @@ router.get('/comite', function(req, res, next) {
 
                 }
             ).then((persGroupements) => {
-            console.log(JSON.stringify(personnes));
-            console.log(JSON.stringify(persGroupements));
             res.render('presentation/comite', {
                 personnes: personnes,
                 personnes3: personnes3,
@@ -64,7 +61,6 @@ router.get('/commission', function(req, res, next) {
             }]}
 
     ).then((pers) => {
-        console.log(pers);
         res.render('presentation/commission',{personnes:pers, title: 'commission' });
 
     })
@@ -75,7 +71,6 @@ router.get('/groupement', function(req, res, next) {
 
     models.Groupe.findAll(
     ).then((groups) => {
-        console.log(JSON.stringify(groups));
         res.render('presentation/groupement', {groups: groups, title: 'groupements'});
 
     })
