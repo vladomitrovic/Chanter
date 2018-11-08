@@ -4,21 +4,24 @@
     "password": "root1234",
     "database": "chanter",
     "host": "db",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "timezone": "+01:00"
   },
   "test": {
     "username": "user",
     "password": "root1234",
     "database": "chanter",
     "host": "db",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "timezone": "+01:00"
   },
   "production": {
     "username": "user",
     "password": "root1234",
     "database": "chanter",
     "host": "db",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "timezone": "+01:00"
   }
 }
 
