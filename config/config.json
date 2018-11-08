@@ -2,22 +2,23 @@
   "development": {
     "username": "user",
     "password": "root1234",
-    "database": "chanterDB",
-    "host": "127.0.0.1",
+    "database": "chanter",
+    "host": "db",
     "dialect": "mysql"
   },
   "test": {
     "username": "user",
     "password": "root1234",
-    "database": "chanterDB",
-    "host": "127.0.0.1",
+    "database": "chanter",
+    "host": "db",
     "dialect": "mysql"
   },
   "production": {
     "username": "user",
     "password": "root1234",
-    "database": "chanterDB",
-    "host": "127.0.0.1",
+    "database": "chanter",
+    "host": "db",
     "dialect": "mysql"
   }
 }
+
