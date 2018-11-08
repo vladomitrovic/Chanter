@@ -56,14 +56,18 @@ router.get('/contacts', function (req, res, next) {
 
 
 router.post('/contacts', function (req, res, next) {
-    console.log(req.body.name);
-    console.log(JSON.stringify(req.body));
+
+    //Server side validation
+    if(req.body.name=='' || req.body.email=='' || req.body.sujet=='' || req.body.message==''){
+        res.redirect(422, '/contacts');
+        return;
+    }
+
     models.Category.findOne(
     {where:{[Op.or]: [{categoryFR: req.body.categorie}, {categoryDE: req.body.categorie}]}
-
     }).then((category) => {
         console.log(JSON.stringify(category));
-        var categoryId = category.id;
+       var categoryId = category.id;
         console.log(categoryId);
         models.Ticket.create({
             nom: req.body.name,
@@ -78,6 +82,7 @@ router.post('/contacts', function (req, res, next) {
             res.send(200)
         });
     });
-    });
+
+});
 
     module.exports = router;
