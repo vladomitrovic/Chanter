@@ -18,7 +18,6 @@ router.get('/annonces', function(req, res, next) {
         include: [{
             model: models.Person}]
     }).then((annonces) => {
-        console.log(annonces)
         res.render('service/petites', { title: 'annonces' , bool:lang==='fr', annonces: annonces});
     });
 
@@ -66,9 +65,7 @@ router.post('/contacts', function (req, res, next) {
     models.Category.findOne(
     {where:{[Op.or]: [{categoryFR: req.body.categorie}, {categoryDE: req.body.categorie}]}
     }).then((category) => {
-        console.log(JSON.stringify(category));
        var categoryId = category.id;
-        console.log(categoryId);
         models.Ticket.create({
             nom: req.body.name,
             email: req.body.email,
@@ -78,7 +75,6 @@ router.post('/contacts', function (req, res, next) {
             statut: "toAnswer"
 
         }).then(() => {
-            console.log("ok create");
             res.send(200)
         });
     });

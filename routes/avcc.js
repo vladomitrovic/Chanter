@@ -14,7 +14,6 @@ router.get('/', function(req, res, next) {
 
     ).then((presentation)=>
     {
-        console.log(presentation)
         res.render('avcc/presentationavcc', { presentation:presentation, bool:lang==='fr', title: 'presentationavcc' });
     })
 });
@@ -26,7 +25,6 @@ router.get('/historique', function(req, res, next) {
 
     ).then((historique)=>
     {
-        console.log(historique)
         res.render('avcc/historique',{historique:historique, bool:lang==='fr', title: 'historiqueavcc' });
     })
 
@@ -44,7 +42,6 @@ router.get('/fonds', function (req, res, next) {
 
     ).then((fonds)=>
     {
-        console.log(fonds)
         res.render('avcc/fonds', { fonds:fonds, bool:lang==='fr', title: 'fondsavcc' });
     })
 });
@@ -56,7 +53,6 @@ router.get('/formation', function (req, res, next) {
 
     ).then((formation)=>
     {
-        console.log(formation)
         res.render('avcc/formation', { formation:formation, bool:lang==='fr', title: 'formationavcc' });
     })
 });
