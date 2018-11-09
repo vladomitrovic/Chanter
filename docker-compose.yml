@@ -1,0 +1,46 @@
+version:                   '3.3'
+
+services:
+
+  backend:
+    build:                 .
+    container_name: chanter-grp4
+    environment:
+      NODE_ENV:            production
+      DB_CONNECTION:       $DB_PROTOCOL://$DB_USER:$DB_PASSWORD@$DB_HOST:$DB_PORT/$DB_DATABASE
+      VIRTUAL_HOST:        ${DOMAINS}
+      LETSENCRYPT_HOST:    ${DOMAINS}
+      LETSENCRYPT_EMAIL:   ${EMAIL}
+    restart:               always
+    depends_on:
+    - db
+
+  phpmyadmin:
+    container_name: pma-grp4
+    image:                 phpmyadmin/phpmyadmin
+    restart:               always
+    environment:
+      PMA_ARBITRARY:       1
+      PMA_HOST:            db
+      PMA_PORT:            3306
+      VIRTUAL_HOST:        ${PHPMYADMINDOMAINS}
+      LETSENCRYPT_HOST:    ${PHPMYADMINDOMAINS}
+      LETSENCRYPT_EMAIL:   ${EMAIL}
+    depends_on:
+    - db
+
+  db:
+    container_name: mysql-grp4
+    image:                 mysql:5.7
+    restart:               always
+    environment:
+      MYSQL_ROOT_PASSWORD: $DB_ROOT_PASSWORD
+      MYSQL_DATABASE:      $DB_DATABASE
+      MYSQL_USER:          $DB_USER
+      MYSQL_PASSWORD:      $DB_PASSWORD
+    command:               ["bash", "-c", 'docker-entrypoint.sh --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci']
+
+networks:
+  default:
+    external:
+      name:                ${NETWORK}
