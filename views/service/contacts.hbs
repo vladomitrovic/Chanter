@@ -70,7 +70,9 @@
         });
     });
 
-     $("#logoutModal").dialog({autoOpen: false,  height: 590, width: 1005});
+     $("#logoutModal").dialog({autoOpen: false,  height: 590, width: 1005, open: function(event, ui) {
+             $(".ui-dialog-titlebar-close", ui.dialog | ui).hide();
+         }});
 
 
     $("#contact_form").submit(function(event){

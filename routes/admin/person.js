@@ -41,7 +41,6 @@ router.get('/edit/:id', function(req, res, next) {
         models.Person.findOne({where:{id: req.params.id}, include: models.Locality}).then((person) => {
 
             //res.send(JSON.stringify(person));
-            console.log(JSON.stringify(person));
 
             res.render('admin/person/edit', {layout:'admin/adminLayout', user: req.session.user, person: person, action: "/edit"});
     });
@@ -76,7 +75,6 @@ router.post('/new', function (req, res, next) {
     var functionId = body.role;
 
 
-    console.log(body);
 
 
     // Validating the locality
@@ -84,7 +82,6 @@ router.post('/new', function (req, res, next) {
         where:{npa:npa}, defaults:{localityName: req.body.localityName}
     }).spread((locality, created)=> {
 
-      //  console.log(JSON.stringify(locality));
        person = models.Person.create({
             lastname:  lastname,
             firstname: firstname,
@@ -109,10 +106,8 @@ router.post('/new', function (req, res, next) {
                    comityName:'Comite FCC'}
 
            }).then((comity) => {
-               console.log(comity);
 
                var comityid = comity.id;
-               console.log(comity);
 
 
              models.Comity.addPerson({personId: person.id, comityId: comityid}).then(() => {
@@ -123,7 +118,6 @@ router.post('/new', function (req, res, next) {
 
 
 
-            console.log(person);
 
 
 
@@ -146,7 +140,6 @@ router.post('/edit/:id', function(req, res, next) {
 
 
 
-    console.log('Am i here...');
 
 
 
@@ -175,7 +168,6 @@ router.post('/edit/:id', function(req, res, next) {
         where:{npa:npa}
     }).spread((locality, created)=>{
 
-        console.log(JSON.stringify(locality));
     // Update the table
         person = models.Person.update({
                 lastname:  lastname,
@@ -195,7 +187,6 @@ router.post('/edit/:id', function(req, res, next) {
                 LocalityId: locality.id},
             {where: {id: req.body.id}
             }).then(() => {
-                console.log(person);
                 res.redirect("/admin/person");
 
             });

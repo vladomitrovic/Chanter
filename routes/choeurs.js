@@ -8,51 +8,37 @@ const Op = Sequelize.Op;
 router.get('/', function(req, res, next) {
     models.Person.findAll(
         {where: {FunctionId: 1}},
-        // include: [{
-        // model: models.Function,
-        // where: { functionName: 'President' }
 
     ).then((president) => {
         models.Person.findAll
         (
             {where: {FunctionId: 2}},
-            // {
-            // include: [{
-            //     model: models.Function,
-            //     where: { functionName: 'Director' }
-            //          }]
-            // }
+
         ).then((chefChoeur)=>
         {
-            console.log(chefChoeur);
-            console.log(president);
             res.render('choeurs/index', {presidents:president, chefChoeur:chefChoeur, title:'titleChoose'});
         })})
 });
 
 // SEARCH CHOIR TO DO
 router.post('/', function(req, res, next) {
-    console.log("searhc result");
-    var memberfc = req.body.memberfc;
-    console.log(memberfc);
-    if (memberfc == "null")
-    {
-        memberfc = [0,1, null];
-    }
-    else
-    {
-        memberfc = [parseInt(memberfc)];
-    }
+    var search = {};
+    if (req.body.memberfc !== "all") {search.memberfc = parseInt(req.body.memberfc);}
+    if (req.body.region !== "all") {}
+    if (req.body.groupe !== "all") {search.GroupeId = parseInt(req.body.groupe);}
+    if (req.body.typechoeur !== "all") {search.ChoirTypeId = parseInt(req.body.typechoeur);}
+    if (req.body.president !== "all") {}
+    if (req.body.director !== "all") {}
     models.Choir.findAll(
-        {where: {memberfc: {[Op.or]:memberfc}},
+        {where: search/*{memberfc: {[Op.or]:memberfc}}*/,
             include: [{// Notice `include` takes an ARRAY
                 model: models.Locality}]}
 
     ).then((choeurs) => {
-        console.log(JSON.stringify(choeurs));
         res.render('choeurs/choirList', {choeurs: choeurs, title: 'listedecoeurs'}) ;
     })
 });
+
 
 router.get('/calendrier', function(req, res, next) {
 
@@ -68,8 +54,6 @@ router.get('/calendrier', function(req, res, next) {
         });
     });
 });
-
-
 
 router.get('/calendrier/:id', function(req, res, next) {
 
@@ -107,7 +91,5 @@ router.get('/:id', function(req, res, next) {
         });
     });
 });
-
-
 
 module.exports = router;

@@ -12,20 +12,23 @@ router.get('/', function(req, res, next)
 });
 
 // New chore form
-router.get('/new', function(req, res, next) {
+router.get('/new', async function(req, res, next) {
 
-    res.render('admin/choeurs/edit', {layout:'admin/adminLayout', user: req.session.user, choeur: new models.Choir(), action: "new"});
+    groups = await models.Groupe.findAll().then((groups) => { return groups});
+
+    choirTypes = await models.ChoirType.findAll().then((choirTypes)=>{return choirTypes});
+
+    languages = await models.Language.findAll().then((languages) => {return languages});
+
+    res.render('admin/choeurs/edit', {layout:'admin/adminLayout', user: req.session.user, choeur: new models.Choir(), groups: groups, languages: languages, choirTypes : choirTypes, action: "new"});
 });
 
 router.post('/new', function (req, res, next) {
-
-    console.log(JSON.stringify(req.body));
 
     models.Locality.findOrCreate({
         where:{npa:req.body.npa}, defaults:{localityName: req.body.localityName}
     }).spread((locality, created)=>{
 
-        console.log(JSON.stringify(locality));
 
         models.Choir.create({
             choirName: req.body.choirName,
@@ -41,7 +44,7 @@ router.post('/new', function (req, res, next) {
             entryGroup: req.body.entryGroup,
             remarks: req.body.remarks,
             ChoirTypeId: req.body.ChoirTypeId,
-            GroupeId: req.body.GroupId,
+            GroupeId: req.body.GroupeId,
             LanguageId: req.body.LanguageId,
             LocalityId: locality.id
         }).then(res.redirect("/admin/choeurs"));
@@ -51,10 +54,16 @@ router.post('/new', function (req, res, next) {
 
 });
 
-router.get('/edit/:id', function(req, res, next) {
+router.get('/edit/:id', async function(req, res, next) {
+
+    groups = await models.Groupe.findAll().then((groups) => { return groups});
+
+    choirTypes = await models.ChoirType.findAll().then((choirTypes)=>{return choirTypes});
+
+    languages = await models.Language.findAll().then((languages) => {return languages});
+
     models.Choir.findOne({where:{id: req.params.id}, include: models.Locality}).then((choir) => {
-        console.log(JSON.stringify(choir));
-        res.render('admin/choeurs/edit', {layout:'admin/adminLayout', user: req.session.user, choeur: choir, action: "edit"});
+        res.render('admin/choeurs/edit', {layout:'admin/adminLayout', user: req.session.user, choeur: choir, groups: groups, languages: languages, choirTypes : choirTypes, action: "edit"});
     });
 });
 
@@ -64,7 +73,6 @@ router.post('/edit', function(req, res, next) {
         where:{npa:req.body.npa}, defaults:{localityName: req.body.localityName}
     }).spread((locality, created)=>{
 
-        console.log(JSON.stringify(locality));
 
         models.Choir.update({
             choirName: req.body.choirName,
@@ -80,7 +88,7 @@ router.post('/edit', function(req, res, next) {
             entryGroup: req.body.entryGroup,
             remarks: req.body.remarks,
             ChoirTypeId: req.body.ChoirTypeId,
-            GroupeId: req.body.GroupId,
+            GroupeId: req.body.GroupeId,
             LanguageId: req.body.LanguageId,
             LocalityId: locality.id},
             {where: {id: req.body.id}

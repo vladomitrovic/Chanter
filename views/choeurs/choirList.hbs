@@ -1,5 +1,6 @@
 <div class="row">
 
+    {{#if choeurs}}
     {{#each choeurs}}
         <div class="row border" style="padding-bottom:20px;">
             <div class="col-sm-3"><h4><a href="/choeurs/{{this.id}}">{{this.choirName}}</a></h4></div>
@@ -11,6 +12,10 @@
         </div>
 
     {{/each}}
+    {{else}}
+        <h3>No choir found</h3>
+    {{/if}}
+
 </div>
 
 
