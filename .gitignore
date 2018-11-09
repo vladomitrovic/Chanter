@@ -2,3 +2,4 @@
 .dockerignore
 .env
 node_modules*
+config*
